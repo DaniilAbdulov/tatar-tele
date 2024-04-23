@@ -1,23 +1,25 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
-import { Auth, Home } from "../views/index";
-import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "../views/index";
+//import { useEffect } from "react";
+import { FirstLesson } from "../components/FirstLesson";
 
 export const Router = () => {
-    const isAuth = true;
-    const navigate = useNavigate();
+    //const isAuth = true;
+    //const navigate = useNavigate();
 
-    useEffect(() => {
-        if (isAuth) {
-            navigate("/home");
-        } else {
-            navigate("/");
-        }
-    }, [navigate, isAuth]);
+    // useEffect(() => {
+    //     if (isAuth) {
+    //         navigate("/home");
+    //     } else {
+    //         navigate("/");
+    //     }
+    // }, [navigate, isAuth]);
     return (
         <div>
             <Routes>
-                <Route path="/" element={<Auth />} />
-                {isAuth && <Route path="/home" element={<Home />} />}
+                <Route path="/home" element={<Home />} />
+                <Route path="/first" element={<FirstLesson />} />
+                {/* {isAuth && <Route path="/home" element={<Home />} />} */}
             </Routes>
         </div>
     );
