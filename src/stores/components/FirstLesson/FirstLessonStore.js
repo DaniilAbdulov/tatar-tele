@@ -40,12 +40,13 @@ class FirstLessonStore {
         this.verbNegative = newVerbNegative;
     };
 
-    randomInt = (max) => {
-        return Math.floor(Math.random() * max);
+    randomInt = (min, max) => {
+        const rand = min + Math.random() * (max + 1 - min);
+        return Math.floor(rand);
     };
 
     randomVerb = () => {
-        const randomInt = this.randomInt(VERBS.length) || 1;
+        const randomInt = this.randomInt(1, VERBS.length-1);
         return VERBS.filter((v) => v.id === randomInt)[0];
     };
 
@@ -91,9 +92,9 @@ class FirstLessonStore {
     };
 
     getTask = () => {
-        const pronouns = GENERAL_ENUMS[this.randomInt(6)];
+        const pronouns = GENERAL_ENUMS[this.randomInt(0,GENERAL_ENUMS.length - 1)];
 
-        const timesIndex = this.randomInt(3);
+        const timesIndex = this.randomInt(0, TIMES.length - 1);
         const time = TIMES[timesIndex];
         const verb = this.randomVerb();
         const fullVerb = verb.full_value;
