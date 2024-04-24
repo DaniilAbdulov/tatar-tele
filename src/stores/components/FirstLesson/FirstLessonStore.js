@@ -54,12 +54,9 @@ class FirstLessonStore {
         this.task = this.getTask();
     };
 
-    setTrueVerb = (verb, ending) => {
-        if (!verb.futureValue) {
-            this.trueVerb = verb.imperative + ending;
-        } else {
-            this.trueVerb = verb.futureValue + ending;
-        }
+    setTrueVerb = (word, ending) => {
+        this.trueVerb = word + ending;
+        
     };
 
     getVerbNowEnding = (pronouns, voice, state) => {
@@ -98,14 +95,14 @@ class FirstLessonStore {
         const time = TIMES[timesIndex];
         const verb = this.randomVerb();
         const fullVerb = verb.full_value;
-
-        if (time === "FUTURE") {
-            verb.futureValue = fullVerb.slice(0, fullVerb.length - 2);
-        }
+        verb.futureValue = fullVerb.slice(0, fullVerb.length - 2);
 
         const ending = this.getEnding(pronouns, time, verb);
-
-        this.setTrueVerb(verb, ending);
+        
+        if (time === "FUTURE") {
+            this.setTrueVerb(verb.futureValue, ending);
+        }
+        this.setTrueVerb(verb.imperative, ending);
 
         const taskObject = {
             pronouns: RUSSIAN_PRONOUNS[`${pronouns}`],
