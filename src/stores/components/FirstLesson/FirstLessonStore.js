@@ -101,8 +101,10 @@ class FirstLessonStore {
         
         if (time === "FUTURE") {
             this.setTrueVerb(verb.futureValue, ending);
+        } else {
+            this.setTrueVerb(verb.imperative, ending);
         }
-        this.setTrueVerb(verb.imperative, ending);
+        
 
         const taskObject = {
             pronouns: RUSSIAN_PRONOUNS[`${pronouns}`],
