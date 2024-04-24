@@ -1,40 +1,41 @@
 import { autorun, makeAutoObservable } from "mobx";
 
 class HomeStore {
+    lessons = [];
     constructor() {
         makeAutoObservable(this);
 
-        autorun(() => this.getHomePageData());
+        autorun(() => this.getLessons());
     }
 
-    getHomePageData = () => {
-        console.log(`getHomePageData`);
-        this.setData([
+    getLessons = () => {
+        console.log(`getLessons`);
+        this.setLessons([
             {
-                title: "Урок 1",
-                value: "Образование глаголов",
+                id: 1,
+                title: "Образование глаголов",
                 path: "/first",
             },
             {
-                title: "Урок 2",
-                value: "Падежи существительных",
+                id: 2,
+                title: "Падежи существительных",
                 path: "/second",
             },
             {
-                title: "Урок 3",
-                value: "Принадлежность",
+                id: 3,
+                title: "Принадлежность",
                 path: "/thirth",
             },
             {
-                title: "Урок 4",
-                value: "Счёт",
+                id: 4,
+                title: "Счёт",
                 path: "/fourth",
             },
         ]);
     };
 
-    setData = (newData) => {
-        this.data = newData;
+    setLessons = (lessonsList) => {
+        this.lessons = lessonsList;
     };
 }
 

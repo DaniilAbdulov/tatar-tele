@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Home } from "../views/index";
 //import { useEffect } from "react";
-import { FirstLesson } from "../components/FirstLesson";
+import { FirstLessonWrapper } from "../components/FirstLesson/index";
 
 export const Router = () => {
     //const isAuth = true;
@@ -17,8 +17,8 @@ export const Router = () => {
     return (
         <div>
             <Routes>
-                <Route path="/home" element={<Home />} />
-                <Route path="/first" element={<FirstLesson />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/first" element={<FirstLessonWrapper />} />
                 {/* {isAuth && <Route path="/home" element={<Home />} />} */}
             </Routes>
         </div>

@@ -5,29 +5,28 @@ import { homeStore } from "../stores/views/HomeStore.js";
 import { NavLink } from "react-router-dom";
 
 export const Home = observer(() => {
-    const data = homeStore.data;
-    const setRoute = (value) => homeStore.setRoute(value);
+    const lessons = homeStore.lessons;
+    const gridStyle = {
+        width: "25%",
+        textAlign: "center",
+        cursor: "pointer",
+    };
     return (
-        <Flex align="center" justify="center" style={{ marginTop: "30px" }}>
-            <List
-                grid={{
-                    gutter: 16,
-                    column: 4,
-                }}
-                dataSource={data}
-                renderItem={(item) => (
-                    <List.Item>
-                        <Card title={item.title}>
-                            <Flex vertical justify="space-around">
-                                <Typography>{item.value}</Typography>
-                                <NavLink to={item.path}>
-                                    <Button>Начать</Button>
-                                </NavLink>
-                            </Flex>
-                        </Card>
-                    </List.Item>
-                )}
-            />
-        </Flex>
+        <Card title="Выберите урок">
+            {lessons &&
+                lessons?.length &&
+                lessons.map((lesson) => {
+                    return (
+                        <Card.Grid style={gridStyle} key={lesson.id}>
+                            <NavLink
+                                style={{ color: "black" }}
+                                to={lesson.path}
+                            >
+                                {lesson.title}
+                            </NavLink>
+                        </Card.Grid>
+                    );
+                })}
+        </Card>
     );
 });

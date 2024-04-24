@@ -1,0 +1,21 @@
+import { VERB_ENDINGS, VERBS, VERB_NEGATIVE } from "./FirstLesson";
+import {
+    TATARLETTERS,
+    GENERAL_ENUMS,
+    PRONOUNS,
+    RUSSIAN_PRONOUNS,
+    TIMES,
+    RUSSIAN_TIMES,
+} from "./shared";
+
+export {
+    VERB_ENDINGS,
+    VERBS,
+    VERB_NEGATIVE,
+    TATARLETTERS,
+    GENERAL_ENUMS,
+    PRONOUNS,
+    TIMES,
+    RUSSIAN_PRONOUNS,
+    RUSSIAN_TIMES,
+};

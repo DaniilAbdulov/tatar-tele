@@ -27,7 +27,12 @@ export const App = () => {
                             height: "70px",
                         }}
                     ></Header>
-                    <Layout>
+                    <Layout
+                        style={{
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
                         <div className="App">
                             <Router />
                         </div>
