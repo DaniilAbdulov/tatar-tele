@@ -46,7 +46,7 @@ class FirstLessonStore {
     };
 
     randomVerb = () => {
-        const randomInt = this.randomInt(1, VERBS.length-1);
+        const randomInt = this.randomInt(1, VERBS.length);
         return VERBS.filter((v) => v.id === randomInt)[0];
     };
 
@@ -56,7 +56,6 @@ class FirstLessonStore {
 
     setTrueVerb = (word, ending) => {
         this.trueVerb = word + ending;
-        
     };
 
     getVerbNowEnding = (pronouns, voice, state) => {
@@ -89,22 +88,25 @@ class FirstLessonStore {
     };
 
     getTask = () => {
-        const pronouns = GENERAL_ENUMS[this.randomInt(0,GENERAL_ENUMS.length - 1)];
+        const pronouns =
+            GENERAL_ENUMS[this.randomInt(0, GENERAL_ENUMS.length - 1)];
 
-        const timesIndex = this.randomInt(0, TIMES.length - 1);
+        // const timesIndex = this.randomInt(0, TIMES.length - 1);
+        const timesIndex = 0;
         const time = TIMES[timesIndex];
         const verb = this.randomVerb();
         const fullVerb = verb.full_value;
         verb.futureValue = fullVerb.slice(0, fullVerb.length - 2);
 
         const ending = this.getEnding(pronouns, time, verb);
-        
+
         if (time === "FUTURE") {
             this.setTrueVerb(verb.futureValue, ending);
-        } else {
+        } else if (time === "NOW") {
+            //Если императив заканчивается на гласный, то удалить последний гласный
+            // const nowVerbImperative = verb.imperative.endsWith('')
             this.setTrueVerb(verb.imperative, ending);
         }
-        
 
         const taskObject = {
             pronouns: RUSSIAN_PRONOUNS[`${pronouns}`],

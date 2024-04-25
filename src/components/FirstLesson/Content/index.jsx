@@ -10,8 +10,8 @@ export const Content = observer(() => {
     return (
         <>
             <div>
-                {task.pronouns} (отрицательная форма) ({task.time}){" "}
-                {task.actualVerb}
+                {task.pronouns} (отрицательная форма) ({task.time})
+                {task.verb.full_value}
             </div>
             <div>{trueVerb}</div>
         </>
