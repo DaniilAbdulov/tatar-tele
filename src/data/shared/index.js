@@ -87,12 +87,12 @@ export const RUSSIAN_NEGATIVE = {
 
 export const RUSSIAN_TIME_PART = {
   [TIMES.PAST]: {
-    [GENERAL.I]: 'раньше',
-    [GENERAL.YOU]: 'раньше',
-    [GENERAL.HS]: 'раньше',
-    [GENERAL.WE]: 'раньше',
-    [GENERAL.YOUBIG]: 'раньше',
-    [GENERAL.THEY]: 'раньше'
+    [GENERAL.I]: 'ранее',
+    [GENERAL.YOU]: 'ранее',
+    [GENERAL.HS]: 'ранее',
+    [GENERAL.WE]: 'ранее',
+    [GENERAL.YOUBIG]: 'ранее',
+    [GENERAL.THEY]: 'ранее'
   },
   [TIMES.NOW]: {
     [GENERAL.I]: '',
