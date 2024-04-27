@@ -1,121 +1,239 @@
-import { autorun, makeAutoObservable } from "mobx";
+import {autorun, makeAutoObservable} from 'mobx';
 import {
-    VERB_ENDINGS,
-    VERBS,
-    VERB_NEGATIVE,
-    GENERAL_ENUMS,
-    RUSSIAN_PRONOUNS,
-    TIMES,
-} from "../../../data/index";
-import { RUSSIAN_TIMES } from "../../../data/shared";
+  PART_SPEACH,
+  PAST_VERB_ENDINGS,
+  NEGATIVE,
+  TIMES,
+  PAST_NEGATIVE_VERB_PARTS,
+  NOW_VERB_ENDINGS,
+  FUTURE_NEGATIVE_VERB_ENDINGS,
+  VOICE,
+  FUTURE_VERB_ENDINGS,
+  VERBS,
+  PRONOUNS
+
+} from '../../../data/index';
+import {actualValue, getRandomIntegers, shuffleArray} from '../../../utils/index';
+
 class FirstLessonStore {
-    verbs = [];
-    verbEndings = [];
-    verbNegative = [];
-    task = {};
-    trueVerb = "";
+    trueTaskValue = {}
+    falseTaskVerbs = []
+    falseTaskPronouns = []
+    variants = []
+    userAnswer = []
+    result = '';
 
     constructor() {
-        makeAutoObservable(this);
+      makeAutoObservable(this);
 
-        autorun(() => this.getFirstLessonData());
+      autorun(() => this.getFirstLessonData());
+    }
+
+    resetTask = () => {
+      this.trueTaskValue = {};
+      this.falseTaskVerbs = [];
+      this.falseTaskPronouns = [];
+      this.variants = [];
+      this.userAnswer = [];
+      this.result = '';
+    }
+
+    setResult = (value) => {
+      this.result = value;
     }
 
     getFirstLessonData = () => {
-        this.setVerbs(VERBS);
-        this.setVerbEdnings(VERB_ENDINGS);
-        this.setVerbNegative(VERB_NEGATIVE);
-        this.setTask();
-    };
+      this.getTask();
+      this.getVariants();
+    }
 
-    setVerbs = (newVerbs) => {
-        this.verbs = newVerbs;
-    };
+    setTrueTaskValue = (obj) => {
+      this.trueTaskValue = obj;
+    }
 
-    setVerbEdnings = (newVerbEndings) => {
-        this.verbEndings = newVerbEndings;
-    };
+    setFalseTaskVerbs = (arr) => {
+      this.falseTaskVerbs = arr;
+    }
 
-    setVerbNegative = (newVerbNegative) => {
-        this.verbNegative = newVerbNegative;
-    };
+    setFalseTaskPronouns = (arr) => {
+      this.falseTaskPronouns = arr;
+    }
 
-    randomInt = (min, max) => {
-        const rand = min + Math.random() * (max + 1 - min);
-        return Math.floor(rand);
-    };
+    setVariants = (arr) => {
+      this.variants = arr;
+    }
 
-    randomVerb = () => {
-        const randomInt = this.randomInt(1, VERBS.length);
-        return VERBS.filter((v) => v.id === randomInt)[0];
-    };
+    getAnotherTask = () => {
+      this.resetTask();
+      this.getTask();
+      this.getVariants();
+    }
 
-    setTask = () => {
-        this.task = this.getTask();
-    };
+    getVariants = () => {
+      const pronounsArray = [...this.falseTaskPronouns, this.trueTaskValue.pronoun.value];
+      const verbsArray = [...this.falseTaskVerbs, this.trueTaskValue.value];
 
-    setTrueVerb = (word, ending) => {
-        this.trueVerb = word + ending;
-    };
+      const pronouns = shuffleArray(pronounsArray);
+      const verbs = shuffleArray(verbsArray);
 
-    getVerbNowEnding = (pronouns, voice, state) => {
-        //ДОДЕЛАТЬ НАСТОЯЩЕЕ ВРЕМЯ
-        return VERB_ENDINGS.NOW[`${voice}`][`${state}`][`${pronouns}`];
-    };
-
-    getVerbPastEnding = (pronouns, state) => {
-        return VERB_ENDINGS.PAST[`${state}`][`${pronouns}`];
-    };
-
-    getVerbFutureEnding = (pronouns, state) => {
-        return VERB_ENDINGS.FUTURE[`${state}`][`${pronouns}`];
-    };
-
-    getEnding = (pronouns, time, verb) => {
-        const voice = verb.consonant ? "CONSONANT" : "VOWEL";
-        const state = verb.solid ? "SOLID" : "SOFT";
-
-        switch (time) {
-            case "NOW":
-                return this.getVerbNowEnding(pronouns, voice, state);
-            case "PAST":
-                return this.getVerbPastEnding(pronouns, state);
-            case "FUTURE":
-                return this.getVerbFutureEnding(pronouns, state);
-            default:
-                return "";
-        }
-    };
-
-    getTask = () => {
-        const pronouns =
-            GENERAL_ENUMS[this.randomInt(0, GENERAL_ENUMS.length - 1)];
-
-        // const timesIndex = this.randomInt(0, TIMES.length - 1);
-        const timesIndex = 0;
-        const time = TIMES[timesIndex];
-        const verb = this.randomVerb();
-        const fullVerb = verb.full_value;
-        verb.futureValue = fullVerb.slice(0, fullVerb.length - 2);
-
-        const ending = this.getEnding(pronouns, time, verb);
-
-        if (time === "FUTURE") {
-            this.setTrueVerb(verb.futureValue, ending);
-        } else if (time === "NOW") {
-            //Если императив заканчивается на гласный, то удалить последний гласный
-            // const nowVerbImperative = verb.imperative.endsWith('')
-            this.setTrueVerb(verb.imperative, ending);
-        }
-
-        const taskObject = {
-            pronouns: RUSSIAN_PRONOUNS[`${pronouns}`],
-            time: RUSSIAN_TIMES[timesIndex],
-            verb,
+      const variants = [...pronouns, ...verbs].map((item, index) => {
+        const miniObj = {
+          id: index + 1,
+          value: item
         };
 
-        return taskObject;
+        return miniObj;
+      });
+
+      this.setVariants([...variants]);
+
+    }
+
+    checkAnswer = () => {
+      if (!this.userAnswer.length) {
+        return;
+      }
+      const {pronoun: truePronoun, value: trueVerbValue} = this.trueTaskValue;
+      const userAnswerArray = this.userAnswer.map((e) => e.value);
+
+      const userAnswer = userAnswerArray.join(' ');
+      const trueAnswer = `${truePronoun.value} ${trueVerbValue}`;
+
+      if (userAnswer === trueAnswer) {
+        this.setResult('success');
+      } else {
+        this.setResult('error');
+      }
+    }
+
+    setUserAnswer = (variant) => {
+      if (!this.userAnswer.includes(variant)) {
+        this.userAnswer.push(variant);
+        this.userAnswer = this.userAnswer.sort((a, b) => a.id - b.id);
+        this.variants = this.variants.filter((v) => v.id !== variant.id);
+      }
+    }
+
+    deleteOneUserAnswerItem = (answerItem) => {
+      this.variants.push(answerItem);
+      this.variants = this.variants.sort((a, b) => a.id - b.id);
+      this.userAnswer = this.userAnswer.filter((a) => a.id !== answerItem.id);
+    }
+
+    getTask = () => {
+      const trueTaskValue = this.getTrueTaskValue();
+      const {changedVerb: verb, pronoun} = trueTaskValue;
+
+      const falseTaskVerbs = this.getFalseValues(verb, PART_SPEACH.VERB);
+      const falseTaskPronouns = this.getFalseValues(pronoun.value, PART_SPEACH.PRONOUN);
+
+      this.setTrueTaskValue(trueTaskValue);
+      this.setFalseTaskVerbs(falseTaskVerbs);
+      this.setFalseTaskPronouns(falseTaskPronouns);
+    }
+
+    getChangedVerb = (verb, pronounId, timeId, negativeId) => {
+
+      //деструктуризация глагола
+      const {fullValue: verbFull, imperative, voice, state} = verb;
+      const slicedImperative = imperative.slice(0, imperative.length - 1);
+      const slicedFullValue = verbFull.slice(0, verbFull.length - 2);
+
+      //используется два раза, поэтому вынес
+      const pastVerbEnd = PAST_VERB_ENDINGS[state][pronounId];
+
+      if (negativeId === NEGATIVE.ON) {
+        switch (timeId) {
+          case TIMES.PAST:
+            const pastNegativeVerbPart = PAST_NEGATIVE_VERB_PARTS[state];
+
+            return imperative + pastNegativeVerbPart + pastVerbEnd;
+          case TIMES.NOW:
+            const nowVerbEnd = NOW_VERB_ENDINGS[VOICE.VOWEL][state][pronounId];
+
+            return `${imperative}м${nowVerbEnd}`;
+          case TIMES.FUTURE:
+            const futureVerbEnd = FUTURE_NEGATIVE_VERB_ENDINGS[state][pronounId];
+
+            return imperative + futureVerbEnd;
+          default:
+            return '';
+        }
+      } else if (negativeId === NEGATIVE.OFF) {
+        switch (timeId) {
+          case TIMES.PAST:
+
+            return imperative + pastVerbEnd;
+          case TIMES.NOW:
+            const nowVerbEnd = NOW_VERB_ENDINGS[voice][state][pronounId];
+
+            if (voice === VOICE.VOWEL) {
+              return slicedImperative + nowVerbEnd;
+            }
+
+            return imperative + nowVerbEnd;
+
+          case TIMES.FUTURE:
+            const futureVerbEnd = FUTURE_VERB_ENDINGS[state][pronounId];
+
+            return slicedFullValue + futureVerbEnd;
+          default:
+            return '';
+        }
+      } else {
+        return '';
+      }
     };
+
+    getFalseValues = (value, parametr) => {
+      const arr = [];
+
+      switch (parametr) {
+        case PART_SPEACH.VERB:
+          for (let i = 0; i < 6; i++) {
+            const {pronounId, timeId, verbId, negativeId} = getRandomIntegers();
+            const [verb] = actualValue(VERBS, verbId);
+            const item = this.getChangedVerb(verb, pronounId, timeId, negativeId);
+
+            if (value !== item) {
+              arr.push(item);
+            }
+          }
+          break;
+        case PART_SPEACH.PRONOUN:
+          for (let i = 0; i < 5; i++) {
+            const {pronounId} = getRandomIntegers();
+            const [pronoun] = actualValue(PRONOUNS, pronounId);
+
+            const item = pronoun.value;
+
+            if (value !== item) {
+              arr.push(item);
+            }
+          }
+          break;
+        default:
+          break;
+      }
+
+      return [...new Set(arr)];
+    };
+
+    getTrueTaskValue = () => {
+      const {pronounId, timeId, verbId, negativeId} = getRandomIntegers();
+      const [pronoun] = actualValue(PRONOUNS, pronounId);
+      const [verb] = actualValue(VERBS, verbId);
+
+      const value = this.getChangedVerb(verb, pronounId, timeId, negativeId);
+
+      return {
+        pronoun,
+        verb,
+        value,
+        timeId,
+        negativeId
+      };
+    }
 }
 
 export const firstLessonStore = new FirstLessonStore();

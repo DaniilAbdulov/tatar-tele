@@ -9,7 +9,6 @@ class HomeStore {
     }
 
     getLessons = () => {
-        console.log(`getLessons`);
         this.setLessons([
             {
                 id: 1,

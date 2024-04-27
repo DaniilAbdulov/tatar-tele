@@ -1,19 +1,21 @@
 import React from "react";
-import { observer } from "mobx-react-lite";
-import { firstLessonStore } from "../../../stores/components/FirstLesson/FirstLessonStore";
+import { Task } from "./Task/index";
+import { Answer } from "./Answer/Answer";
+import { Variants } from "./Variants/Variants";
+import { Divider, Flex } from "antd";
+import { CheckAnswer } from "./CheckAnswer";
 
-export const Content = observer(() => {
-    const task = firstLessonStore.task;
-    const trueVerb = firstLessonStore.trueVerb;
-    console.log(task);
-    console.log(trueVerb);
+
+export const Content = () => {
     return (
-        <>
-            <div>
-                {task.pronouns} (отрицательная форма) ({task.time})
-                {task.verb.full_value}
-            </div>
-            <div>{trueVerb}</div>
-        </>
+        <Flex vertical align='center'>
+          <Task/>
+          <Divider />
+          <Answer/>
+          <Divider />
+          <Variants/>
+          <Divider />
+          <CheckAnswer/>
+        </Flex>
     );
-});
+};

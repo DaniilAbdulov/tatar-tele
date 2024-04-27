@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home } from "../views/index";
+import { Home, NoFound } from "../views/index";
 //import { useEffect } from "react";
 import { FirstLessonWrapper } from "../components/FirstLesson/index";
 
@@ -19,6 +19,7 @@ export const Router = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/first" element={<FirstLessonWrapper />} />
+                <Route path="*" element={<NoFound/>}/>
                 {/* {isAuth && <Route path="/home" element={<Home />} />} */}
             </Routes>
         </div>

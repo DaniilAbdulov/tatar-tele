@@ -38,8 +38,8 @@ export const App = () => {
                         </div>
                     </Layout>
                     <Footer style={{ textAlign: "center" }}>
-                        Tatar tele ©{new Date().getFullYear()} Created by
-                        AbdulovDB
+                        Tatar tele ©{new Date().getFullYear()} Created by {" "}
+                        <a href="https://www.abdulovdb.com/" target="_blank">AbdulovDB</a>
                     </Footer>
                 </Layout>
             </ConfigProvider>

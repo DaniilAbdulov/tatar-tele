@@ -1,12 +1,18 @@
 import React from "react";
-import { Header } from "./Header";
 import { Content } from "./Content";
+import { Button, Card, Divider, Flex } from "antd";
+import { NavLink } from "react-router-dom";
+import { Message } from "../shared/Message";
 
-export const FirstLessonView = () => {
-    return (
-        <div>
-            <Header />
-            <Content />
-        </div>
-    );
-};
+export const FirstLessonView = () => (
+    <Flex vertical={true} align='center' style={{maxWidth: '600px', margin: '10px'}}>
+      <Card
+        title='Просклоняейте глагол'
+      >
+        <Content />
+      </Card>
+      <Divider />
+      <Button><NavLink to='/'>К списку уроков</NavLink></Button>
+      <Message />
+    </Flex>
+  );
