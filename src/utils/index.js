@@ -1,6 +1,6 @@
-import { actualValue } from "./actualValue";
-import {getRandomIntegers} from './getRandomIntegers'
-import {shuffleArray} from './shuffleArray'
+import { actualValue } from "./actualValue.js";
+import { getRandomIntegers } from "./getRandomIntegers.js";
+import { shuffleArray } from "./shuffleArray.js";
+import { getChangedVerb } from "./getChangedVerb.js";
 
-
-export {actualValue, getRandomIntegers, shuffleArray};
+export { actualValue, getRandomIntegers, shuffleArray, getChangedVerb };
