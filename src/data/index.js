@@ -3,8 +3,9 @@ import {
     PAST_VERB_ENDINGS,
     PAST_NEGATIVE_VERB_PARTS,
     FUTURE_VERB_ENDINGS,
-    FUTURE_NEGATIVE_VERB_ENDINGS} from './FirstLesson';
-  import {
+    FUTURE_NEGATIVE_VERB_ENDINGS,
+} from "./FirstLesson/index.js";
+import {
     GENERAL,
     PART_SPEACH,
     PRONOUNS,
@@ -16,14 +17,12 @@ import {
     VOWELS_LETTERS,
     CONSONANT_LETTERS,
     RUSSIAN_TIME_PART,
-    RUSSIAN_NEGATIVE
-  } from './shared';
+    RUSSIAN_NEGATIVE,
+} from "./shared/index.js";
 
-  import {
-    VERBS
-  } from './FirstLesson/verbs';
-  
-  export {
+import { VERBS } from "./FirstLesson/verbs.js";
+
+export {
     NOW_VERB_ENDINGS,
     PAST_VERB_ENDINGS,
     PAST_NEGATIVE_VERB_PARTS,
@@ -41,6 +40,5 @@ import {
     CONSONANT_LETTERS,
     VERBS,
     RUSSIAN_TIME_PART,
-    RUSSIAN_NEGATIVE
+    RUSSIAN_NEGATIVE,
 };
-  

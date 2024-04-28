@@ -9,7 +9,7 @@ export const VERBS = [
     },
     {
         id: 2,
-        fullValue: "килəргə",
+        fullValue: "килергә",
         imperative: "кил",
         russian: "приходить",
         voice: 1,
@@ -25,8 +25,8 @@ export const VERBS = [
     },
     {
         id: 4,
-        fullValue: "эшлəргə",
-        imperative: "эшлə",
+        fullValue: "эшләргә",
+        imperative: "эшлә",
         russian: "работать",
         voice: 2,
         state: 2,
@@ -41,7 +41,7 @@ export const VERBS = [
     },
     {
         id: 6,
-        fullValue: "Әйтергә",
+        fullValue: "әйтергә",
         imperative: "әйт",
         russian: "сказать",
         voice: 1,
@@ -49,7 +49,7 @@ export const VERBS = [
     },
     {
         id: 7,
-        fullValue: "Итәргә",
+        fullValue: "итәргә",
         imperative: "ит",
         russian: "делать",
         voice: 1,
@@ -57,7 +57,7 @@ export const VERBS = [
     },
     {
         id: 8,
-        fullValue: "Бирергә",
+        fullValue: "бирергә",
         imperative: "бир",
         russian: "давать",
         voice: 1,
@@ -65,7 +65,7 @@ export const VERBS = [
     },
     {
         id: 9,
-        fullValue: "Күрергә",
+        fullValue: "күрергә",
         imperative: "күр",
         russian: "видеть",
         voice: 1,
@@ -73,7 +73,7 @@ export const VERBS = [
     },
     {
         id: 10,
-        fullValue: "Үтәргә",
+        fullValue: "үтәргә",
         imperative: "үт",
         russian: "Исполнять",
         voice: 1,
@@ -81,7 +81,7 @@ export const VERBS = [
     },
     {
         id: 11,
-        fullValue: "Керергә",
+        fullValue: "керергә",
         imperative: "кер",
         russian: "зайти",
         voice: 1,
@@ -89,7 +89,7 @@ export const VERBS = [
     },
     {
         id: 12,
-        fullValue: "Белергә",
+        fullValue: "белергә",
         imperative: "бел",
         russian: "знать",
         voice: 1,
@@ -97,7 +97,7 @@ export const VERBS = [
     },
     {
         id: 13,
-        fullValue: "Күрсәтергә",
+        fullValue: "күрсәтергә",
         imperative: "күрсәт",
         russian: "показывать",
         voice: 1,
@@ -105,7 +105,7 @@ export const VERBS = [
     },
     {
         id: 14,
-        fullValue: "Китәргә",
+        fullValue: "китәргә",
         imperative: "кит",
         russian: "уходить",
         voice: 1,
@@ -113,7 +113,7 @@ export const VERBS = [
     },
     {
         id: 15,
-        fullValue: "Үткәрергә",
+        fullValue: "үткәрергә",
         imperative: "үткәр",
         russian: "пропускать",
         voice: 1,
@@ -121,7 +121,7 @@ export const VERBS = [
     },
     {
         id: 16,
-        fullValue: "Җитәргә",
+        fullValue: "җитәргә",
         imperative: "җит",
         russian: "достигать",
         voice: 1,
@@ -129,7 +129,7 @@ export const VERBS = [
     },
     {
         id: 17,
-        fullValue: "Белдерергә",
+        fullValue: "белдерергә",
         imperative: "белдер",
         russian: "извещать",
         voice: 1,
@@ -137,7 +137,7 @@ export const VERBS = [
     },
     {
         id: 18,
-        fullValue: "Көтәргә",
+        fullValue: "көтәргә",
         imperative: "көт",
         russian: "ждать",
         voice: 1,
@@ -145,7 +145,7 @@ export const VERBS = [
     },
     {
         id: 19,
-        fullValue: "Йөрергә",
+        fullValue: "йөрергә",
         imperative: "йөр",
         russian: "ходить",
         voice: 1,
@@ -153,7 +153,7 @@ export const VERBS = [
     },
     {
         id: 20,
-        fullValue: "Җибәрергә",
+        fullValue: "җибәрергә",
         imperative: "җибәр",
         russian: "отправлять",
         voice: 1,
@@ -161,7 +161,7 @@ export const VERBS = [
     },
     {
         id: 21,
-        fullValue: "Төшәргә",
+        fullValue: "төшәргә",
         imperative: "төш",
         russian: "спускаться",
         voice: 1,
@@ -169,7 +169,7 @@ export const VERBS = [
     },
     {
         id: 22,
-        fullValue: "Менәргә",
+        fullValue: "менәргә",
         imperative: "мен",
         russian: "подниматься",
         voice: 1,
@@ -177,7 +177,7 @@ export const VERBS = [
     },
     {
         id: 23,
-        fullValue: "Китерергә",
+        fullValue: "китерергә",
         imperative: "китер",
         russian: "приносить",
         voice: 1,
@@ -185,7 +185,7 @@ export const VERBS = [
     },
     {
         id: 24,
-        fullValue: "Күтәрергә",
+        fullValue: "күтәрергә",
         imperative: "күтәр",
         russian: "поднимать",
         voice: 1,
@@ -193,7 +193,7 @@ export const VERBS = [
     },
     {
         id: 25,
-        fullValue: "Тикшерергә",
+        fullValue: "тикшерергә",
         imperative: "тикшер",
         russian: "проверять",
         voice: 1,
@@ -201,7 +201,7 @@ export const VERBS = [
     },
     {
         id: 26,
-        fullValue: "Өйрәнергә",
+        fullValue: "өйрәнергә",
         imperative: "өйрән",
         russian: "изучать",
         voice: 1,
@@ -209,7 +209,7 @@ export const VERBS = [
     },
     {
         id: 27,
-        fullValue: "Төзергә",
+        fullValue: "төзергә",
         imperative: "төз",
         russian: "строить",
         voice: 1,
@@ -217,7 +217,7 @@ export const VERBS = [
     },
     {
         id: 28,
-        fullValue: "Үсәргә",
+        fullValue: "үсәргә",
         imperative: "үс",
         russian: "расти",
         voice: 1,
@@ -225,7 +225,7 @@ export const VERBS = [
     },
     {
         id: 29,
-        fullValue: "Ишетергә",
+        fullValue: "ишетергә",
         imperative: "ишет",
         russian: "слышать",
         voice: 1,
@@ -233,7 +233,7 @@ export const VERBS = [
     },
     {
         id: 30,
-        fullValue: "Үләргә",
+        fullValue: "үләргә",
         imperative: "үл",
         russian: "умирать",
         voice: 1,
@@ -241,7 +241,7 @@ export const VERBS = [
     },
     {
         id: 31,
-        fullValue: "Сөйләшергә",
+        fullValue: "сөйләшергә",
         imperative: "сөйләш",
         russian: "разговаривать",
         voice: 1,
@@ -249,7 +249,7 @@ export const VERBS = [
     },
     {
         id: 32,
-        fullValue: "Җитештерергә",
+        fullValue: "җитештерергә",
         imperative: "җитештер",
         russian: "производить",
         voice: 1,
@@ -257,7 +257,7 @@ export const VERBS = [
     },
     {
         id: 33,
-        fullValue: "Барырга",
+        fullValue: "барырга",
         imperative: "бар",
         russian: "идти",
         voice: 1,
@@ -265,7 +265,7 @@ export const VERBS = [
     },
     {
         id: 34,
-        fullValue: "Узарга",
+        fullValue: "узарга",
         imperative: "уз",
         russian: "проходить",
         voice: 1,
@@ -273,7 +273,7 @@ export const VERBS = [
     },
     {
         id: 35,
-        fullValue: "Чыгарга",
+        fullValue: "чыгарга",
         imperative: "чык",
         russian: "выйти",
         voice: 1,
@@ -281,7 +281,7 @@ export const VERBS = [
     },
     {
         id: 36,
-        fullValue: "Торырга",
+        fullValue: "торырга",
         imperative: "тор",
         russian: "стоять",
         voice: 1,
@@ -289,7 +289,7 @@ export const VERBS = [
     },
     {
         id: 37,
-        fullValue: "Кайтырга",
+        fullValue: "кайтырга",
         imperative: "кайт",
         russian: "возвращаться",
         voice: 1,
@@ -297,7 +297,7 @@ export const VERBS = [
     },
     {
         id: 38,
-        fullValue: "Язарга",
+        fullValue: "язарга",
         imperative: "яз",
         russian: "писать",
         voice: 1,
@@ -305,7 +305,7 @@ export const VERBS = [
     },
     {
         id: 39,
-        fullValue: "Катнашырга",
+        fullValue: "катнашырга",
         imperative: "катнаш",
         russian: "участвовать",
         voice: 1,
@@ -313,7 +313,7 @@ export const VERBS = [
     },
     {
         id: 40,
-        fullValue: "Калырга",
+        fullValue: "калырга",
         imperative: "кал",
         russian: "лишиться",
         voice: 1,
@@ -321,7 +321,7 @@ export const VERBS = [
     },
     {
         id: 41,
-        fullValue: "Табарга",
+        fullValue: "табарга",
         imperative: "тап",
         russian: "находить",
         voice: 1,
@@ -329,7 +329,7 @@ export const VERBS = [
     },
     {
         id: 42,
-        fullValue: "Тотарга",
+        fullValue: "тотарга",
         imperative: "тот",
         russian: "держать",
         voice: 1,
@@ -337,7 +337,7 @@ export const VERBS = [
     },
     {
         id: 43,
-        fullValue: "Чыгарырга",
+        fullValue: "чыгарырга",
         imperative: "чыгар",
         russian: "выводить",
         voice: 1,
@@ -345,7 +345,7 @@ export const VERBS = [
     },
     {
         id: 44,
-        fullValue: "Оештырырга",
+        fullValue: "оештырырга",
         imperative: "оештыр",
         russian: "организовывать",
         voice: 1,
@@ -353,7 +353,7 @@ export const VERBS = [
     },
     {
         id: 45,
-        fullValue: "Салырга",
+        fullValue: "салырга",
         imperative: "сал",
         russian: "положить",
         voice: 1,
@@ -361,7 +361,7 @@ export const VERBS = [
     },
     {
         id: 46,
-        fullValue: "Ачырга",
+        fullValue: "ачырга",
         imperative: "ач",
         russian: "открывать",
         voice: 1,
@@ -369,7 +369,7 @@ export const VERBS = [
     },
     {
         id: 47,
-        fullValue: "Кертергә",
+        fullValue: "кертергә",
         imperative: "керт",
         russian: "впускать",
         voice: 1,
@@ -377,7 +377,7 @@ export const VERBS = [
     },
     {
         id: 48,
-        fullValue: "Яратырга",
+        fullValue: "яратырга",
         imperative: "ярат",
         russian: "любить",
         voice: 1,
@@ -385,7 +385,7 @@ export const VERBS = [
     },
     {
         id: 49,
-        fullValue: "Тапшырырга",
+        fullValue: "тапшырырга",
         imperative: "тапшыр",
         russian: "передавать",
         voice: 1,
@@ -393,7 +393,7 @@ export const VERBS = [
     },
     {
         id: 50,
-        fullValue: "Басарга",
+        fullValue: "басарга",
         imperative: "бас",
         russian: "давить",
         voice: 1,
@@ -401,7 +401,7 @@ export const VERBS = [
     },
     {
         id: 51,
-        fullValue: "Артырга",
+        fullValue: "артырга",
         imperative: "арт",
         russian: "увеличиваться",
         voice: 1,
@@ -409,7 +409,7 @@ export const VERBS = [
     },
     {
         id: 52,
-        fullValue: "Тырышырга",
+        fullValue: "тырышырга",
         imperative: "тырыш",
         russian: "стараться",
         voice: 1,
@@ -417,7 +417,7 @@ export const VERBS = [
     },
     {
         id: 53,
-        fullValue: "Чакырырга",
+        fullValue: "чакырырга",
         imperative: "чакыр",
         russian: "звать",
         voice: 1,
@@ -425,7 +425,7 @@ export const VERBS = [
     },
     {
         id: 54,
-        fullValue: "Сатарга",
+        fullValue: "сатарга",
         imperative: "сат",
         russian: "продавать",
         voice: 1,
@@ -433,7 +433,7 @@ export const VERBS = [
     },
     {
         id: 55,
-        fullValue: "Утырырга",
+        fullValue: "утырырга",
         imperative: "утыр",
         russian: "садиться",
         voice: 1,
@@ -441,7 +441,7 @@ export const VERBS = [
     },
     {
         id: 56,
-        fullValue: "Калдырырга",
+        fullValue: "калдырырга",
         imperative: "калдыр",
         russian: "оставлять",
         voice: 1,
@@ -449,7 +449,7 @@ export const VERBS = [
     },
     {
         id: 57,
-        fullValue: "Тартырга",
+        fullValue: "тартырга",
         imperative: "тарт",
         russian: "тянуть",
         voice: 1,
@@ -457,7 +457,7 @@ export const VERBS = [
     },
     {
         id: 58,
-        fullValue: "Урнашырга",
+        fullValue: "урнашырга",
         imperative: "урнаш",
         russian: "располагаться",
         voice: 1,
@@ -465,7 +465,7 @@ export const VERBS = [
     },
     {
         id: 59,
-        fullValue: "Укытырга",
+        fullValue: "укытырга",
         imperative: "укыт",
         russian: "обучать",
         voice: 1,
@@ -473,7 +473,7 @@ export const VERBS = [
     },
     {
         id: 60,
-        fullValue: "Кулланырга",
+        fullValue: "кулланырга",
         imperative: "куллан",
         russian: "пользоваться",
         voice: 1,
@@ -481,7 +481,7 @@ export const VERBS = [
     },
     {
         id: 61,
-        fullValue: "Карарга",
+        fullValue: "карарга",
         imperative: "кара",
         russian: "смотреть",
         voice: 2,
@@ -489,7 +489,7 @@ export const VERBS = [
     },
     {
         id: 62,
-        fullValue: "Укырга",
+        fullValue: "укырга",
         imperative: "укы",
         russian: "читать",
         voice: 2,
@@ -497,7 +497,7 @@ export const VERBS = [
     },
     {
         id: 63,
-        fullValue: "Башларга",
+        fullValue: "башларга",
         imperative: "башла",
         russian: "начинать",
         voice: 2,
@@ -505,7 +505,7 @@ export const VERBS = [
     },
     {
         id: 64,
-        fullValue: "Сакларга",
+        fullValue: "сакларга",
         imperative: "сакла",
         russian: "хранить",
         voice: 2,
@@ -513,7 +513,7 @@ export const VERBS = [
     },
     {
         id: 65,
-        fullValue: "Ашарга",
+        fullValue: "ашарга",
         imperative: "аша",
         russian: "кушать",
         voice: 2,
@@ -521,7 +521,7 @@ export const VERBS = [
     },
     {
         id: 66,
-        fullValue: "Санарга",
+        fullValue: "санарга",
         imperative: "сана",
         russian: "считать",
         voice: 2,
@@ -529,7 +529,7 @@ export const VERBS = [
     },
     {
         id: 67,
-        fullValue: "Аңларга",
+        fullValue: "аңларга",
         imperative: "аңла",
         russian: "понимать",
         voice: 2,
@@ -537,7 +537,7 @@ export const VERBS = [
     },
     {
         id: 68,
-        fullValue: "Сорарга",
+        fullValue: "сорарга",
         imperative: "сора",
         russian: "спрашивать",
         voice: 2,
@@ -545,7 +545,7 @@ export const VERBS = [
     },
     {
         id: 69,
-        fullValue: "Атарга",
+        fullValue: "атарга",
         imperative: "ата",
         russian: "называть",
         voice: 2,
@@ -553,7 +553,7 @@ export const VERBS = [
     },
     {
         id: 70,
-        fullValue: "Җырларга",
+        fullValue: "җырларга",
         imperative: "җырла",
         russian: "петь",
         voice: 2,
@@ -561,7 +561,7 @@ export const VERBS = [
     },
     {
         id: 71,
-        fullValue: "Туарга",
+        fullValue: "туарга",
         imperative: "ту",
         russian: "рождаться",
         voice: 2,
@@ -569,7 +569,7 @@ export const VERBS = [
     },
     {
         id: 72,
-        fullValue: "Уйнарга",
+        fullValue: "уйнарга",
         imperative: "уйна",
         russian: "играть",
         voice: 2,
@@ -577,7 +577,7 @@ export const VERBS = [
     },
     {
         id: 73,
-        fullValue: "Сайларга",
+        fullValue: "сайларга",
         imperative: "сайла",
         russian: "выбирать",
         voice: 2,
@@ -585,7 +585,7 @@ export const VERBS = [
     },
     {
         id: 74,
-        fullValue: "Танырга",
+        fullValue: "танырга",
         imperative: "таны",
         russian: "узнавать",
         voice: 2,
@@ -593,7 +593,7 @@ export const VERBS = [
     },
     {
         id: 75,
-        fullValue: "Яшәргә",
+        fullValue: "яшәргә",
         imperative: "яшә",
         russian: "жить",
         voice: 2,
@@ -601,7 +601,7 @@ export const VERBS = [
     },
     {
         id: 76,
-        fullValue: "Теләргә",
+        fullValue: "теләргә",
         imperative: "телә",
         russian: "желать",
         voice: 2,
@@ -609,7 +609,7 @@ export const VERBS = [
     },
     {
         id: 77,
-        fullValue: "Әзерләргә",
+        fullValue: "әзерләргә",
         imperative: "әзерлә",
         russian: "готовить",
         voice: 2,
@@ -617,7 +617,7 @@ export const VERBS = [
     },
     {
         id: 78,
-        fullValue: "Тәмамларга",
+        fullValue: "тәмамларга",
         imperative: "тәмамла",
         russian: "завершать",
         voice: 2,
@@ -625,7 +625,7 @@ export const VERBS = [
     },
     {
         id: 79,
-        fullValue: "Түләргә",
+        fullValue: "түләргә",
         imperative: "түлә",
         russian: "платить",
         voice: 2,
@@ -633,7 +633,7 @@ export const VERBS = [
     },
     {
         id: 80,
-        fullValue: "Эзләргә",
+        fullValue: "эзләргә",
         imperative: "эзлә",
         russian: "искать",
         voice: 2,

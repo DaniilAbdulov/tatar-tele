@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button, message } from "antd";
+import { message } from "antd";
 import { firstLessonStore } from "../../stores/components/FirstLesson/FirstLessonStore";
 import { observer } from "mobx-react-lite";
 
