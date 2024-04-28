@@ -11,12 +11,12 @@ export const NOW_VERB_ENDINGS = {
             [GENERAL.THEY]: "алар",
         },
         [STATE.SOFT]: {
-            [GENERAL.I]: "əм",
-            [GENERAL.YOU]: "əсең",
-            [GENERAL.HS]: "ə",
-            [GENERAL.WE]: "əбез",
-            [GENERAL.YOUBIG]: "əсез",
-            [GENERAL.THEY]: "əлəр",
+            [GENERAL.I]: "әм",
+            [GENERAL.YOU]: "әсең",
+            [GENERAL.HS]: "ә",
+            [GENERAL.WE]: "әбез",
+            [GENERAL.YOUBIG]: "әсез",
+            [GENERAL.THEY]: "әләр",
         },
     },
     [VOICE.VOWEL]: {
@@ -34,7 +34,7 @@ export const NOW_VERB_ENDINGS = {
             [GENERAL.HS]: "и",
             [GENERAL.WE]: "ибез",
             [GENERAL.YOUBIG]: "исез",
-            [GENERAL.THEY]: "илəр",
+            [GENERAL.THEY]: "иләр",
         },
     },
 };
@@ -54,13 +54,13 @@ export const PAST_VERB_ENDINGS = {
         [GENERAL.HS]: "де",
         [GENERAL.WE]: "дек",
         [GENERAL.YOUBIG]: "дегез",
-        [GENERAL.THEY]: "де(лəр)",
+        [GENERAL.THEY]: "де(ләр)",
     },
 };
 
 export const PAST_NEGATIVE_VERB_PARTS = {
     [STATE.SOLID]: "ма",
-    [STATE.SOFT]: "мə",
+    [STATE.SOFT]: "мә",
 };
 
 export const FUTURE_VERB_ENDINGS = {
@@ -78,7 +78,7 @@ export const FUTURE_VERB_ENDINGS = {
         [GENERAL.HS]: "",
         [GENERAL.WE]: "без",
         [GENERAL.YOUBIG]: "сез",
-        [GENERAL.THEY]: "лəр",
+        [GENERAL.THEY]: "ләр",
     },
 };
 
@@ -88,15 +88,15 @@ export const FUTURE_NEGATIVE_VERB_ENDINGS = {
         [GENERAL.YOU]: "массың",
         [GENERAL.HS]: "мас",
         [GENERAL.WE]: "мабыз",
-        [GENERAL.YOUBIG]: "масыз",
+        [GENERAL.YOUBIG]: "массыз",
         [GENERAL.THEY]: "маслар",
     },
     [STATE.SOFT]: {
-        [GENERAL.I]: "мəм",
-        [GENERAL.YOU]: "мəссең",
-        [GENERAL.HS]: "мəс",
-        [GENERAL.WE]: "мəбез",
-        [GENERAL.YOUBIG]: "мəcсез",
-        [GENERAL.THEY]: "мəслəр",
+        [GENERAL.I]: "мәм",
+        [GENERAL.YOU]: "мәссең",
+        [GENERAL.HS]: "мәс",
+        [GENERAL.WE]: "мәбез",
+        [GENERAL.YOUBIG]: "мәссез",
+        [GENERAL.THEY]: "мәсләр",
     },
 };

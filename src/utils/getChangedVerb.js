@@ -19,14 +19,15 @@ export const getChangedVerb = (verbId, pronounId, timeId, negativeId) => {
     const slicedFullValue = verbFull.slice(0, verbFull.length - 2);
 
     //используется два раза, поэтому вынес
-    const pastVerbEnd = PAST_VERB_ENDINGS[state][pronounId];
+    const pastVerbEndD = PAST_VERB_ENDINGS[state][pronounId];
+    const pastVerbEndT = "т" + pastVerbEndD.slice(1);
 
     if (negativeId === NEGATIVE.ON) {
         switch (timeId) {
             case TIMES.PAST:
                 const pastNegativeVerbPart = PAST_NEGATIVE_VERB_PARTS[state];
 
-                return imperative + pastNegativeVerbPart + pastVerbEnd;
+                return imperative + pastNegativeVerbPart + pastVerbEndD;
             case TIMES.NOW:
                 const nowVerbEnd =
                     NOW_VERB_ENDINGS[VOICE.VOWEL][state][pronounId];
@@ -43,12 +44,21 @@ export const getChangedVerb = (verbId, pronounId, timeId, negativeId) => {
     } else if (negativeId === NEGATIVE.OFF) {
         switch (timeId) {
             case TIMES.PAST:
-                return imperative + pastVerbEnd;
+                if (imperative.endsWith("т") || imperative.endsWith("п")) {
+                    return imperative + pastVerbEndT;
+                }
+                return imperative + pastVerbEndD;
             case TIMES.NOW:
                 const nowVerbEnd = NOW_VERB_ENDINGS[voice][state][pronounId];
 
                 if (voice === VOICE.VOWEL) {
                     return slicedImperative + nowVerbEnd;
+                }
+
+                if (imperative.endsWith("п")) {
+                    const changedImperative =
+                        imperative.slice(0, imperative.length - 1) + "б";
+                    return changedImperative + nowVerbEnd;
                 }
 
                 return imperative + nowVerbEnd;
