@@ -16,6 +16,13 @@ export const GENERAL = {
     VERB: 5, //Глагол
     ADVERB: 6 //Наречие
   }
+
+  export const LESSONS = {
+    FIRST: 1, 
+    SECOND: 2, 
+    THIRD: 3,
+    FOURTH: 4
+  }
   
   export const PRONOUNS = [
     {
@@ -62,8 +69,8 @@ export const GENERAL = {
   };
   
   export const VOICE = {
-    CONSONANT: 1, //согласный
-    VOWEL: 2 //гласный
+    CONSONANT: 1, //согласный. Глухой
+    VOWEL: 2 //гласный. Звонкий
   };
   
   export const STATE = {
@@ -79,6 +86,67 @@ export const GENERAL = {
     LOCAL: 5, //Местный
     ORIGINAL: 6 //Исходный
   };
+
+  export const RUSSIAN_CASES_PART = {
+    [CASES.NOMINATIVE]: '',
+    [CASES.POSSESSIVE]: 'Кого ? Чей ?',
+    [CASES.DIRECTIONAL]: 'Куда? Кому?',
+    [CASES.ACCUSATIVE]: 'Кого? Чего? (Вин. падеж)',
+    [CASES.LOCAL]: 'Где ?',
+    [CASES.ORIGINAL]: 'Откуда ?'
+  }
+
+  export const RUSSIAN_NOUNS_PART = {
+    [CASES.NOMINATIVE]: {
+      [GENERAL.I]: '',
+      [GENERAL.YOU]: '',
+      [GENERAL.HS]: '',
+      [GENERAL.WE]: '',
+      [GENERAL.YOUBIG]: '',
+      [GENERAL.THEY]: ''
+    },
+    [CASES.POSSESSIVE]: {
+      [GENERAL.I]: 'мой',
+      [GENERAL.YOU]: 'твой',
+      [GENERAL.HS]: 'его/её',
+      [GENERAL.WE]: 'наш',
+      [GENERAL.YOUBIG]: 'ваш',
+      [GENERAL.THEY]: 'их'
+    },
+    [CASES.DIRECTIONAL]: {
+      [GENERAL.I]: 'мой',
+      [GENERAL.YOU]: 'твой',
+      [GENERAL.HS]: 'его/её',
+      [GENERAL.WE]: 'наш',
+      [GENERAL.YOUBIG]: 'ваш',
+      [GENERAL.THEY]: 'их'
+    },
+    [CASES.ACCUSATIVE]: {
+      [GENERAL.I]: '',
+      [GENERAL.YOU]: '',
+      [GENERAL.HS]: '',
+      [GENERAL.WE]: '',
+      [GENERAL.YOUBIG]: '',
+      [GENERAL.THEY]: ''
+    },
+    [CASES.LOCAL]: {
+      [GENERAL.I]: 'мой',
+      [GENERAL.YOU]: 'твой',
+      [GENERAL.HS]: 'его/её',
+      [GENERAL.WE]: 'наш',
+      [GENERAL.YOUBIG]: 'ваш',
+      [GENERAL.THEY]: 'их'
+    },
+    [CASES.ORIGINAL]: {
+      [GENERAL.I]: 'моего',
+      [GENERAL.YOU]: 'твоего',
+      [GENERAL.HS]: 'его/её',
+      [GENERAL.WE]: 'нашего',
+      [GENERAL.YOUBIG]: 'вашего',
+      [GENERAL.THEY]: 'их'
+    },
+
+  }
 
 export const RUSSIAN_NEGATIVE = {
     [NEGATIVE.ON]: 'не',

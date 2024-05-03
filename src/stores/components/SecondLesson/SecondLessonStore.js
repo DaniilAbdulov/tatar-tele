@@ -1,17 +1,19 @@
 import { autorun, makeAutoObservable } from "mobx";
-import { PART_SPEACH, VERBS, PRONOUNS, LESSONS } from "../../../data/index.js";
+import { PART_SPEACH, VERBS, PRONOUNS, LESSONS, NOUNS, RUSSIAN_CASES_PART } from "../../../data/index.js";
 import {
     actualValue,
     getRandomIntegers,
     shuffleArray,
 } from "../../../utils/index.js";
 import { getChangedVerb } from "../../../utils/index.js";
+import { getChangedNoun } from "../../../utils/getChangedNoun.js";
 import { messageStore } from "../MessageStore.js";
 const myMessageStore = messageStore;
 
-class FirstLessonStore {
+
+class SecondLessonStore {
     trueTaskValue = {};
-    falseTaskVerbs = [];
+    falseTaskNouns = [];
     falseTaskPronouns = [];
     variants = [];
     userAnswer = [];
@@ -24,14 +26,10 @@ class FirstLessonStore {
 
     resetTask = () => {
         this.trueTaskValue = {};
-        this.falseTaskVerbs = [];
+        this.falseTaskNouns = [];
         this.falseTaskPronouns = [];
         this.variants = [];
         this.userAnswer = [];
-    };
-
-    setResult = (value) => {
-        this.result = value;
     };
 
     getLessonData = () => {
@@ -43,8 +41,8 @@ class FirstLessonStore {
         this.trueTaskValue = obj;
     };
 
-    setFalseTaskVerbs = (arr) => {
-        this.falseTaskVerbs = arr;
+    setFalseTaskNouns = (arr) => {
+        this.falseTaskNouns = arr;
     };
 
     setFalseTaskPronouns = (arr) => {
@@ -62,16 +60,18 @@ class FirstLessonStore {
     };
 
     getVariants = () => {
-        const pronounsArray = [
-            ...this.falseTaskPronouns,
-            this.trueTaskValue.pronoun.value,
-        ];
-        const verbsArray = [...this.falseTaskVerbs, this.trueTaskValue.value];
+        // const pronounsArray = [
+        //     ...this.falseTaskPronouns,
+        //     this.trueTaskValue.pronoun.value,
+        // ];
 
-        const pronouns = shuffleArray(pronounsArray);
-        const verbs = shuffleArray(verbsArray);
+        const nounsArray = [...this.falseTaskNouns, this.trueTaskValue.value];
 
-        const variants = [...pronouns, ...verbs].map((item, index) => {
+        //const pronouns = shuffleArray(pronounsArray);
+        const nouns = shuffleArray(nounsArray);
+
+        //const variants = [...pronouns, ...nouns].map((item, index) => {
+        const variants = [...nouns].map((item, index) => {
             const miniObj = {
                 id: index + 1,
                 value: item,
@@ -79,7 +79,6 @@ class FirstLessonStore {
 
             return miniObj;
         });
-
         this.setVariants([...variants]);
     };
 
@@ -87,13 +86,12 @@ class FirstLessonStore {
         if (!this.userAnswer.length) {
             return;
         }
-        const { pronoun: truePronoun, value: trueVerbValue } =
-            this.trueTaskValue;
+
         const userAnswerArray = this.userAnswer.map((e) => e.value);
 
         const userAnswer = userAnswerArray.join(" ");
-        const trueAnswer = `${truePronoun.value} ${trueVerbValue}`;
-
+        const trueAnswer = `${this.trueTaskValue.value}`;
+        
         if (userAnswer === trueAnswer) {
             myMessageStore.handleSuccess();
             setTimeout(() => {
@@ -122,18 +120,19 @@ class FirstLessonStore {
     };
 
     getTask = () => {
-        const trueTaskValue = this.getTrueTaskValue();
-        const { value, pronoun } = trueTaskValue;
 
-        const falseTaskVerbs = this.getFalseValues(value, PART_SPEACH.VERB);
-        const falseTaskPronouns = this.getFalseValues(
-            pronoun.value,
-            PART_SPEACH.PRONOUN
-        );
+        const trueTaskValue = this.getTrueTaskValue();
+
+        const { value } = trueTaskValue;
+
+        const falseTaskNouns = this.getFalseValues(value, PART_SPEACH.NOUN);
+
+        console.log(trueTaskValue)
+
 
         this.setTrueTaskValue(trueTaskValue);
-        this.setFalseTaskVerbs(falseTaskVerbs);
-        this.setFalseTaskPronouns(falseTaskPronouns);
+        this.setFalseTaskNouns(falseTaskNouns);
+        //this.setFalseTaskPronouns(falseTaskPronouns);
     };
 
     getFalseValues = (value, parametr) => {
@@ -169,6 +168,18 @@ class FirstLessonStore {
                     }
                 }
                 break;
+            case PART_SPEACH.NOUN:
+                for (let i = 0; i < 4; i++) {
+                    const { nounId } = getRandomIntegers();
+
+                    const [noun] = actualValue(NOUNS, nounId);
+
+                    const item = noun.fullValue;
+                    if (value !== item) {
+                        arr.push(item);
+                     }
+                }
+                break;                
             default:
                 break;
         }
@@ -177,22 +188,20 @@ class FirstLessonStore {
     };
 
     getTrueTaskValue = () => {
-        const lessonId = LESSONS.FIRST;
-        const { pronounId, timeId, verbId, negativeId } = getRandomIntegers();
-        const [pronoun] = actualValue(PRONOUNS, pronounId);
-        const [verb] = actualValue(VERBS, verbId);
-
-        const value = getChangedVerb(verbId, pronounId, timeId, negativeId);
+        const lessonId = LESSONS.SECOND;
+        const { nounId, caseId } = getRandomIntegers();
+        const [noun] = actualValue(NOUNS, nounId);
+        const casePart = RUSSIAN_CASES_PART[caseId]
+        const value = getChangedNoun(nounId, caseId);
 
         return {
             lessonId,
-            pronoun,
-            verb,
+            noun,
             value,
-            timeId,
-            negativeId,
+            caseId,
+            casePart
         };
     };
 }
 
-export const firstLessonStore = new FirstLessonStore();
+export const secondLessonStore = new SecondLessonStore();

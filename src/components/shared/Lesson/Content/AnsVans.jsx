@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Button } from "antd";
 
-export const AnsNVans = ({array, handler}) => {
+export const AnsVans = ({array, handler}) => {
 const clickHandler = (value) => {
     handler(value);
 }

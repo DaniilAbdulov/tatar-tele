@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { message } from "antd";
-import { firstLessonStore } from "../../stores/components/FirstLesson/FirstLessonStore";
 import { observer } from "mobx-react-lite";
+import { messageStore } from "../../stores/components/MessageStore";
 
 export const Message = observer(() => {
     const [messageApi, contextHolder] = message.useMessage();
-    const result = firstLessonStore.result;
+    const result = messageStore.result;
 
     useEffect(() => {
         const handleSuccess = () => {
@@ -32,16 +32,9 @@ export const Message = observer(() => {
 
         if (result === "success") {
             handleSuccess();
-            setTimeout(() => {
-                firstLessonStore.setResult("");
-                firstLessonStore.resetTask();
-                firstLessonStore.getAnotherTask();
-            }, 2000);
+
         } else if (result === "error") {
             handleError();
-            setTimeout(() => {
-                firstLessonStore.setResult("");
-            }, 2000);
         }
     }, [result, messageApi]);
     return <>{contextHolder}</>;

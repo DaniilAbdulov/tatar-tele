@@ -18,9 +18,13 @@ import {
     CONSONANT_LETTERS,
     RUSSIAN_TIME_PART,
     RUSSIAN_NEGATIVE,
+    LESSONS, RUSSIAN_CASES_PART 
 } from "./shared/index.js";
 
 import { VERBS } from "./FirstLesson/verbs.js";
+
+import { NOUNS } from "./SecondLesson/nouns.js";
+import { NOUNS_ENDINGS} from "./SecondLesson/index.js";
 
 export {
     NOW_VERB_ENDINGS,
@@ -41,4 +45,8 @@ export {
     VERBS,
     RUSSIAN_TIME_PART,
     RUSSIAN_NEGATIVE,
+    LESSONS,
+    NOUNS,
+    NOUNS_ENDINGS,
+    RUSSIAN_CASES_PART
 };
