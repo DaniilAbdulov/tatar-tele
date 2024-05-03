@@ -1,5 +1,5 @@
 import React from "react";
-import { AnsVans } from "../../../AnsVans";
+import { AnsVans } from "../AnsVans";
 
 
 export const Variants = ({variants, store}) => {

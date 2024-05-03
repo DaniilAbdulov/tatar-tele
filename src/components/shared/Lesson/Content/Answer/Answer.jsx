@@ -1,5 +1,6 @@
 import React from "react";
-import { AnsVans } from "../../../AnsVans";
+import { AnsVans } from "../AnsVans";
+
 
 export const Answer = ({answer, store}) => {
   const answerClick = (value) => {
