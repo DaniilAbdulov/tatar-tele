@@ -18,6 +18,7 @@ import {
     CONSONANT_LETTERS,
     RUSSIAN_TIME_PART,
     RUSSIAN_NEGATIVE,
+    LESSONS
 } from "./shared/index.js";
 
 import { VERBS } from "./FirstLesson/verbs.js";
@@ -41,4 +42,5 @@ export {
     VERBS,
     RUSSIAN_TIME_PART,
     RUSSIAN_NEGATIVE,
+    LESSONS
 };

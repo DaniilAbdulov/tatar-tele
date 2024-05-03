@@ -16,6 +16,13 @@ export const GENERAL = {
     VERB: 5, //Глагол
     ADVERB: 6 //Наречие
   }
+
+  export const LESSONS = {
+    FIRST: 1, 
+    SECOND: 2, 
+    THIRD: 3,
+    FOURTH: 4
+  }
   
   export const PRONOUNS = [
     {

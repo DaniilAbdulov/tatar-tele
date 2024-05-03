@@ -1,5 +1,5 @@
 import { autorun, makeAutoObservable } from "mobx";
-import { PART_SPEACH, VERBS, PRONOUNS } from "../../../data/index.js";
+import { PART_SPEACH, VERBS, PRONOUNS, LESSONS } from "../../../data/index.js";
 import {
     actualValue,
     getRandomIntegers,
@@ -102,17 +102,15 @@ class FirstLessonStore {
     };
 
     setUserAnswer = (variant) => {
-        if (!this.userAnswer.includes(variant)) {
-            this.userAnswer.push(variant);
-            this.userAnswer = this.userAnswer.sort((a, b) => a.id - b.id);
-            this.variants = this.variants.filter((v) => v.id !== variant.id);
-        }
+        this.variants = this.variants.filter((v) => v.id !== variant.id);
+        this.userAnswer = [...this.userAnswer, variant];
+        this.userAnswer = this.userAnswer.sort((a, b) => a.id - b.id);
     };
 
-    deleteOneUserAnswerItem = (answerItem) => {
-        this.variants.push(answerItem);
+    deleteOneUserAnswerItem = (answer) => {
+        this.variants = [...this.variants, answer];
+        this.userAnswer = this.userAnswer.filter((a) => a.id !== answer.id);
         this.variants = this.variants.sort((a, b) => a.id - b.id);
-        this.userAnswer = this.userAnswer.filter((a) => a.id !== answerItem.id);
     };
 
     getTask = () => {
@@ -171,6 +169,7 @@ class FirstLessonStore {
     };
 
     getTrueTaskValue = () => {
+        const lessonId = LESSONS.FIRST;
         const { pronounId, timeId, verbId, negativeId } = getRandomIntegers();
         const [pronoun] = actualValue(PRONOUNS, pronounId);
         const [verb] = actualValue(VERBS, verbId);
@@ -178,6 +177,7 @@ class FirstLessonStore {
         const value = getChangedVerb(verbId, pronounId, timeId, negativeId);
 
         return {
+            lessonId,
             pronoun,
             verb,
             value,

@@ -1,7 +1,7 @@
 import React from "react";
-import { FirstLessonView } from "./FirstLessonView";
+import { LessonView } from "../shared/Lesson/LessonView";
+import { firstLessonStore } from "../../stores/components/FirstLesson/FirstLessonStore";
 
 export const FirstLessonWrapper = () => {
-    return <FirstLessonView />
-
+    return <LessonView title={'Просклоняйте глагол'} store={firstLessonStore}/>
 };
