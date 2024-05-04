@@ -66,6 +66,30 @@ describe('Noun test', () => {
     expect(getChangedNoun(4, 5, 2)).toBe('Икмәктә');
     expect(getChangedNoun(4, 6, 2)).toBe('Икмәктән');
   });
+  test('Ел в ед.ч', () => {
+    expect(getChangedNoun(5, 3, 2)).toBe('Елга');
+  });
+  test('Кеше в ед.ч', () => {
+    expect(getChangedNoun(6, 3, 2)).toBe('Кешегә');
+  });
+  test('Эш в ед.ч', () => {
+    expect(getChangedNoun(7, 3, 2)).toBe('Эшкә');
+  });
+  test('Көн в ед.ч', () => {
+    expect(getChangedNoun(8, 3, 2)).toBe('Көнгә');
+  });
+  test('Бала в ед.ч', () => {
+    expect(getChangedNoun(9, 3, 2)).toBe('Балага');
+  });
+  test('Халык в ед.ч', () => {
+    expect(getChangedNoun(10, 3, 2)).toBe('Халыкка');
+  });
+  test('Вакыт в ед.ч', () => {
+    expect(getChangedNoun(11, 3, 2)).toBe('Вакытка');
+  });
+  test('Баш в ед.ч', () => {
+    expect(getChangedNoun(12, 3, 2)).toBe('Башка');
+  });
   test('шәһәр во мн.ч', () => {
     expect(getChangedNoun(14, 1, 1)).toBe('Шәһәрләр');
     expect(getChangedNoun(14, 2, 1)).toBe('Шәһәрләрнең');
