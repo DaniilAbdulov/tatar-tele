@@ -142,7 +142,7 @@ class FirstLessonStore {
         switch (parametr) {
             case PART_SPEACH.VERB:
                 for (let i = 0; i < 6; i++) {
-                    const { pronounId, timeId, verbId, negativeId } =
+                    const { pronounId, timeId, verbId, oneOrTwo: negativeId } =
                         getRandomIntegers();
 
                     const item = getChangedVerb(
@@ -178,7 +178,7 @@ class FirstLessonStore {
 
     getTrueTaskValue = () => {
         const lessonId = LESSONS.FIRST;
-        const { pronounId, timeId, verbId, negativeId } = getRandomIntegers();
+        const { pronounId, timeId, verbId, oneOrTwo: negativeId } = getRandomIntegers();
         const [pronoun] = actualValue(PRONOUNS, pronounId);
         const [verb] = actualValue(VERBS, verbId);
 

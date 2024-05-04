@@ -120,15 +120,9 @@ class SecondLessonStore {
     };
 
     getTask = () => {
-
         const trueTaskValue = this.getTrueTaskValue();
-
         const { value } = trueTaskValue;
-
         const falseTaskNouns = this.getFalseValues(value, PART_SPEACH.NOUN);
-
-        console.log(trueTaskValue)
-
 
         this.setTrueTaskValue(trueTaskValue);
         this.setFalseTaskNouns(falseTaskNouns);
@@ -141,7 +135,7 @@ class SecondLessonStore {
         switch (parametr) {
             case PART_SPEACH.VERB:
                 for (let i = 0; i < 6; i++) {
-                    const { pronounId, timeId, verbId, negativeId } =
+                    const { pronounId, timeId, verbId, oneOrTwo: negativeId } =
                         getRandomIntegers();
 
                     const item = getChangedVerb(

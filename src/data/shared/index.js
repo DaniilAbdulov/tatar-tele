@@ -67,6 +67,11 @@ export const GENERAL = {
     ON: 1,
     OFF: 2
   };
+
+  export const ALOT = {
+    ON: 1,
+    OFF: 2
+  }
   
   export const VOICE = {
     CONSONANT: 1, //согласный. Глухой
@@ -88,12 +93,12 @@ export const GENERAL = {
   };
 
   export const RUSSIAN_CASES_PART = {
-    [CASES.NOMINATIVE]: '',
-    [CASES.POSSESSIVE]: 'Кого ? Чей ?',
+    [CASES.NOMINATIVE]: 'Кто? Что?',    
+    [CASES.POSSESSIVE]: 'Кого? Чей?',
     [CASES.DIRECTIONAL]: 'Куда? Кому?',
     [CASES.ACCUSATIVE]: 'Кого? Чего? (Вин. падеж)',
-    [CASES.LOCAL]: 'Где ?',
-    [CASES.ORIGINAL]: 'Откуда ? Из чего ?'
+    [CASES.LOCAL]: 'Где?',
+    [CASES.ORIGINAL]: 'Откуда? Из чего?'
   }
 
   export const RUSSIAN_NOUNS_PART = {

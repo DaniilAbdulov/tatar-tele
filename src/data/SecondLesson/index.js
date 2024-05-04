@@ -1,4 +1,4 @@
-import { VOICE, STATE, CASES } from "../shared/index.js";
+import { VOICE, STATE, CASES, ALOT } from "../shared/index.js";
 //VOICE.CONSONANT = для глагола это согласный звук. Для существительного глухой
 //VOICE.VOWEL = для глагола это гласный звук. Для существительного звонкий звук
 
@@ -62,5 +62,11 @@ export const NOUNS_ENDINGS = {
             [STATE.SOLID]: 'тан',
             [STATE.SOFT]: 'тән'
         }
+    }
+}
+export const NOUNS_ALOT_PART = {
+    [ALOT.ON]: {
+        [STATE.SOLID]: 'лар',
+        [STATE.SOFT]: 'ләр'
     }
 }
