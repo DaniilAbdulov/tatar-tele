@@ -1,11 +1,12 @@
 import React from "react";
-import { LESSONS } from "../../../../../data";
+import { LESSONS } from "../../../../../data/index.js";
 import { TimePart } from "../../../../FirstLesson/Content/Task/TimePart";
 import { Verb } from "../../../../FirstLesson/Content/Task/Verb";
 import { Flex, Space } from "antd";
 import { Pronoun } from "../../../../FirstLesson/Content/Task/Pronoun";
-import { Noun } from "./Noun";
-import { Case } from "./Case";
+import {Case} from "../../../../SecondLesson/Content/Task/Case";
+import {Noun} from "../../../../SecondLesson/Content/Task/Noun";
+
 
 export const Task = ({task}) => {
     if (task?.lessonId === LESSONS.FIRST) {

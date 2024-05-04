@@ -1,8 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
 import { firstLessonStore } from "../../../../stores/components/FirstLesson/FirstLessonStore";
-import { RUSSIAN_TIME_PART, TIMES } from "../../../../data";
-import { RUSSIAN_NEGATIVE } from "../../../../data";
+import { RUSSIAN_TIME_PART, TIMES, RUSSIAN_NEGATIVE } from "../../../../data/index.js";
 import Title from "antd/es/typography/Title";
 
 

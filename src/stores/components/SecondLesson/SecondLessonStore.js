@@ -2,11 +2,11 @@ import { autorun, makeAutoObservable } from "mobx";
 import { PART_SPEACH, VERBS, PRONOUNS, LESSONS, NOUNS, RUSSIAN_CASES_PART } from "../../../data/index.js";
 import {
     actualValue,
+    getFalseValues,
     getRandomIntegers,
     shuffleArray,
+    getChangedNoun
 } from "../../../utils/index.js";
-import { getChangedVerb } from "../../../utils/index.js";
-import { getChangedNoun } from "../../../utils/getChangedNoun.js";
 import { messageStore } from "../MessageStore.js";
 const myMessageStore = messageStore;
 
@@ -122,78 +122,27 @@ class SecondLessonStore {
     getTask = () => {
         const trueTaskValue = this.getTrueTaskValue();
         const { value } = trueTaskValue;
-        const falseTaskNouns = this.getFalseValues(value, PART_SPEACH.NOUN);
+        const falseTaskNouns = getFalseValues(value, PART_SPEACH.NOUN);
 
         this.setTrueTaskValue(trueTaskValue);
         this.setFalseTaskNouns(falseTaskNouns);
         //this.setFalseTaskPronouns(falseTaskPronouns);
     };
 
-    getFalseValues = (value, parametr) => {
-        const arr = [];
-
-        switch (parametr) {
-            case PART_SPEACH.VERB:
-                for (let i = 0; i < 6; i++) {
-                    const { pronounId, timeId, verbId, oneOrTwo: negativeId } =
-                        getRandomIntegers();
-
-                    const item = getChangedVerb(
-                        verbId,
-                        pronounId,
-                        timeId,
-                        negativeId
-                    );
-
-                    if (value !== item) {
-                        arr.push(item);
-                    }
-                }
-                break;
-            case PART_SPEACH.PRONOUN:
-                for (let i = 0; i < 5; i++) {
-                    const { pronounId } = getRandomIntegers();
-                    const [pronoun] = actualValue(PRONOUNS, pronounId);
-
-                    const item = pronoun.value;
-
-                    if (value !== item) {
-                        arr.push(item);
-                    }
-                }
-                break;
-            case PART_SPEACH.NOUN:
-                for (let i = 0; i < 4; i++) {
-                    const { nounId } = getRandomIntegers();
-
-                    const [noun] = actualValue(NOUNS, nounId);
-
-                    const item = noun.fullValue;
-                    if (value !== item) {
-                        arr.push(item);
-                     }
-                }
-                break;                
-            default:
-                break;
-        }
-
-        return [...new Set(arr)];
-    };
-
     getTrueTaskValue = () => {
         const lessonId = LESSONS.SECOND;
-        const { nounId, caseId } = getRandomIntegers();
+        const { nounId, caseId, oneOrTwo: alotId } = getRandomIntegers();
         const [noun] = actualValue(NOUNS, nounId);
         const casePart = RUSSIAN_CASES_PART[caseId]
-        const value = getChangedNoun(nounId, caseId);
+        const value = getChangedNoun(nounId, caseId, alotId);
 
         return {
             lessonId,
             noun,
             value,
             caseId,
-            casePart
+            casePart,
+            alotId
         };
     };
 }
