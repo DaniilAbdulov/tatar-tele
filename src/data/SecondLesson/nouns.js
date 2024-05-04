@@ -80,8 +80,8 @@ export const NOUNS = [
     id: 18,
     fullValue: 'Юл',
     russian: 'дорога',
-    voice: 2,
-    state: 2,
+    voice: 1,
+    state: 1,
   },
   {
     id: 19,
