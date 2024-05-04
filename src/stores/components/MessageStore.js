@@ -1,23 +1,22 @@
-import { autorun, makeAutoObservable } from "mobx";
-
+import {makeAutoObservable} from 'mobx';
 
 class MessageStore {
-    result = "";
-    constructor() {
-        makeAutoObservable(this);
-    }
+  result = '';
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-    setResult = (value) => {
-        this.result = value;
-    };
+  setResult = value => {
+    this.result = value;
+  };
 
-    handleSuccess = () => {
-        this.setResult('success');
-    };
+  handleSuccess = () => {
+    this.setResult('success');
+  };
 
-    handleError = () => {
-        this.setResult('error');
-    };
+  handleError = () => {
+    this.setResult('error');
+  };
 }
 
 export const messageStore = new MessageStore();

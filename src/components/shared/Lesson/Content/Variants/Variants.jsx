@@ -1,12 +1,10 @@
-import React from "react";
-import { AnsVans } from "../AnsVans";
-
+import React from 'react';
+import {AnsVans} from '../AnsVans';
 
 export const Variants = ({variants, store}) => {
-
-const variantClick = (value) => {
+  const variantClick = value => {
     store.setUserAnswer(value);
-}
+  };
 
-return <AnsVans array={variants} handler={variantClick}/>
+  return <AnsVans array={variants} handler={variantClick} />;
 };
