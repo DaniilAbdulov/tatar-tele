@@ -2,6 +2,7 @@ import { autorun, makeAutoObservable } from "mobx";
 import { PART_SPEACH, VERBS, PRONOUNS, LESSONS } from "../../../data/index.js";
 import {
     actualValue,
+    getFalseValues,
     getRandomIntegers,
     shuffleArray,
 } from "../../../utils/index.js";
@@ -125,8 +126,8 @@ class FirstLessonStore {
         const trueTaskValue = this.getTrueTaskValue();
         const { value, pronoun } = trueTaskValue;
 
-        const falseTaskVerbs = this.getFalseValues(value, PART_SPEACH.VERB);
-        const falseTaskPronouns = this.getFalseValues(
+        const falseTaskVerbs = getFalseValues(value, PART_SPEACH.VERB);
+        const falseTaskPronouns = getFalseValues(
             pronoun.value,
             PART_SPEACH.PRONOUN
         );
@@ -134,46 +135,6 @@ class FirstLessonStore {
         this.setTrueTaskValue(trueTaskValue);
         this.setFalseTaskVerbs(falseTaskVerbs);
         this.setFalseTaskPronouns(falseTaskPronouns);
-    };
-
-    getFalseValues = (value, parametr) => {
-        const arr = [];
-
-        switch (parametr) {
-            case PART_SPEACH.VERB:
-                for (let i = 0; i < 6; i++) {
-                    const { pronounId, timeId, verbId, oneOrTwo: negativeId } =
-                        getRandomIntegers();
-
-                    const item = getChangedVerb(
-                        verbId,
-                        pronounId,
-                        timeId,
-                        negativeId
-                    );
-
-                    if (value !== item) {
-                        arr.push(item);
-                    }
-                }
-                break;
-            case PART_SPEACH.PRONOUN:
-                for (let i = 0; i < 5; i++) {
-                    const { pronounId } = getRandomIntegers();
-                    const [pronoun] = actualValue(PRONOUNS, pronounId);
-
-                    const item = pronoun.value;
-
-                    if (value !== item) {
-                        arr.push(item);
-                    }
-                }
-                break;
-            default:
-                break;
-        }
-
-        return [...new Set(arr)];
     };
 
     getTrueTaskValue = () => {
