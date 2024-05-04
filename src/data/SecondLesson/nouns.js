@@ -22,8 +22,8 @@ export const NOUNS = [
     },
     {
         id: 4,
-        fullValue: "кибет",
-        russian: "магазин",
+        fullValue: "икмәк",
+        russian: "хлеб",
         voice: 2,
         state: 2,
     },
