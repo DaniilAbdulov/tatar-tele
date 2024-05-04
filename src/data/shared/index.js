@@ -93,7 +93,7 @@ export const GENERAL = {
     [CASES.DIRECTIONAL]: 'Куда? Кому?',
     [CASES.ACCUSATIVE]: 'Кого? Чего? (Вин. падеж)',
     [CASES.LOCAL]: 'Где ?',
-    [CASES.ORIGINAL]: 'Откуда ?'
+    [CASES.ORIGINAL]: 'Откуда ? Из чего ?'
   }
 
   export const RUSSIAN_NOUNS_PART = {
