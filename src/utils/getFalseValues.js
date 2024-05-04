@@ -8,13 +8,11 @@ import {
 
 export const getFalseValues = (value, parametr) => {
   const arr = [];
-  const VERB_COUNT = 10;
-  const PRONOUN_COUNT = 5;
-  const NOUN_COUNT = 8;
-
+  const COUNT = 4;
+  
   switch (parametr) {
     case PART_SPEACH.VERB:
-      for (let i = 0; i < VERB_COUNT; i++) {
+      for (let i = 0; i < COUNT; i++) {
         const {
           pronounId,
           timeId,
@@ -30,7 +28,7 @@ export const getFalseValues = (value, parametr) => {
       }
       break;
     case PART_SPEACH.PRONOUN:
-      for (let i = 0; i < PRONOUN_COUNT; i++) {
+      for (let i = 0; i < COUNT; i++) {
         const {pronounId} = getRandomIntegers();
         const [pronoun] = actualValue(PRONOUNS, pronounId);
 
@@ -42,7 +40,7 @@ export const getFalseValues = (value, parametr) => {
       }
       break;
     case PART_SPEACH.NOUN:
-      for (let i = 0; i < NOUN_COUNT; i++) {
+      for (let i = 0; i < COUNT; i++) {
         const {nounId, caseId, oneOrTwo: alotId} = getRandomIntegers();
 
         const item = getChangedNoun(nounId, caseId, alotId);
