@@ -3,14 +3,44 @@ import { VOICE, STATE, CASES } from "../shared/index.js";
 //VOICE.VOWEL = для глагола это гласный звук. Для существительного звонкий звук
 
 export const NOUNS_ENDINGS = {
-    [CASES.ORIGINAL]:{
+    [CASES.NOMINATIVE]:{
         [VOICE.CONSONANT]: {
-            [STATE.SOLID]: 'дан',
-            [STATE.SOFT]: 'дән'
+            [STATE.SOLID]: '',
+            [STATE.SOFT]: ''
         },
         [VOICE.VOWEL]: {
-            [STATE.SOLID]: 'тан',
-            [STATE.SOFT]: 'тән'
+            [STATE.SOLID]: '',
+            [STATE.SOFT]: ''
+        }
+    },
+    [CASES.POSSESSIVE]:{
+        [VOICE.CONSONANT]: {
+            [STATE.SOLID]: 'ның',
+            [STATE.SOFT]: 'нең'
+        },
+        [VOICE.VOWEL]: {
+            [STATE.SOLID]: 'ның',
+            [STATE.SOFT]: 'нең'
+        }
+    },
+    [CASES.DIRECTIONAL]: {
+        [VOICE.CONSONANT]: {
+            [STATE.SOLID]: 'га',
+            [STATE.SOFT]: 'гә'
+        },
+        [VOICE.VOWEL]: {
+            [STATE.SOLID]: 'ка',
+            [STATE.SOFT]: 'кә'
+        }
+    },
+    [CASES.ACCUSATIVE]: {
+        [VOICE.CONSONANT]: {
+            [STATE.SOLID]: 'ны',
+            [STATE.SOFT]: 'не'
+        },
+        [VOICE.VOWEL]: {
+            [STATE.SOLID]: 'ны',
+            [STATE.SOFT]: 'не'
         }
     },
     [CASES.LOCAL]:{
@@ -23,14 +53,14 @@ export const NOUNS_ENDINGS = {
             [STATE.SOFT]: 'тә'
         }
     },
-    [CASES.DIRECTIONAL]: {
+    [CASES.ORIGINAL]:{
         [VOICE.CONSONANT]: {
-            [STATE.SOLID]: 'га',
-            [STATE.SOFT]: 'гә'
+            [STATE.SOLID]: 'дан',
+            [STATE.SOFT]: 'дән'
         },
         [VOICE.VOWEL]: {
-            [STATE.SOLID]: 'ка',
-            [STATE.SOFT]: 'кә'
+            [STATE.SOLID]: 'тан',
+            [STATE.SOFT]: 'тән'
         }
     }
 }
