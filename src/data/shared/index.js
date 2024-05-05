@@ -74,13 +74,18 @@ export const ALOT = {
 };
 
 export const VOICE = {
-  CONSONANT: 1, //согласный. Глухой
-  VOWEL: 2, //гласный. Звонкий
+  CONSONANT: 1, //согласный
+  VOWEL: 2, //гласный
 };
 
 export const STATE = {
   SOLID: 1, //твердый
   SOFT: 2, //мягкий
+};
+
+export const SOUND = {
+  RING: 1, //Звонкий
+  DEAF: 2, //Глухой
 };
 
 export const CASES = {

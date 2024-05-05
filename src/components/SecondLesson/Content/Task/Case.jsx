@@ -10,7 +10,6 @@ export const Case = observer(() => {
     secondLessonStore?.trueTaskValue?.alotId === ALOT.ON
       ? 'Во множественном числе'
       : 'В единственном числе';
-  console.log(secondLessonStore);
 
   return (
     <>

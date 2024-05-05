@@ -9,7 +9,7 @@ import {
 export const getFalseValues = (value, parametr) => {
   const arr = [];
   const COUNT = 4;
-  
+
   switch (parametr) {
     case PART_SPEACH.VERB:
       for (let i = 0; i < COUNT; i++) {
@@ -41,13 +41,14 @@ export const getFalseValues = (value, parametr) => {
       break;
     case PART_SPEACH.NOUN:
       for (let i = 0; i < COUNT; i++) {
-        const {nounId, caseId, oneOrTwo: alotId} = getRandomIntegers();
+        const {
+          nounId,
+          caseId,
+          oneOrTwo: alotId,
+          pronounId,
+        } = getRandomIntegers();
 
-        const item = getChangedNoun(nounId, caseId, alotId);
-
-        if (!item) {
-          console.log([nounId, caseId, alotId]);
-        }
+        const item = getChangedNoun(nounId, caseId, alotId, pronounId);
 
         if (value !== item) {
           arr.push(item);

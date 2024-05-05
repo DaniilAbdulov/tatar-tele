@@ -10,7 +10,7 @@ export const Content = observer(({store}) => {
   const task = store?.trueTaskValue || {};
   const answer = [...store?.userAnswer] || [];
   const variants = store?.variants || [];
-  console.log(store);
+
   return (
     <Flex vertical align="center">
       <Task task={task} />

@@ -2,29 +2,64 @@ import {
   ALOT,
   CASES,
   NOUNS,
+  NOUNS_AFFILIATION_PART,
   NOUNS_ALOT_PART,
   NOUNS_ENDINGS,
+  SOUND,
   VOICE,
 } from '../data/index.js';
 import {actualValue} from './actualValue.js';
 
-export const getChangedNoun = (nounId, caseId, alotId) => {
-  const [noun] = actualValue(NOUNS, nounId);
-  if (!noun.voice || !noun.state) {
-    return;
+const expectedLetters = ['й', 'к', 'п', 'у'];
+
+export const getChangedNoun = (nounId, caseId, alotId, pronounId) => {
+  let answer = '';
+  if (!nounId || !caseId || !alotId || !pronounId) {
+    return answer;
   }
-  const isAlot = alotId === ALOT.ON;
-  const start = noun.fullValue;
-  const startPartEndsWithN = start.endsWith('м') || start.endsWith('н');
-  /////
-  const alotPart = NOUNS_ALOT_PART[alotId][noun.state];
-  const alotPartWithN = alotPart?.length ? 'н' + alotPart.slice(1) : '';
-  /////
-  const ending =
-    NOUNS_ENDINGS[caseId][isAlot ? VOICE.CONSONANT : noun.voice][noun.state];
-  const endingWithN = ending?.length ? 'н' + ending.slice(1) : '';
-  ////////
-  return isAlot
-    ? `${start}${startPartEndsWithN ? alotPartWithN : alotPart}${ending}`
-    : `${start}${startPartEndsWithN && caseId === CASES.ORIGINAL ? endingWithN : ending}`;
+  const [noun] = actualValue(NOUNS, nounId);
+
+  if (!noun?.fullValue) {
+    return answer;
+  }
+
+  let general = noun.fullValue;
+  const generalLastLetter = general[general.length - 1];
+  const slicedGeneral = general.slice(0, general.length - 1);
+
+  if (expectedLetters.includes(generalLastLetter) && alotId === ALOT.OFF) {
+    switch (generalLastLetter) {
+      case 'й':
+        general = slicedGeneral;
+        break;
+      case 'к':
+        general = slicedGeneral + 'г';
+        break;
+      case 'п':
+        general = slicedGeneral + 'б';
+        break;
+      case 'у':
+        general = slicedGeneral + 'в';
+        break;
+      default:
+        break;
+    }
+  }
+  answer += general;
+  const alotPart = NOUNS_ALOT_PART[ALOT.ON][noun.state];
+
+  const affiliationPart =
+    NOUNS_AFFILIATION_PART[noun.voice][noun.state][pronounId];
+
+  const nounCaseEnding =
+    NOUNS_ENDINGS[caseId][alotId === ALOT.ON ? [SOUND.RING] : noun.sound][
+      noun.state
+    ];
+
+  if (alotId === ALOT.ON) {
+    answer += alotPart + affiliationPart;
+  } else {
+    answer += affiliationPart;
+  }
+  return answer + nounCaseEnding;
 };
