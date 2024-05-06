@@ -16,18 +16,18 @@ export const Case = observer(() => {
   const arrOfParts = [
   {
     id:1,
-    title: alotPart,
-    value: 'числе'
+    title: 'Численность',
+    value: alotPart
   },
   {
     id:2,
-    title: nounCase,
-    value: 'падеже'
-  },
-  {
-    id:1,
     title: 'Принадлежащий',
     value: russianNounPart
+  },
+  {
+    id:3,
+    title: 'В падеже',
+    value: nounCase
   },
 ];
 
