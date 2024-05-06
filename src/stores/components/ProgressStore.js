@@ -1,7 +1,8 @@
 import {makeAutoObservable} from 'mobx';
 
-class MessageStore {
+class ProgressStore {
   result = '';
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -19,4 +20,4 @@ class MessageStore {
   };
 }
 
-export const messageStore = new MessageStore();
+export const progressStore = new ProgressStore();

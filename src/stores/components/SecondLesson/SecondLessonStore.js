@@ -12,8 +12,8 @@ import {
   shuffleArray,
   getChangedNoun,
 } from '../../../utils/index.js';
-import {messageStore} from '../MessageStore.js';
-const myMessageStore = messageStore;
+import {progressStore} from '../ProgressStore.js';
+const myProgressStore = progressStore;
 
 class SecondLessonStore {
   trueTaskValue = {};
@@ -89,16 +89,16 @@ class SecondLessonStore {
     const trueAnswer = `${this.trueTaskValue.value}`;
 
     if (userAnswer === trueAnswer) {
-      myMessageStore.handleSuccess();
+      myProgressStore.handleSuccess();
       setTimeout(() => {
         this.resetTask();
         this.getAnotherTask();
-        myMessageStore.setResult('');
+        myProgressStore.setResult('');
       }, 2000);
     } else {
-      myMessageStore.handleError();
+      myProgressStore.handleError();
       setTimeout(() => {
-        myMessageStore.setResult('');
+        myProgressStore.setResult('');
       }, 2000);
     }
   };

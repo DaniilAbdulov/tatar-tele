@@ -7,8 +7,8 @@ import {
   shuffleArray,
 } from '../../../utils/index.js';
 import {getChangedVerb} from '../../../utils/index.js';
-import {messageStore} from '../MessageStore.js';
-const myMessageStore = messageStore;
+import {progressStore} from '../ProgressStore.js';
+const myProgressStore = progressStore;
 
 class FirstLessonStore {
   trueTaskValue = {};
@@ -95,16 +95,16 @@ class FirstLessonStore {
     const trueAnswer = `${truePronoun.value} ${trueVerbValue}`;
 
     if (userAnswer === trueAnswer) {
-      myMessageStore.handleSuccess();
+      myProgressStore.handleSuccess();
       setTimeout(() => {
         this.resetTask();
         this.getAnotherTask();
-        myMessageStore.setResult('');
+        myProgressStore.setResult('');
       }, 2000);
     } else {
-      myMessageStore.handleError();
+      myProgressStore.handleError();
       setTimeout(() => {
-        myMessageStore.setResult('');
+        myProgressStore.setResult('');
       }, 2000);
     }
   };

@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
 import {message} from 'antd';
 import {observer} from 'mobx-react-lite';
-import {messageStore} from '../../stores/components/MessageStore';
+import { progressStore } from '../../stores/components/ProgressStore';
+
 
 export const Message = observer(() => {
   const [messageApi, contextHolder] = message.useMessage();
-  const result = messageStore.result;
+  const result = progressStore.result;
 
   useEffect(() => {
     const handleSuccess = () => {
