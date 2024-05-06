@@ -23,7 +23,7 @@ import {
   ALOT,
   SOUND,
   RUSSIAN_CASES_PART,
-  COUNT_FOR_LESSON_DONE
+  COUNT_FOR_LESSON_DONE,
 } from './shared/index.js';
 
 import {VERBS} from './FirstLesson/verbs.js';
@@ -63,5 +63,5 @@ export {
   SOUND,
   NOUNS_AFFILIATION_PART,
   RUSSIAN_CASES_PART,
-  COUNT_FOR_LESSON_DONE
+  COUNT_FOR_LESSON_DONE,
 };

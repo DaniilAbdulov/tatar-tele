@@ -7,7 +7,6 @@ import {SecondLessonWrapper} from '../components/SecondLesson';
 export const Router = () => {
   //const isAuth = true;
 
-
   // useEffect(() => {
   //     if (isAuth) {
   //         navigate("/home");

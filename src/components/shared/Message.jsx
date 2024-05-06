@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
 import {message} from 'antd';
 import {observer} from 'mobx-react-lite';
-import { progressStore } from '../../stores/components/ProgressStore';
-
+import {progressStore} from '../../stores/components/ProgressStore';
 
 export const Message = observer(() => {
   const [messageApi, contextHolder] = message.useMessage();

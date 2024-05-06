@@ -109,12 +109,12 @@ export const RUSSIAN_CASES = {
 };
 
 export const RUSSIAN_CASES_PART = {
-    [GENERAL.I]: 'мне',
-    [GENERAL.YOU]: 'тебе',
-    [GENERAL.HS]: 'ему/ей',
-    [GENERAL.WE]: 'нам',
-    [GENERAL.YOUBIG]: 'вам',
-    [GENERAL.THEY]: 'им',
+  [GENERAL.I]: 'мне',
+  [GENERAL.YOU]: 'тебе',
+  [GENERAL.HS]: 'ему/ей',
+  [GENERAL.WE]: 'нам',
+  [GENERAL.YOUBIG]: 'вам',
+  [GENERAL.THEY]: 'им',
 };
 
 export const RUSSIAN_NEGATIVE = {

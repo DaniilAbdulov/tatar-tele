@@ -8,7 +8,7 @@ export const Noun = observer(() => {
   const items = [
     {
       label: `Перевод: ${noun.fullValue}`,
-      key: '1'
+      key: '1',
     },
   ];
   const menuProps = {

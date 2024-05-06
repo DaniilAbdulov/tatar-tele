@@ -2,7 +2,7 @@ import {BrowserRouter} from 'react-router-dom';
 import {Router} from './routes/index';
 import {ConfigProvider, Layout} from 'antd';
 import {Footer, Header} from 'antd/es/layout/layout';
-import { LessonEnd } from './components/shared/LessonEnd';
+import {LessonEnd} from './components/shared/LessonEnd';
 
 export const App = () => {
   return (
@@ -36,7 +36,7 @@ export const App = () => {
           >
             <div className="App">
               <Router />
-              <LessonEnd/>
+              <LessonEnd />
             </div>
           </Layout>
           <Footer style={{textAlign: 'center'}}>

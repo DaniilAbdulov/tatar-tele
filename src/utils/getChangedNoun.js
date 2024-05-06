@@ -12,7 +12,8 @@ import {actualValue} from './actualValue.js';
 
 const expectedLetters = ['й', 'к', 'п', 'у'];
 
-const endsWithNM = (str) => str.endsWith('м') || str.endsWith('н') || str.endsWith('ң');
+const endsWithNM = str =>
+  str.endsWith('м') || str.endsWith('н') || str.endsWith('ң');
 
 export const getChangedNoun = (nounId, caseId, alotId, pronounId) => {
   let answer = '';
@@ -31,14 +32,14 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId) => {
     NOUNS_ENDINGS[caseId][alotId === ALOT.ON ? [SOUND.RING] : noun.sound][
       noun.state
     ];
-  
+
   if (alotId === ALOT.ON) {
     const affiliationPart =
-    NOUNS_AFFILIATION_PART[VOICE.CONSONANT][noun.state][pronounId];
+      NOUNS_AFFILIATION_PART[VOICE.CONSONANT][noun.state][pronounId];
 
-    const alotPart = endsWithNM(general) ?
-    NOUNS_ALOT_PART[ALOT.OFF][noun.state] :
-    NOUNS_ALOT_PART[ALOT.ON][noun.state];
+    const alotPart = endsWithNM(general)
+      ? NOUNS_ALOT_PART[ALOT.OFF][noun.state]
+      : NOUNS_ALOT_PART[ALOT.ON][noun.state];
 
     const withoutNounCaseEnding = general + alotPart + affiliationPart;
 
@@ -46,14 +47,15 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId) => {
       const slicedNounCaseEnding = nounCaseEnding.slice(1);
       return withoutNounCaseEnding + slicedNounCaseEnding;
     }
-    return  withoutNounCaseEnding + nounCaseEnding;
-  } 
+    return withoutNounCaseEnding + nounCaseEnding;
+  }
 
   const generalLastLetter = general[general.length - 1];
   const slicedGeneral = general.slice(0, general.length - 1);
 
-  const exludeIsNeed = expectedLetters.includes(generalLastLetter) && alotId === ALOT.OFF;
-  
+  const exludeIsNeed =
+    expectedLetters.includes(generalLastLetter) && alotId === ALOT.OFF;
+
   answer = general;
   let consonantToVowel = false;
 
@@ -77,8 +79,9 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId) => {
     }
   }
   const affiliationPart =
-  NOUNS_AFFILIATION_PART[consonantToVowel ? VOICE.CONSONANT : noun.voice][noun.state][pronounId];
-  
-  return answer + affiliationPart + nounCaseEnding;
+    NOUNS_AFFILIATION_PART[consonantToVowel ? VOICE.CONSONANT : noun.voice][
+      noun.state
+    ][pronounId];
 
+  return answer + affiliationPart + nounCaseEnding;
 };
