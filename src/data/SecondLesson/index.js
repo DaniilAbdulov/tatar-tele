@@ -68,8 +68,8 @@ export const NOUNS_ALOT_PART = {
     [STATE.SOFT]: 'ләр',
   },
   [ALOT.OFF]: {
-    [STATE.SOLID]: '',
-    [STATE.SOFT]: '',
+    [STATE.SOLID]: 'нар',
+    [STATE.SOFT]: 'нәр',
   },
 };
 export const NOUNS_AFFILIATION_PART = {

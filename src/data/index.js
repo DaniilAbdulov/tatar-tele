@@ -19,9 +19,10 @@ import {
   RUSSIAN_TIME_PART,
   RUSSIAN_NEGATIVE,
   LESSONS,
-  RUSSIAN_CASES_PART,
+  RUSSIAN_CASES,
   ALOT,
   SOUND,
+  RUSSIAN_CASES_PART,
 } from './shared/index.js';
 
 import {VERBS} from './FirstLesson/verbs.js';
@@ -55,9 +56,10 @@ export {
   LESSONS,
   NOUNS,
   NOUNS_ENDINGS,
-  RUSSIAN_CASES_PART,
+  RUSSIAN_CASES,
   ALOT,
   NOUNS_ALOT_PART,
   SOUND,
   NOUNS_AFFILIATION_PART,
+  RUSSIAN_CASES_PART
 };

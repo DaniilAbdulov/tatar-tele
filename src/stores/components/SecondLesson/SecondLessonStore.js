@@ -3,7 +3,7 @@ import {
   PART_SPEACH,
   LESSONS,
   NOUNS,
-  RUSSIAN_CASES_PART,
+  RUSSIAN_CASES,
 } from '../../../data/index.js';
 import {
   actualValue,
@@ -128,7 +128,7 @@ class SecondLessonStore {
     const lessonId = LESSONS.SECOND;
     const {nounId, caseId, oneOrTwo: alotId, pronounId} = getRandomIntegers();
     const [noun] = actualValue(NOUNS, nounId);
-    const casePart = RUSSIAN_CASES_PART[caseId];
+    const casePart = RUSSIAN_CASES[caseId];
     const value = getChangedNoun(nounId, caseId, alotId, pronounId);
 
     return {

@@ -97,64 +97,22 @@ export const CASES = {
   ORIGINAL: 6, //Исходный
 };
 
-export const RUSSIAN_CASES_PART = {
-  [CASES.NOMINATIVE]: 'Кто? Что?',
-  [CASES.POSSESSIVE]: 'Кого? Чей?',
-  [CASES.DIRECTIONAL]: 'Куда? Кому?',
-  [CASES.ACCUSATIVE]: 'Кого? Чего? (Вин. падеж)',
-  [CASES.LOCAL]: 'Где?',
-  [CASES.ORIGINAL]: 'Откуда? Из чего?',
+export const RUSSIAN_CASES = {
+  [CASES.NOMINATIVE]: 'Именительном',
+  [CASES.POSSESSIVE]: 'Притяжательном',
+  [CASES.DIRECTIONAL]: 'Направительном',
+  [CASES.ACCUSATIVE]: 'Винительном',
+  [CASES.LOCAL]: 'Местном',
+  [CASES.ORIGINAL]: 'Исходном',
 };
 
-export const RUSSIAN_NOUNS_PART = {
-  [CASES.NOMINATIVE]: {
-    [GENERAL.I]: '',
-    [GENERAL.YOU]: '',
-    [GENERAL.HS]: '',
-    [GENERAL.WE]: '',
-    [GENERAL.YOUBIG]: '',
-    [GENERAL.THEY]: '',
-  },
-  [CASES.POSSESSIVE]: {
-    [GENERAL.I]: 'мой',
-    [GENERAL.YOU]: 'твой',
-    [GENERAL.HS]: 'его/её',
-    [GENERAL.WE]: 'наш',
-    [GENERAL.YOUBIG]: 'ваш',
-    [GENERAL.THEY]: 'их',
-  },
-  [CASES.DIRECTIONAL]: {
-    [GENERAL.I]: 'мой',
-    [GENERAL.YOU]: 'твой',
-    [GENERAL.HS]: 'его/её',
-    [GENERAL.WE]: 'наш',
-    [GENERAL.YOUBIG]: 'ваш',
-    [GENERAL.THEY]: 'их',
-  },
-  [CASES.ACCUSATIVE]: {
-    [GENERAL.I]: '',
-    [GENERAL.YOU]: '',
-    [GENERAL.HS]: '',
-    [GENERAL.WE]: '',
-    [GENERAL.YOUBIG]: '',
-    [GENERAL.THEY]: '',
-  },
-  [CASES.LOCAL]: {
-    [GENERAL.I]: 'мой',
-    [GENERAL.YOU]: 'твой',
-    [GENERAL.HS]: 'его/её',
-    [GENERAL.WE]: 'наш',
-    [GENERAL.YOUBIG]: 'ваш',
-    [GENERAL.THEY]: 'их',
-  },
-  [CASES.ORIGINAL]: {
-    [GENERAL.I]: 'моего',
-    [GENERAL.YOU]: 'твоего',
-    [GENERAL.HS]: 'его/её',
-    [GENERAL.WE]: 'нашего',
-    [GENERAL.YOUBIG]: 'вашего',
-    [GENERAL.THEY]: 'их',
-  },
+export const RUSSIAN_CASES_PART = {
+    [GENERAL.I]: 'мне',
+    [GENERAL.YOU]: 'тебе',
+    [GENERAL.HS]: 'ему/ей',
+    [GENERAL.WE]: 'нам',
+    [GENERAL.YOUBIG]: 'вам',
+    [GENERAL.THEY]: 'им',
 };
 
 export const RUSSIAN_NEGATIVE = {

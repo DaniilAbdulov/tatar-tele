@@ -21,12 +21,12 @@ export const Task = ({task}) => {
   }
   if (task?.lessonId === LESSONS.SECOND) {
     return (
-      <Flex>
-        <Space>
-          <Case />
-          <Noun />
-        </Space>
-      </Flex>
+      <div>
+        <Noun />
+        <Case />
+      </div>
+
+
     );
   }
   return <div>None</div>;
