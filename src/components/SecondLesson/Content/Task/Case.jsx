@@ -28,8 +28,6 @@ export const Case = observer(() => {
     },
   ];
 
-  console.log(arrOfParts);
-
   return (
     <Flex wrap gap={5}>
       <Descriptions items={arrOfParts} />

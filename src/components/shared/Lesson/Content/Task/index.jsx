@@ -6,32 +6,33 @@ import {Flex, Space} from 'antd';
 import {Pronoun} from '../../../../FirstLesson/Content/Task/Pronoun';
 import {Case} from '../../../../SecondLesson/Content/Task/Case';
 import {Noun} from '../../../../SecondLesson/Content/Task/Noun';
+import {AdjectiveTask} from '../../../../ThithLesson/Content/AdjectiveTask';
+import {SharedNoun} from './SharedNoun.jsx';
 
 export const Task = ({task}) => {
-  if (task?.lessonId === LESSONS.FIRST) {
-    return (
-      <Flex>
-        <Space>
-          <Pronoun />
-          <TimePart />
-          <Verb />
-        </Space>
-      </Flex>
-    );
-  }
-  if (task?.lessonId === LESSONS.SECOND) {
-    return (
-      <Space>
-        <Flex vertical>
-
-        <Noun />
-        <Case />
+  switch (task?.lessonId) {
+    case LESSONS.FIRST:
+      return (
+        <Flex>
+          <Space>
+            <Pronoun />
+            <TimePart />
+            <Verb />
+          </Space>
         </Flex>
-      </Space>
-
-
-
-    );
+      );
+    case LESSONS.SECOND:
+      return (
+        <Space>
+          <Flex vertical>
+            <SharedNoun noun={task.noun} />
+            <Case />
+          </Flex>
+        </Space>
+      );
+    case LESSONS.THIRD:
+      return <AdjectiveTask />;
+    default:
+      return <div>None</div>;
   }
-  return <div>None</div>;
 };

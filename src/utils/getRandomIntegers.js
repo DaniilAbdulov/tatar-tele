@@ -1,4 +1,11 @@
-import {CASES, NOUNS, PRONOUNS, TIMES, VERBS} from '../data/index.js';
+import {
+  ADJECTIVES,
+  CASES,
+  NOUNS,
+  PRONOUNS,
+  TIMES,
+  VERBS,
+} from '../data/index.js';
 import {randomInt} from './randomInt.js';
 
 export const getRandomIntegers = () => {
@@ -9,6 +16,7 @@ export const getRandomIntegers = () => {
   const timeId = randomInt(1, Object.keys(TIMES).length);
   const verbId = randomInt(1, VERBS.length);
   const oneOrTwo = randomInt(1, 2);
+  const adjectiveId = randomInt(1, ADJECTIVES.length);
 
   return {
     nounId,
@@ -17,5 +25,6 @@ export const getRandomIntegers = () => {
     timeId,
     verbId,
     oneOrTwo,
+    adjectiveId,
   };
 };

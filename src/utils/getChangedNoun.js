@@ -15,19 +15,18 @@ const expectedLetters = ['й', 'к', 'п', 'у'];
 const endsWithNM = str =>
   str.endsWith('м') || str.endsWith('н') || str.endsWith('ң');
 
-export const getChangedNoun = (nounId, caseId, alotId, pronounId) => {
-  let answer = '';
-  if (!nounId || !caseId || !alotId || !pronounId) {
-    return answer;
+export const getChangedNoun = (nounId, caseId, alotId, pronounId = null) => {
+  if (!nounId || !caseId || !alotId) {
+    return '';
   }
+
   const [noun] = actualValue(NOUNS, nounId);
 
   if (!noun?.fullValue) {
-    return answer;
+    return '';
   }
 
   const general = noun.fullValue;
-
   const nounCaseEnding =
     NOUNS_ENDINGS[caseId][alotId === ALOT.ON ? [SOUND.RING] : noun.sound][
       noun.state
@@ -56,7 +55,7 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId) => {
   const exludeIsNeed =
     expectedLetters.includes(generalLastLetter) && alotId === ALOT.OFF;
 
-  answer = general;
+  let answer = general;
   let consonantToVowel = false;
 
   if (exludeIsNeed) {
@@ -78,10 +77,12 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId) => {
         break;
     }
   }
-  const affiliationPart =
-    NOUNS_AFFILIATION_PART[consonantToVowel ? VOICE.CONSONANT : noun.voice][
-      noun.state
-    ][pronounId];
+
+  const affiliationPart = pronounId
+    ? NOUNS_AFFILIATION_PART[consonantToVowel ? VOICE.CONSONANT : noun.voice][
+        noun.state
+      ][pronounId]
+    : '';
 
   return answer + affiliationPart + nounCaseEnding;
 };

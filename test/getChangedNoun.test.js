@@ -148,6 +148,7 @@ describe('Noun test', () => {
     expect(getChangedNoun(103, 1, 2, 4)).toBe('Булмәбез');
     expect(getChangedNoun(103, 1, 2, 5)).toBe('Булмәгез');
     expect(getChangedNoun(103, 1, 2, 6)).toBe('Булмәсе');
+    expect(getChangedNoun(103, 6, 2)).toBe('Булмәдән');
   });
   test('Сорау в ед.ч', () => {
     expect(getChangedNoun(101, 1, 2, 1)).toBe('Соравым');

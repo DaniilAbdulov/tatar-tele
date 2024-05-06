@@ -1,12 +1,19 @@
-import {NOUNS, PART_SPEACH, PRONOUNS} from '../data/index.js';
+import {
+  ADJECTIVES,
+  LESSONS,
+  NOUNS,
+  PART_SPEACH,
+  PRONOUNS,
+} from '../data/index.js';
 import {
   actualValue,
+  getChangedAdjective,
   getChangedNoun,
   getChangedVerb,
   getRandomIntegers,
 } from './index.js';
 
-export const getFalseValues = (value, parametr) => {
+export const getFalseValues = (value, parametr, lessonId) => {
   const arr = [];
   const COUNT = 4;
 
@@ -48,9 +55,23 @@ export const getFalseValues = (value, parametr) => {
           pronounId,
         } = getRandomIntegers();
 
-        const item = getChangedNoun(nounId, caseId, alotId, pronounId);
+        const item =
+          lessonId === LESSONS.THIRD
+            ? getChangedNoun(nounId, 6, 2)
+            : getChangedNoun(nounId, caseId, alotId, pronounId);
 
         if (value !== item) {
+          arr.push(item);
+        }
+      }
+      break;
+    case PART_SPEACH.ADJECTIVE:
+      for (let i = 0; i < COUNT; i++) {
+        const {adjectiveId} = getRandomIntegers();
+        const [adjective] = actualValue(ADJECTIVES, adjectiveId);
+
+        if (value.value !== adjective.value) {
+          const item = getChangedAdjective(adjective);
           arr.push(item);
         }
       }

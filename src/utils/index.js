@@ -4,6 +4,7 @@ import {shuffleArray} from './shuffleArray.js';
 import {getChangedVerb} from './getChangedVerb.js';
 import {getChangedNoun} from './getChangedNoun.js';
 import {getFalseValues} from './getFalseValues.js';
+import {getChangedAdjective} from './getChangedAdjective.js';
 
 export {
   actualValue,
@@ -12,4 +13,5 @@ export {
   getChangedVerb,
   getChangedNoun,
   getFalseValues,
+  getChangedAdjective,
 };

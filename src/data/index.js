@@ -35,6 +35,9 @@ import {
   NOUNS_AFFILIATION_PART,
 } from './SecondLesson/index.js';
 
+import {ADJECTIVE_ENDINGS} from './ThirthLesson/index.js';
+import {ADJECTIVES} from './ThirthLesson/adjectives.js';
+
 export {
   NOW_VERB_ENDINGS,
   PAST_VERB_ENDINGS,
@@ -64,4 +67,6 @@ export {
   NOUNS_AFFILIATION_PART,
   RUSSIAN_CASES_PART,
   COUNT_FOR_LESSON_DONE,
+  ADJECTIVE_ENDINGS,
+  ADJECTIVES,
 };
