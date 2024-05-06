@@ -1,33 +1,32 @@
 import React from 'react';
 import {observer} from 'mobx-react-lite';
-import Title from 'antd/es/typography/Title';
 import {secondLessonStore} from '../../../../stores/components/SecondLesson/SecondLessonStore';
 import {ALOT, RUSSIAN_CASES_PART} from '../../../../data/index.js';
-import { Card, Col, Flex, Row } from 'antd';
+import { Descriptions, Flex} from 'antd';
 
 export const Case = observer(() => {
   const trueTaskValue = secondLessonStore.trueTaskValue;
   const alotPart = trueTaskValue?.alotId === ALOT.ON
-  ? 'Во множественном'
-  : 'В единственном';
+  ? 'несколько'
+  : 'один';
   const nounCase = trueTaskValue?.casePart || '';
   const russianNounPart = RUSSIAN_CASES_PART[trueTaskValue?.pronounId] || '';
 
   const arrOfParts = [
   {
     id:1,
-    title: 'Численность',
-    value: alotPart
+    label: 'Численность',
+    children: <span>{alotPart}</span>
   },
   {
     id:2,
-    title: 'Принадлежащий',
-    value: russianNounPart
+    label: 'Принадлежащий',
+    children: <span>{russianNounPart}</span>
   },
   {
     id:3,
-    title: 'В падеже',
-    value: nounCase
+    label: 'Падеж',
+    children: <span>{nounCase}</span>
   },
 ];
 
@@ -35,16 +34,8 @@ export const Case = observer(() => {
 
   return (
     <Flex wrap gap={5}>
-      {arrOfParts?.length > 1 && (
-        arrOfParts.map((c) => {
-          return (
-      <Card size='small' title={c.title} bordered={false} key={c.id} style={{textAlign:'center'}}>
-        {c.value}
-      </Card>
+<Descriptions items={arrOfParts} />
 
-          )
-        })
-      )}
 
   </Flex>
   );

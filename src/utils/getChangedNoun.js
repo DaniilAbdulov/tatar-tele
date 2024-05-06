@@ -1,7 +1,6 @@
 import {
   ALOT,
   CASES,
-  GENERAL,
   NOUNS,
   NOUNS_AFFILIATION_PART,
   NOUNS_ALOT_PART,
@@ -32,29 +31,21 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId) => {
     NOUNS_ENDINGS[caseId][alotId === ALOT.ON ? [SOUND.RING] : noun.sound][
       noun.state
     ];
-
-  // console.log(`general: ${general}`);
-  // console.log(`generalLastLetter: ${generalLastLetter}`);
-  // console.log(`slicedGeneral: ${slicedGeneral}`);
-  // console.log(`alotPart: ${alotPart}`);
-  // console.log(`affiliationPart: ${affiliationPart}`);
-  // console.log(`nounCaseEnding: ${nounCaseEnding}`);
   
   if (alotId === ALOT.ON) {
     const affiliationPart =
     NOUNS_AFFILIATION_PART[VOICE.CONSONANT][noun.state][pronounId];
 
-    const alotPart = endsWithNM(general) ? NOUNS_ALOT_PART[ALOT.OFF][noun.state] : NOUNS_ALOT_PART[ALOT.ON][noun.state];
+    const alotPart = endsWithNM(general) ?
+    NOUNS_ALOT_PART[ALOT.OFF][noun.state] :
+    NOUNS_ALOT_PART[ALOT.ON][noun.state];
 
     const withoutNounCaseEnding = general + alotPart + affiliationPart;
 
     if (endsWithNM(withoutNounCaseEnding) && caseId === CASES.DIRECTIONAL) {
-
       const slicedNounCaseEnding = nounCaseEnding.slice(1);
-
       return withoutNounCaseEnding + slicedNounCaseEnding;
     }
-
     return  withoutNounCaseEnding + nounCaseEnding;
   } 
 

@@ -98,12 +98,12 @@ export const CASES = {
 };
 
 export const RUSSIAN_CASES = {
-  [CASES.NOMINATIVE]: 'Именительном',
-  [CASES.POSSESSIVE]: 'Притяжательном',
-  [CASES.DIRECTIONAL]: 'Направительном',
-  [CASES.ACCUSATIVE]: 'Винительном',
-  [CASES.LOCAL]: 'Местном',
-  [CASES.ORIGINAL]: 'Исходном',
+  [CASES.NOMINATIVE]: 'Именительный',
+  [CASES.POSSESSIVE]: 'Притяжательный',
+  [CASES.DIRECTIONAL]: 'Направительный',
+  [CASES.ACCUSATIVE]: 'Винительный',
+  [CASES.LOCAL]: 'Местный',
+  [CASES.ORIGINAL]: 'Исходный',
 };
 
 export const RUSSIAN_CASES_PART = {

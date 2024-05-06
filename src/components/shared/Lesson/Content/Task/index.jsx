@@ -21,10 +21,14 @@ export const Task = ({task}) => {
   }
   if (task?.lessonId === LESSONS.SECOND) {
     return (
-      <div>
+      <Space>
+        <Flex vertical>
+
         <Noun />
         <Case />
-      </div>
+        </Flex>
+      </Space>
+
 
 
     );
