@@ -8,6 +8,8 @@ export const GENERAL = {
   THEY: 6,
 };
 
+export const COUNT_FOR_LESSON_DONE = 5;
+
 export const PART_SPEACH = {
   NOUN: 1, //Существительное
   ADJECTIVE: 2, //Прилагательное
