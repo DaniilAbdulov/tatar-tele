@@ -58,13 +58,19 @@ describe('Noun test', () => {
     expect(getChangedNoun(4, 5, 1, 5)).toBe('Икмәкләрегездә');
     expect(getChangedNoun(4, 6, 1, 6)).toBe('Икмәкләредән');
   });
-  test('икмәк в ед.ч', () => {
+  test('Икмәк в ед.ч', () => {
     expect(getChangedNoun(4, 1, 2, 1)).toBe('Икмәгем');
     expect(getChangedNoun(4, 2, 2, 2)).toBe('Икмәгеңнең');
     expect(getChangedNoun(4, 3, 2, 3)).toBe('Икмәгекә');
     expect(getChangedNoun(4, 4, 2, 4)).toBe('Икмәгебезне');
     expect(getChangedNoun(4, 5, 2, 5)).toBe('Икмәгегезтә');
     expect(getChangedNoun(4, 6, 2, 6)).toBe('Икмәгетән');
+    expect(getChangedNoun(4, 1, 2)).toBe('Икмәк');
+    expect(getChangedNoun(4, 2, 2)).toBe('Икмәкнең');
+    expect(getChangedNoun(4, 3, 2)).toBe('Икмәккә');
+    expect(getChangedNoun(4, 4, 2)).toBe('Икмәкне');
+    expect(getChangedNoun(4, 5, 2)).toBe('Икмәктә');
+    expect(getChangedNoun(4, 6, 2)).toBe('Икмәктән');
   });
   test('Ел в ед.ч', () => {
     expect(getChangedNoun(5, 3, 2, 1)).toBe('Елымга');
@@ -110,6 +116,12 @@ describe('Noun test', () => {
     expect(getChangedNoun(17, 1, 2, 4)).toBe('Мәктәбебез');
     expect(getChangedNoun(17, 1, 2, 5)).toBe('Мәктәбегез');
     expect(getChangedNoun(17, 1, 2, 6)).toBe('Мәктәбе');
+    expect(getChangedNoun(17, 1, 2)).toBe('Мәктәп');
+    expect(getChangedNoun(17, 2, 2)).toBe('Мәктәпнең');
+    expect(getChangedNoun(17, 3, 2)).toBe('Мәктәпкә');
+    expect(getChangedNoun(17, 4, 2)).toBe('Мәктәпне');
+    expect(getChangedNoun(17, 5, 2)).toBe('Мәктәптә');
+    expect(getChangedNoun(17, 6, 2)).toBe('Мәктәптән');
   });
   test('Китап', () => {
     expect(getChangedNoun(55, 4, 1, 1)).toBe('Китапларымны');
@@ -124,6 +136,12 @@ describe('Noun test', () => {
     expect(getChangedNoun(92, 4, 2, 4)).toBe('Урамыбызны');
     expect(getChangedNoun(92, 5, 2, 5)).toBe('Урамыгызда');
     //expect(getChangedNoun(92, 6, 2, 6)).toBe('Урамынан');
+    expect(getChangedNoun(92, 1, 2)).toBe('Урам');
+    expect(getChangedNoun(92, 2, 2)).toBe('Урамның');
+    expect(getChangedNoun(92, 3, 2)).toBe('Урамга');
+    expect(getChangedNoun(92, 4, 2)).toBe('Урамны');
+    expect(getChangedNoun(92, 5, 2)).toBe('Урамда');
+    expect(getChangedNoun(92, 6, 2)).toBe('Урамнан');
   });
   test('Урам во мн.ч', () => {
     expect(getChangedNoun(92, 1, 1, 1)).toBe('Урамнарым');
@@ -148,6 +166,11 @@ describe('Noun test', () => {
     expect(getChangedNoun(103, 1, 2, 4)).toBe('Булмәбез');
     expect(getChangedNoun(103, 1, 2, 5)).toBe('Булмәгез');
     expect(getChangedNoun(103, 1, 2, 6)).toBe('Булмәсе');
+    expect(getChangedNoun(103, 1, 2)).toBe('Булмә');
+    expect(getChangedNoun(103, 2, 2)).toBe('Булмәнең');
+    expect(getChangedNoun(103, 3, 2)).toBe('Булмәгә');
+    expect(getChangedNoun(103, 4, 2)).toBe('Булмәне');
+    expect(getChangedNoun(103, 5, 2)).toBe('Булмәдә');
     expect(getChangedNoun(103, 6, 2)).toBe('Булмәдән');
   });
   test('Сорау в ед.ч', () => {
@@ -157,5 +180,11 @@ describe('Noun test', () => {
     expect(getChangedNoun(101, 1, 2, 4)).toBe('Соравыбыз');
     expect(getChangedNoun(101, 1, 2, 5)).toBe('Соравыгыз');
     expect(getChangedNoun(101, 1, 2, 6)).toBe('Соравы');
+    expect(getChangedNoun(101, 1, 2)).toBe('Сорау');
+    expect(getChangedNoun(101, 2, 2)).toBe('Сорауның');
+    expect(getChangedNoun(101, 3, 2)).toBe('Сорауга');
+    expect(getChangedNoun(101, 4, 2)).toBe('Сорауны');
+    expect(getChangedNoun(101, 5, 2)).toBe('Сорауда');
+    expect(getChangedNoun(101, 6, 2)).toBe('Сораудан');
   });
 });

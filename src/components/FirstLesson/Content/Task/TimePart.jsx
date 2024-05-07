@@ -6,7 +6,7 @@ import {
   TIMES,
   RUSSIAN_NEGATIVE,
 } from '../../../../data/index.js';
-import Title from 'antd/es/typography/Title';
+import Text from 'antd/es/typography/Text';
 
 export const TimePart = observer(() => {
   const verb = firstLessonStore?.trueTaskValue;
@@ -19,5 +19,5 @@ export const TimePart = observer(() => {
       ? timePart + ' ' + negative
       : negative + ' ' + timePart;
 
-  return <Title level={4}>{str}</Title>;
+  return <Text>{str}</Text>;
 });

@@ -15,7 +15,7 @@ import {
 
 export const getFalseValues = (value, parametr, lessonId) => {
   const arr = [];
-  const COUNT = 4;
+  const COUNT = lessonId === LESSONS.THIRD ? 2 : 4;
 
   switch (parametr) {
     case PART_SPEACH.VERB:

@@ -1,17 +1,17 @@
-import {CONSONANT_LETTERS, NOUNS} from './src/data/index.js';
+import { ADJECTIVES } from "./src/data/index.js";
 
-const nouns = NOUNS;
-const conLet = CONSONANT_LETTERS;
-const conLetSmall = conLet.map(l => l.toLowerCase());
+const adjs = ADJECTIVES
 
-const newArr = nouns.map((n, index) => {
-  const fullValue = n.fullValue;
-  return {
-    id: index + 1,
-    fullValue,
-    russian: n.russian,
-    sound: null,
-    voice: conLetSmall.includes(fullValue[fullValue.length - 1]) ? 1 : 2,
-    state: null,
-  };
-});
+const newArr = adjs.map((a) => {
+  const value = a.value.split(' ');
+
+  const obj = {
+    id: a.id,
+    value: value[0],
+    russian: `${value[3]} ${value[4]} ${value[5]}`,
+    russianSuper: value[3],
+    state:null
+  }
+  return obj
+})
+console.log(newArr);

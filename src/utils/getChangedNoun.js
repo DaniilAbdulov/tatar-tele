@@ -31,6 +31,8 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId = null) => {
     NOUNS_ENDINGS[caseId][alotId === ALOT.ON ? [SOUND.RING] : noun.sound][
       noun.state
     ];
+  const slicedNounCaseEnding = nounCaseEnding.slice(1);
+  const nounCaseEndWithN = 'н' + slicedNounCaseEnding;
 
   if (alotId === ALOT.ON) {
     const affiliationPart =
@@ -43,7 +45,6 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId = null) => {
     const withoutNounCaseEnding = general + alotPart + affiliationPart;
 
     if (endsWithNM(withoutNounCaseEnding) && caseId === CASES.DIRECTIONAL) {
-      const slicedNounCaseEnding = nounCaseEnding.slice(1);
       return withoutNounCaseEnding + slicedNounCaseEnding;
     }
     return withoutNounCaseEnding + nounCaseEnding;
@@ -58,7 +59,7 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId = null) => {
   let answer = general;
   let consonantToVowel = false;
 
-  if (exludeIsNeed) {
+  if (exludeIsNeed && pronounId) {
     switch (generalLastLetter) {
       case 'й':
         answer = slicedGeneral;
@@ -83,6 +84,10 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId = null) => {
         noun.state
       ][pronounId]
     : '';
+
+  if (!pronounId && endsWithNM(answer) && caseId === CASES.ORIGINAL) {
+    return answer + nounCaseEndWithN;
+  }
 
   return answer + affiliationPart + nounCaseEnding;
 };
