@@ -7,8 +7,10 @@ import {Pronoun} from '../../../../FirstLesson/Content/Task/Pronoun';
 import {Case} from '../../../../SecondLesson/Content/Task/Case';
 import {AdjectiveTask} from '../../../../ThithLesson/Content/AdjectiveTask';
 import {SharedDropDown} from './SharedDropDown.jsx';
+import { Pairs } from '../../../../PairWords/Content/Pairs.jsx';
 
 export const Task = ({task}) => {
+  task.lessonId = 5;
   switch (task?.lessonId) {
     case LESSONS.FIRST:
       return (
@@ -31,6 +33,8 @@ export const Task = ({task}) => {
       );
     case LESSONS.THIRD:
       return <AdjectiveTask />;
+      case LESSONS.FIVE:
+        return <Pairs />;
     default:
       return <div>None</div>;
   }

@@ -24,6 +24,7 @@ export const LESSONS = {
   SECOND: 2,
   THIRD: 3,
   FOURTH: 4,
+  FIVE: 5,
 };
 
 export const PRONOUNS = [

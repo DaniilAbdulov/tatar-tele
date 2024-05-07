@@ -1,700 +1,700 @@
 export const ADJECTIVES = [
   {
     id: 1,
-    value: 'Матур',
+    fullValue: 'Матур',
     russian: 'красивый, приятный',
     russianSuper: 'красивее',
     state: 1
   },
   {
     id: 2,
-    value: 'Яшь',
+    fullValue: 'Яшь',
     russian: 'молодой, юный',
     russianSuper: 'моложе',
     state: 2
   },
   {
     id: 3,
-    value: 'Зур',
+    fullValue: 'Зур',
     russian: 'большой, крупный',
     russianSuper: 'больше',
     state: 1
   },
   {
     id: 4,
-    value: 'Күп',
+    fullValue: 'Күп',
     russian: 'многие',
     russianSuper: 'больше(по количеству)​',
     state: 2
   },
   {
     id: 5,
-    value: 'Яңа',
+    fullValue: 'Яңа',
     russian: 'новый',
     russianSuper: 'новее​',
     state: 1
   },
   {
     id: 6,
-    value: 'Төрле',
+    fullValue: 'Төрле',
     russian: 'разный, разнообразный',
     russianSuper: 'разнообразнее',
     state: 2
   },
   {
     id: 7,
-    value: 'Кечкенә',
+    fullValue: 'Кечкенә',
     russian: 'маленький',
     russianSuper: 'меньше',
     state: 2
   },
   {
     id: 8,
-    value: 'Бар',
-    russian: 'весь',
+    fullValue: 'Бар',
+    russian: 'есть, весь',
     russianSuper: 'более полный(по содержанию)',
     state: 1
   },
   {
     id: 9,
-    value: 'Төп',
+    fullValue: 'Төп',
     russian: 'главный, основной',
     russianSuper: 'главнее',
     state: 2
   },
   {
     id: 10,
-    value: 'Җылы',
+    fullValue: 'Җылы',
     russian: 'тёплый',
     russianSuper: 'теплее',
     state: 1
   },
   {
     id: 11,
-    value: 'Салкын',
+    fullValue: 'Салкын',
     russian: 'холодный',
     russianSuper: 'холоднее',
     state: 1
   },
   {
     id: 12,
-    value: 'Кайнар',
+    fullValue: 'Кайнар',
     russian: 'горячий',
     russianSuper: 'горячее',
     state: 1
   },
   {
     id: 13,
-    value: 'Кызык',
+    fullValue: 'Кызык',
     russian: 'интересный, увлекательный',
     russianSuper: 'интереснее',
     state: 1
   },
   {
     id: 14,
-    value: 'Гади',
+    fullValue: 'Гади',
     russian: 'простой',
     russianSuper: 'проще',
     state: 1
   },
   {
     id: 15,
-    value: 'Охшаш',
+    fullValue: 'Охшаш',
     russian: 'похожий',
     russianSuper: 'более похожий',
     state: 2
   },
   {
     id: 16,
-    value: 'Бәхетле',
+    fullValue: 'Бәхетле',
     russian: 'счастливый',
     russianSuper: 'счастливее',
     state: 2
   },
   {
     id: 17,
-    value: 'Көчле',
+    fullValue: 'Көчле',
     russian: 'сильный',
     russianSuper: 'сильнее',
     state: 2
   },
   {
     id: 18,
-    value: 'Көчсез',
+    fullValue: 'Көчсез',
     russian: 'слабый',
     russianSuper: 'слабее',
     state: 2
   },
   {
     id: 19,
-    value: 'Усал',
+    fullValue: 'Усал',
     russian: 'злой, злобный',
     russianSuper: 'злее',
     state: 1
   },
   {
     id: 20,
-    value: 'Игелекле',
+    fullValue: 'Игелекле',
     russian: 'добрый, благодатный',
     russianSuper: 'добрее',
     state: 2
   },
   {
     id: 21,
-    value: 'Шәп',
+    fullValue: 'Шәп',
     russian: 'хороший, отличный',
     russianSuper: 'более хороший',
     state: 2
   },
   {
     id: 22,
-    value: 'Тиз',
+    fullValue: 'Тиз',
     russian: 'быстрый',
     russianSuper: 'быстрее',
     state: 1
   },
   {
     id: 23,
-    value: 'Әкрен',
+    fullValue: 'Әкрен',
     russian: 'медленный, тихий',
     russianSuper: 'медленнее',
     state: 2
   },
   {
     id: 24,
-    value: 'Кирәк',
+    fullValue: 'Кирәк',
     russian: 'нужный, необходимый',
     russianSuper: 'более нужный',
     state: 2
   },
   {
     id: 25,
-    value: 'Юк',
+    fullValue: 'Юк',
     russian: 'не существующий, пустяковый',
     russianSuper: 'более пустяковый',
     state: 1
   },
   {
     id: 26,
-    value: 'Тиеш',
+    fullValue: 'Тиеш',
     russian: 'положенный, должный',
     russianSuper: 'более положенный',
     state: 1
   },
   {
     id: 27,
-    value: 'Милли',
+    fullValue: 'Милли',
     russian: 'национальный',
     russianSuper: 'более национальный',
     state: 1
   },
   {
     id: 28,
-    value: 'Югары',
+    fullValue: 'Югары',
     russian: 'высокий, высший',
     russianSuper: 'выше',
     state: 1
   },
   {
     id: 29,
-    value: 'Мөмкин',
+    fullValue: 'Мөмкин',
     russian: 'возможный',
     russianSuper: 'более возможный',
     state: 2
   },
   {
     id: 30,
-    value: 'Артык',
+    fullValue: 'Артык',
     russian: 'лишний, ненужный',
     russianSuper: 'более лишний',
     state: 1
   },
   {
     id: 31,
-    value: 'Яхшы',
+    fullValue: 'Яхшы',
     russian: 'хороший',
     russianSuper: 'лучше',
     state: 1
   },
   {
     id: 32,
-    value: 'Баш',
+    fullValue: 'Баш',
     russian: 'главный',
     russianSuper: 'главнее',
     state: 1
   },
   {
     id: 33,
-    value: 'Каршы',
+    fullValue: 'Каршы',
     russian: 'противоположный, враждебный',
     russianSuper: 'более противоположный',
     state: 1
   },
   {
     id: 34,
-    value: 'Чын',
+    fullValue: 'Чын',
     russian: 'настоящий',
     russianSuper: 'более настоящий',
     state: 1
   },
   {
     id: 35,
-    value: 'Соң',
+    fullValue: 'Соң',
     russian: 'поздний',
     russianSuper: 'позднее',
     state: 1
   },
   {
     id: 36,
-    value: 'Аерым',
+    fullValue: 'Аерым',
     russian: 'отдельный',
     russianSuper: 'более отдельный',
     state: 1
   },
   {
     id: 37,
-    value: 'Махсус',
+    fullValue: 'Махсус',
     russian: 'специальный, особый',
     russianSuper: 'более специальный',
     state: 1
   },
   {
     id: 38,
-    value: 'Авыр',
+    fullValue: 'Авыр',
     russian: 'тяжелый',
     russianSuper: 'тяжелее',
     state: 1
   },
   {
     id: 39,
-    value: 'Бәйле',
+    fullValue: 'Бәйле',
     russian: 'привязанный, зависимый',
     russianSuper: 'привязанней',
     state: 2
   },
   {
     id: 40,
-    value: 'Мөһим',
+    fullValue: 'Мөһим',
     russian: 'важный, значительный',
     russianSuper: 'важнее',
     state: 2
   },
   {
     id: 41,
-    value: 'Ак',
+    fullValue: 'Ак',
     russian: 'белый',
     russianSuper: 'белее',
     state: 1
   },
   {
     id: 42,
-    value: 'Шактый',
+    fullValue: 'Шактый',
     russian: 'немалый, значительный',
     russianSuper: 'более значительный',
     state: 1
   },
   {
     id: 43,
-    value: 'Билгеле',
+    fullValue: 'Билгеле',
     russian: 'известный, знакомый',
     russianSuper: 'известнее',
     state: 2
   },
   {
     id: 44,
-    value: 'Олы',
+    fullValue: 'Олы',
     russian: 'старший, взрослый',
     russianSuper: 'старше',
     state: 1
   },
   {
     id: 45,
-    value: 'Аз',
+    fullValue: 'Аз',
     russian: 'малый, небольшой',
     russianSuper: 'меньше',
     state: 1
   },
   {
     id: 46,
-    value: 'Башка',
+    fullValue: 'Башка',
     russian: 'другой',
     russianSuper: 'более другой',
     state: 1
   },
   {
     id: 47,
-    value: 'Дөрес',
+    fullValue: 'Дөрес',
     russian: 'правильный',
     russianSuper: 'правильнее',
     state: 2
   },
   {
     id: 48,
-    value: 'Озак',
+    fullValue: 'Озак',
     russian: 'долгий',
     russianSuper: 'дольше',
     state: 1
   },
   {
     id: 49,
-    value: 'Түбән',
+    fullValue: 'Түбән',
     russian: 'низменный',
     russianSuper: 'более низменный',
     state: 2
   },
   {
     id: 50,
-    value: 'Ачык',
+    fullValue: 'Ачык',
     russian: 'открытый, ясный',
     russianSuper: 'более открытый',
     state: 1
   },
   {
     id: 51,
-    value: 'Бөек',
+    fullValue: 'Бөек',
     russian: 'великий',
     russianSuper: 'более великий',
     state: 2
   },
   {
     id: 52,
-    value: 'Өлкән',
+    fullValue: 'Өлкән',
     russian: 'старший, взрослый',
     russianSuper: 'старше',
     state: 2
   },
   {
     id: 53,
-    value: 'Тулы',
+    fullValue: 'Тулы',
     russian: 'полный',
     russianSuper: 'более полный',
     state: 1
   },
   {
     id: 54,
-    value: 'Туры',
+    fullValue: 'Туры',
     russian: 'прямой',
     russianSuper: 'прямее',
     state: 1
   },
   {
     id: 55,
-    value: 'Эчке',
+    fullValue: 'Эчке',
     russian: 'внутренний',
     russianSuper: 'более внутренний',
     state: 2
   },
   {
     id: 56,
-    value: 'Мәдәни',
+    fullValue: 'Мәдәни',
     russian: 'культурный',
     russianSuper: 'культурнее',
     state: 2
   },
   {
     id: 57,
-    value: 'Кара',
+    fullValue: 'Кара',
     russian: 'чёрный',
     russianSuper: 'чернее',
     state: 1
   },
   {
     id: 58,
-    value: 'Шәхси',
+    fullValue: 'Шәхси',
     russian: 'личный',
     russianSuper: 'более личный',
     state: 2
   },
   {
     id: 59,
-    value: 'Нык',
+    fullValue: 'Нык',
     russian: 'крепкий, прочный',
     russianSuper: 'крепче',
     state: 1
   },
   {
     id: 60,
-    value: 'Урта',
+    fullValue: 'Урта',
     russian: 'средний',
     russianSuper: 'более усредненный',
     state: 1
   },
   {
     id: 61,
-    value: 'Кире',
+    fullValue: 'Кире',
     russian: 'обратный, упрямый',
     russianSuper: 'более упрямый',
     state: 2
   },
   {
     id: 62,
-    value: 'Изге',
+    fullValue: 'Изге',
     russian: 'благой',
     russianSuper: 'более благой',
     state: 2
   },
   {
     id: 63,
-    value: 'Ерак',
+    fullValue: 'Ерак',
     russian: 'далёкий, дальний',
     russianSuper: 'более далёкий',
     state: 2
   },
   {
     id: 64,
-    value: 'Иске',
+    fullValue: 'Иске',
     russian: 'старый, устаревший',
     russianSuper: 'старее',
     state: 2
   },
   {
     id: 65,
-    value: 'Киң',
+    fullValue: 'Киң',
     russian: 'широкий',
     russianSuper: 'шире',
     state: 2
   },
   {
     id: 66,
-    value: 'Еш',
+    fullValue: 'Еш',
     russian: 'частый',
     russianSuper: 'чаще',
     state: 1
   },
   {
     id: 67,
-    value: 'Җиңел',
+    fullValue: 'Җиңел',
     russian: 'лёгкий',
     russianSuper: 'легче',
     state: 2
   },
   {
     id: 68,
-    value: 'Җирле',
+    fullValue: 'Җирле',
     russian: 'местный',
     russianSuper: 'более местный',
     state: 2
   },
   {
     id: 69,
-    value: 'Үзәк',
+    fullValue: 'Үзәк',
     russian: 'центральный',
     russianSuper: 'более центральный',
     state: 2
   },
   {
     id: 70,
-    value: 'Тарихи',
+    fullValue: 'Тарихи',
     russian: 'исторический',
     russianSuper: 'более исторический',
     state: 1
   },
   {
     id: 71,
-    value: 'Рәсми',
+    fullValue: 'Рәсми',
     russian: 'официальный',
     russianSuper: 'официальнее',
     state: 2
   },
   {
     id: 72,
-    value: 'Бердәм',
+    fullValue: 'Бердәм',
     russian: 'дружный, единый',
     russianSuper: 'более дружный',
     state: 2
   },
   {
     id: 73,
-    value: 'Әдәби',
+    fullValue: 'Әдәби',
     russian: 'литературный',
     russianSuper: 'литературнее',
     state: 2
   },
   {
     id: 74,
-    value: 'Дини',
+    fullValue: 'Дини',
     russian: 'религиозный',
     russianSuper: 'более религиозный',
     state: 2
   },
   {
     id: 75,
-    value: 'Кызыл',
+    fullValue: 'Кызыл',
     russian: 'красный',
     russianSuper: 'краснее',
     state: 1
   },
   {
     id: 76,
-    value: 'Уңай',
+    fullValue: 'Уңай',
     russian: 'удобный, подходящий, положительный',
     russianSuper: 'удобнее',
     state: 1
   },
   {
     id: 77,
-    value: 'Әлеге',
+    fullValue: 'Әлеге',
     russian: 'настоящий, нынешний',
     russianSuper: 'более настоящий',
     state: 2
   },
   {
     id: 78,
-    value: 'Әзер',
+    fullValue: 'Әзер',
     russian: 'готовый',
     russianSuper: 'более готовый',
     state: 2
   },
   {
     id: 79,
-    value: 'Актив',
+    fullValue: 'Актив',
     russian: 'активный',
     russianSuper: 'активнее',
     state: 1
   },
   {
     id: 80,
-    value: 'Уңышлы',
+    fullValue: 'Уңышлы',
     russian: 'успешный',
     russianSuper: 'успешнее',
     state: 1
   },
   {
     id: 81,
-    value: 'Кыска',
+    fullValue: 'Кыска',
     russian: 'короткий',
     russianSuper: 'короче',
     state: 1
   },
   {
     id: 82,
-    value: 'Ал',
+    fullValue: 'Ал',
     russian: 'передний',
     russianSuper: 'более передний',
     state: 1
   },
   {
     id: 83,
-    value: 'Өстәмә',
+    fullValue: 'Өстәмә',
     russian: 'дополнительный, добавочный',
     russianSuper: 'более дополнительный',
     state: 2
   },
   {
     id: 84,
-    value: 'Бай',
+    fullValue: 'Бай',
     russian: 'богатый',
     russianSuper: 'богаче',
     state: 1
   },
   {
     id: 85,
-    value: 'Уртак',
+    fullValue: 'Уртак',
     russian: 'общий, совместный',
     russianSuper: 'более общий',
     state: 1
   },
   {
     id: 86,
-    value: 'Даими',
+    fullValue: 'Даими',
     russian: 'неизменный',
     russianSuper: 'более неизменный',
     state: 2
   },
   {
     id: 87,
-    value: 'Якты',
+    fullValue: 'Якты',
     russian: 'светлый, яркий',
     russianSuper: 'светлее',
     state: 1
   },
   {
     id: 88,
-    value: 'Киләсе',
+    fullValue: 'Киләсе',
     russian: 'предстоящий, следующий',
     russianSuper: 'более предстоящий',
     state: 2
   },
   {
     id: 89,
-    value: 'Җитди',
+    fullValue: 'Җитди',
     russian: 'серьёзный, важный',
     russianSuper: 'серьёзнее',
     state: 2
   },
   {
     id: 90,
-    value: 'Гомуми',
+    fullValue: 'Гомуми',
     russian: 'общий',
     russianSuper: 'более общий',
     state: 2
   },
   {
     id: 91,
-    value: 'Күңелле',
+    fullValue: 'Күңелле',
     russian: 'весёлый, радостный',
     russianSuper: 'веселее',
     state: 2
   },
   {
     id: 92,
-    value: 'Гүзәл',
+    fullValue: 'Гүзәл',
     russian: 'красивый, прекрасный',
     russianSuper: 'красивее',
     state: 2
   },
   {
     id: 93,
-    value: 'Тирән',
+    fullValue: 'Тирән',
     russian: 'глубокий',
     russianSuper: 'глубже',
     state: 2
   },
   {
     id: 94,
-    value: 'Моңсу',
+    fullValue: 'Моңсу',
     russian: 'грустный, печальный',
     russianSuper: 'более грустный',
     state: 1
   },
   {
     id: 95,
-    value: 'Мәҗбүри',
+    fullValue: 'Мәҗбүри',
     russian: 'обязательный',
     russianSuper: 'обязательнее',
     state: 2
   },
   {
     id: 96,
-    value: 'Тыныч',
+    fullValue: 'Тыныч',
     russian: 'спокойный, тихий',
     russianSuper: 'более спокойный',
     state: 1
   },
   {
     id: 97,
-    value: 'Таныш',
+    fullValue: 'Таныш',
     russian: 'знакомый',
     russianSuper: 'более знакомый',
     state: 1
   },
   {
     id: 98,
-    value: 'Исән',
+    fullValue: 'Исән',
     russian: 'живой, здоровый',
     russianSuper: 'живее',
     state: 2
   },
   {
     id: 99,
-    value: 'Буш',
+    fullValue: 'Буш',
     russian: 'пустой, свободный, напрасный',
     russianSuper: 'более пустой',
     state: 1
   },
   {
     id: 100,
-    value: 'Бөтен',
+    fullValue: 'Бөтен',
     russian: 'целый, весь.',
     russianSuper: 'целее',
     state: 2

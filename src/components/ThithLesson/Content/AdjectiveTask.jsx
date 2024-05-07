@@ -8,6 +8,10 @@ import Text from 'antd/es/typography/Text';
 export const AdjectiveTask = observer(() => {
   const {trueTaskValue} = thirthLessonStore;
 
+  if (!trueTaskValue?.noun || !trueTaskValue?.secondNoun || !trueTaskValue?.adjective) {
+    return <></>
+  }
+
   return (
     <>
       <span>*некоторые предложения могут быть абсолютно бессмысленны</span>

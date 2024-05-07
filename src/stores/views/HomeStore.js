@@ -30,6 +30,11 @@ class HomeStore {
         title: 'Счёт',
         path: '/fourth',
       },
+      {
+        id: 5,
+        title: 'Подбери пару',
+        path:'/pairs'
+      }
     ]);
   };
 
