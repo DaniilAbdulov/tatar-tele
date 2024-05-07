@@ -41,7 +41,7 @@ export const App = () => {
           </Layout>
           <Footer style={{textAlign: 'center'}}>
             Tatar tele ©{new Date().getFullYear()} Created by{' '}
-            <a href="https://www.abdulovdb.com/" target="_blank">
+            <a href="https://www.abdulovdb.com/" rel="noreferrer" target="_blank">
               AbdulovDB
             </a>
           </Footer>

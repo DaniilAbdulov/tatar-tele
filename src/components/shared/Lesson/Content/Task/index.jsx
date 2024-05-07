@@ -5,7 +5,6 @@ import {Verb} from '../../../../FirstLesson/Content/Task/Verb';
 import {Flex, Space} from 'antd';
 import {Pronoun} from '../../../../FirstLesson/Content/Task/Pronoun';
 import {Case} from '../../../../SecondLesson/Content/Task/Case';
-import {Noun} from '../../../../SecondLesson/Content/Task/Noun';
 import {AdjectiveTask} from '../../../../ThithLesson/Content/AdjectiveTask';
 import {SharedDropDown} from './SharedDropDown.jsx';
 

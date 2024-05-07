@@ -1,7 +1,6 @@
 import {
   ADJECTIVES,
   LESSONS,
-  NOUNS,
   PART_SPEACH,
   PRONOUNS,
 } from '../data/index.js';

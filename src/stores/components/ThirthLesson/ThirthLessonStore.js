@@ -3,7 +3,6 @@ import {
   PART_SPEACH,
   LESSONS,
   NOUNS,
-  RUSSIAN_CASES,
   ADJECTIVES,
 } from '../../../data/index.js';
 import {
