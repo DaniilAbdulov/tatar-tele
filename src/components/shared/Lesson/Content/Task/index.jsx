@@ -7,6 +7,7 @@ import {Pronoun} from '../../../../FirstLesson/Content/Task/Pronoun';
 import {Case} from '../../../../SecondLesson/Content/Task/Case';
 import {AdjectiveTask} from '../../../../ThithLesson/Content/AdjectiveTask';
 import {SharedDropDown} from './SharedDropDown.jsx';
+import { Pairs } from '../../../../PairWords/Content/Pairs.jsx';
 
 export const Task = ({task}) => {
   switch (task?.lessonId) {
@@ -23,7 +24,7 @@ export const Task = ({task}) => {
     case LESSONS.SECOND:
       return (
         <Space>
-          <Flex vertical>
+          <Flex vertical>Content
             <SharedDropDown noun={task.noun} />
             <Case />
           </Flex>
@@ -31,6 +32,8 @@ export const Task = ({task}) => {
       );
     case LESSONS.THIRD:
       return <AdjectiveTask />;
+      case LESSONS.FIVE:
+        return <Pairs />;
     default:
       return <div>None</div>;
   }

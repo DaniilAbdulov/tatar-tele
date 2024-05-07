@@ -5,7 +5,7 @@ export const SharedDropDown = ({noun, adjective = {}}) => {
   const items = adjective?.id ? 
   [
     {
-      label: `Перевод: ${adjective.value}`,
+      label: `Перевод: ${adjective.fullValue}`,
       key: '1',
     },
   ]

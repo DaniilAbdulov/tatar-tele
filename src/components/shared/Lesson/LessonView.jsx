@@ -22,7 +22,7 @@ export const LessonView = ({title, store}) => {
     <LinearProgress/>
     <Divider />
     <Card title={title || ''}>
-      <Content store={store} />
+      <Content store={store} lessonId={lessonId}/>
     </Card>
     <Divider />
     <Button>

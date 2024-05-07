@@ -68,8 +68,8 @@ export const getFalseValues = (value, parametr, lessonId) => {
       for (let i = 0; i < COUNT; i++) {
         const {adjectiveId} = getRandomIntegers();
         const [adjective] = actualValue(ADJECTIVES, adjectiveId);
-
-        if (value.value !== adjective.value) {
+        
+        if (value.fullValue !== adjective.fullValue) {
           const item = getChangedAdjective(adjective);
           arr.push(item);
         }
