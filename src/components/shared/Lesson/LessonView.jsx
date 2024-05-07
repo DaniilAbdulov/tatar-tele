@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Content} from './Content';
-import {Button, Card, Divider, Flex, Space} from 'antd';
+import {Button, Card, Divider, Flex} from 'antd';
 import {NavLink} from 'react-router-dom';
 import {Message} from '../Message';
 import { LinearProgress } from '../LinearProgress';
+import { progressStore } from '../../../stores/components/ProgressStore';
 
-export const LessonView = ({title, store}) => (
+export const LessonView = ({title, store}) => {
+  const lessonId = store.lessonId;
+  
+  useEffect(()=>{
+    progressStore.resetStore()
+  },[lessonId]);
+  return (
+
   <Flex
     vertical={true}
     align="center"
@@ -22,4 +30,5 @@ export const LessonView = ({title, store}) => (
     </Button>
     <Message />
   </Flex>
-);
+  )
+};

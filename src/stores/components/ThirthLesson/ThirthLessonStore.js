@@ -17,6 +17,7 @@ import {progressStore} from '../ProgressStore.js';
 const myProgressStore = progressStore;
 
 class ThirthLessonStore {
+  lessonId = LESSONS.THIRD;
   trueTaskValue = {};
   falseTaskAdjectives = [];
   falseTaskNouns = [];
@@ -165,7 +166,6 @@ class ThirthLessonStore {
   };
 
   getTrueTaskValue = () => {
-    const lessonId = LESSONS.THIRD;
     const {nounId, adjectiveId} = getRandomIntegers();
     const [noun] = actualValue(NOUNS, nounId);
     const [adjective] = actualValue(ADJECTIVES, adjectiveId);
@@ -176,7 +176,7 @@ class ThirthLessonStore {
     const secondNounValue = getChangedNoun(secondNounId, 6, 2);
 
     return {
-      lessonId,
+      lessonId: this.lessonId,
       noun,
       nounValue: noun.fullValue,
       valueAdjective,

@@ -16,6 +16,7 @@ import {progressStore} from '../ProgressStore.js';
 const myProgressStore = progressStore;
 
 class SecondLessonStore {
+  lessonId = LESSONS.SECOND;
   trueTaskValue = {};
   falseTaskNouns = [];
   falseTaskPronouns = [];
@@ -125,14 +126,13 @@ class SecondLessonStore {
   };
 
   getTrueTaskValue = () => {
-    const lessonId = LESSONS.SECOND;
     const {nounId, caseId, oneOrTwo: alotId, pronounId} = getRandomIntegers();
     const [noun] = actualValue(NOUNS, nounId);
     const casePart = RUSSIAN_CASES[caseId];
     const value = getChangedNoun(nounId, caseId, alotId, pronounId);
 
     return {
-      lessonId,
+      lessonId: this.lessonId,
       noun,
       value,
       caseId,

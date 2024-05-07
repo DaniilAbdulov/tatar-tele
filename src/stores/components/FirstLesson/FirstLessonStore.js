@@ -11,6 +11,7 @@ import {progressStore} from '../ProgressStore.js';
 const myProgressStore = progressStore;
 
 class FirstLessonStore {
+  lessonId = LESSONS.FIRST;
   trueTaskValue = {};
   falseTaskVerbs = [];
   falseTaskPronouns = [];
@@ -137,7 +138,7 @@ class FirstLessonStore {
   };
 
   getTrueTaskValue = () => {
-    const lessonId = LESSONS.FIRST;
+
     const {
       pronounId,
       timeId,
@@ -150,7 +151,7 @@ class FirstLessonStore {
     const value = getChangedVerb(verbId, pronounId, timeId, negativeId);
 
     return {
-      lessonId,
+      lessonId: this.lessonId,
       pronoun,
       verb,
       value,
