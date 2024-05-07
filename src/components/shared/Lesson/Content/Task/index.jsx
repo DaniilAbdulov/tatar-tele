@@ -10,7 +10,6 @@ import {SharedDropDown} from './SharedDropDown.jsx';
 import { Pairs } from '../../../../PairWords/Content/Pairs.jsx';
 
 export const Task = ({task}) => {
-  task.lessonId = 5;
   switch (task?.lessonId) {
     case LESSONS.FIRST:
       return (
@@ -25,7 +24,7 @@ export const Task = ({task}) => {
     case LESSONS.SECOND:
       return (
         <Space>
-          <Flex vertical>
+          <Flex vertical>Content
             <SharedDropDown noun={task.noun} />
             <Case />
           </Flex>
