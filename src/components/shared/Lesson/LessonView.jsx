@@ -5,10 +5,11 @@ import {NavLink} from 'react-router-dom';
 import {Message} from '../Message';
 import { LinearProgress } from '../LinearProgress';
 import { progressStore } from '../../../stores/components/ProgressStore';
+import { LESSONS } from '../../../data';
 
 export const LessonView = ({title, store}) => {
   const lessonId = store.lessonId;
-  
+
   useEffect(()=>{
     progressStore.resetStore()
   },[lessonId]);
@@ -19,7 +20,7 @@ export const LessonView = ({title, store}) => {
     align="center"
     style={{maxWidth: '600px', margin: '10px'}}
   >
-    <LinearProgress/>
+    {lessonId !== LESSONS.FIVE && <LinearProgress/>}
     <Divider />
     <Card title={title || ''}>
       <Content store={store} lessonId={lessonId}/>

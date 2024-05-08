@@ -18,5 +18,11 @@ export const SharedDropDown = ({noun, adjective = {}}) => {
   const menuProps = {
     items,
   };
-  return <Dropdown.Button menu={menuProps}>{adjective?.id ? adjective.russianSuper : noun.russian}</Dropdown.Button>;
+  return (
+        <Dropdown.Button style={{justifyContent:'center'}} menu={menuProps}>
+          {adjective?.id ? adjective.russianSuper : noun.russian}
+        </Dropdown.Button>
+
+  )
+
 };

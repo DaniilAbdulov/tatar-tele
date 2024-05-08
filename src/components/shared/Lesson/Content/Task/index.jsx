@@ -23,12 +23,14 @@ export const Task = ({task}) => {
       );
     case LESSONS.SECOND:
       return (
-        <Space>
-          <Flex vertical>Content
+        <Flex>
+          <Flex vertical>
             <SharedDropDown noun={task.noun} />
+
             <Case />
+
           </Flex>
-        </Space>
+        </Flex>
       );
     case LESSONS.THIRD:
       return <AdjectiveTask />;
