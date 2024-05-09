@@ -2,7 +2,7 @@ import React from 'react';
 import {observer} from 'mobx-react-lite';
 import {thirthLessonStore} from '../../../stores/components/ThirthLesson/ThirthLessonStore';
 import {SharedDropDown} from '../../shared/Lesson/Content/Task/SharedDropDown';
-import {Flex, Space} from 'antd';
+import {Flex} from 'antd';
 import Text from 'antd/es/typography/Text';
 
 export const AdjectiveTask = observer(() => {
