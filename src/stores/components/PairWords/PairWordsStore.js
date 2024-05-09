@@ -1,18 +1,10 @@
 import {autorun, makeAutoObservable} from 'mobx';
-import {
-  LESSONS,
-  NOUNS,
-  ADJECTIVES,
-  VERBS,
-} from '../../../data/index.js';
-import {
-  actualValue,
-  getRandomIntegers,
-} from '../../../utils/index.js';
+import {LESSONS, NOUNS, ADJECTIVES, VERBS} from '../../../data/index.js';
+import {actualValue, getRandomIntegers} from '../../../utils/index.js';
 class PairWordsStore {
   lessonId = LESSONS.FIVE;
   trueTaskValue = {
-    lessonId: this.lessonId
+    lessonId: this.lessonId,
   };
   variants = [];
   userAnswer = [];
@@ -31,7 +23,6 @@ class PairWordsStore {
     this.variants = arr;
   };
 
-
   getVariants = () => {
     const {nounId, verbId, adjectiveId} = getRandomIntegers();
     let anotherNounId = nounId;
@@ -39,7 +30,7 @@ class PairWordsStore {
     while (anotherNounId === nounId) {
       const {nounId} = getRandomIntegers();
       anotherNounId = nounId;
-    };
+    }
 
     const [noun] = actualValue(NOUNS, nounId);
     const [anotherNoun] = actualValue(NOUNS, anotherNounId);
@@ -49,9 +40,9 @@ class PairWordsStore {
     this.setVariants([noun, anotherNoun, verb, adjective]);
   };
 
-  excludeAnswer = (id) => {
-    this.variants = this.variants.filter((v) => v.id !== id);
-  }
+  excludeAnswer = id => {
+    this.variants = this.variants.filter(v => v.id !== id);
+  };
 
   checkAnswer = () => {
     if (this.userAnswer.length < 2) {
@@ -61,7 +52,7 @@ class PairWordsStore {
 
     if (one === two) {
       this.excludeAnswer(one);
-    } 
+    }
     this.userAnswer = [];
   };
 
@@ -70,9 +61,8 @@ class PairWordsStore {
   };
 
   getTask = () => {
-    this.getVariants()
+    this.getVariants();
   };
-
 }
 
 export const pairWordsStore = new PairWordsStore();

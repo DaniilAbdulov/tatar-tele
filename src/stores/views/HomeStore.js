@@ -33,8 +33,8 @@ class HomeStore {
       {
         id: 5,
         title: 'Подбери пару',
-        path:'/pairs'
-      }
+        path: '/pairs',
+      },
     ]);
   };
 

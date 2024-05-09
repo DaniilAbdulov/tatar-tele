@@ -1,10 +1,5 @@
 import {autorun, makeAutoObservable} from 'mobx';
-import {
-  PART_SPEACH,
-  LESSONS,
-  NOUNS,
-  ADJECTIVES,
-} from '../../../data/index.js';
+import {PART_SPEACH, LESSONS, NOUNS, ADJECTIVES} from '../../../data/index.js';
 import {
   actualValue,
   getFalseValues,

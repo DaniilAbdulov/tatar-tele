@@ -1,9 +1,4 @@
-import {
-  ADJECTIVES,
-  LESSONS,
-  PART_SPEACH,
-  PRONOUNS,
-} from '../data/index.js';
+import {ADJECTIVES, LESSONS, PART_SPEACH, PRONOUNS} from '../data/index.js';
 import {
   actualValue,
   getChangedAdjective,
@@ -68,7 +63,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
       for (let i = 0; i < COUNT; i++) {
         const {adjectiveId} = getRandomIntegers();
         const [adjective] = actualValue(ADJECTIVES, adjectiveId);
-        
+
         if (value.fullValue !== adjective.fullValue) {
           const item = getChangedAdjective(adjective);
           arr.push(item);

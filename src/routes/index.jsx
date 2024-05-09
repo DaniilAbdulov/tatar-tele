@@ -4,7 +4,7 @@ import {Home, NoFound} from '../views/index';
 import {FirstLessonWrapper} from '../components/FirstLesson/index';
 import {SecondLessonWrapper} from '../components/SecondLesson';
 import {ThirthLessonWrapper} from '../components/ThithLesson';
-import { PairWordsWrapper } from '../components/PairWords';
+import {PairWordsWrapper} from '../components/PairWords';
 
 export const Router = () => {
   //const isAuth = true;
