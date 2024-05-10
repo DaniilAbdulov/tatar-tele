@@ -639,4 +639,12 @@ export const VERBS = [
     voice: 2,
     state: 2,
   },
+  {
+    id: 81,
+    fullValue: 'онытырга',
+    imperative: 'оныт',
+    russian: 'забывать',
+    voice: 1,
+    state: 1,
+  }
 ];
