@@ -1,3 +1,12 @@
+// {
+//   id: 104, number
+//   fullValue: 'Алма', татарское сущ
+//   russian: 'яблоко', перевод
+//   sound: 1, звонкий глухой
+//   voice: 2, согласныйй гласный
+//   state: 1, твердый мягкий
+// },
+
 export const NOUNS = [
   {
     id: 1,
@@ -822,5 +831,45 @@ export const NOUNS = [
     sound: 1,
     voice: 2,
     state: 2,
+  },
+  {
+    id: 104,
+    fullValue: 'Алма',
+    russian: 'яблоко',
+    sound: 1,
+    voice: 2,
+    state: 1,
+  },
+  {
+    id: 105,
+    fullValue: 'Агач',
+    russian: 'дерево',
+    sound: 2,
+    voice: 1,
+    state: 1,
+  },
+  {
+    id: 106,
+    fullValue: 'Күлмәк',
+    russian: 'платье',
+    sound: 2,
+    voice: 1,
+    state: 2,
+  },
+  {
+    id: 107,
+    fullValue: 'Сәгать',
+    russian: 'час',
+    sound: 2,
+    voice: 1,
+    state: 2,
+  },
+  {
+    id: 108,
+    fullValue: 'Елмаю',
+    russian: 'улыбка',
+    sound: 1,
+    voice: 2,
+    state: 1,
   },
 ];

@@ -81,6 +81,7 @@ export const NOUNS_AFFILIATION_PART = {
       [GENERAL.WE]: 'ыбыз',
       [GENERAL.YOUBIG]: 'ыгыз',
       [GENERAL.THEY]: 'ы',
+      null: '',
     },
     [STATE.SOFT]: {
       [GENERAL.I]: 'ем',
@@ -89,6 +90,7 @@ export const NOUNS_AFFILIATION_PART = {
       [GENERAL.WE]: 'ебез',
       [GENERAL.YOUBIG]: 'егез',
       [GENERAL.THEY]: 'е',
+      null: '',
     },
   },
   [VOICE.VOWEL]: {
@@ -99,6 +101,7 @@ export const NOUNS_AFFILIATION_PART = {
       [GENERAL.WE]: 'быз',
       [GENERAL.YOUBIG]: 'гыз',
       [GENERAL.THEY]: 'сы',
+      null: '',
     },
     [STATE.SOFT]: {
       [GENERAL.I]: 'м',
@@ -107,6 +110,7 @@ export const NOUNS_AFFILIATION_PART = {
       [GENERAL.WE]: 'без',
       [GENERAL.YOUBIG]: 'гез',
       [GENERAL.THEY]: 'се',
+      null: '',
     },
   },
 };
