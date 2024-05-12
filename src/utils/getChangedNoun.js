@@ -7,7 +7,6 @@ import {
   NOUNS_AFFILIATION_PART,
   NOUNS_ALOT_PART,
   NOUNS_ENDINGS,
-  PRONOUNS,
   SOUND,
   STATE,
   VOICE,
@@ -19,19 +18,18 @@ const expectedLetters = ['й', 'к', 'п', 'у', 'и', 'ю', 'ь'];
 const endsWithNM = str =>
   str.endsWith('м') || str.endsWith('н') || str.endsWith('ң');
 
-const nounWithAlot = (noun, caseId, general, pronounId) => {
+const sliceOne = str => str.slice(1);
+
+const nounWithAlot = (noun, caseId, general, specialAffiliationPart) => {
   const nounCaseEnding = NOUNS_ENDINGS[caseId][SOUND.RING][noun.state];
   const alotPart = endsWithNM(general)
     ? NOUNS_ALOT_PART[ALOT.OFF][noun.state]
     : NOUNS_ALOT_PART[ALOT.ON][noun.state];
 
-  const affiliationPart =
-    NOUNS_AFFILIATION_PART[VOICE.CONSONANT][noun.state][pronounId];
-
-  const withoutNounCaseEnding = general + alotPart + affiliationPart;
+  const withoutNounCaseEnding = general + alotPart + specialAffiliationPart;
 
   if (endsWithNM(withoutNounCaseEnding) && caseId === CASES.DIRECTIONAL) {
-    return withoutNounCaseEnding + nounCaseEnding.slice(1);
+    return withoutNounCaseEnding + sliceOne(nounCaseEnding);
   }
 
   return withoutNounCaseEnding + nounCaseEnding;
@@ -43,56 +41,62 @@ const nounWithExpects = (
   caseId,
   pronounId,
   generalLastLetter,
+  affiliationPart,
+  nounCaseEnding,
+  specialAffiliationPart,
 ) => {
-  const nounCaseEnding = NOUNS_ENDINGS[caseId][noun.sound][noun.state];
   const slicedGeneral = general.slice(0, general.length - 1);
-
-  const affiliationPart =
-    NOUNS_AFFILIATION_PART[noun.voice][noun.state][pronounId];
-
-  const specialAffiliationPartForU =
-    NOUNS_AFFILIATION_PART[VOICE.CONSONANT][noun.state][pronounId];
 
   switch (generalLastLetter) {
     case `ь`:
       return slicedGeneral + affiliationPart + nounCaseEnding;
     case `й`:
-      let affiliationPartForStrongI = '';
+      const affiliation =
+        pronounId < 4
+          ? NOUNS_AFFILIATION_PART[noun.voice][STATE.SOFT][pronounId]
+          : sliceOne(affiliationPart);
+
+      let end = nounCaseEnding;
+
       if (pronounId < 4) {
-        affiliationPartForStrongI =
-          NOUNS_AFFILIATION_PART[noun.voice][STATE.SOFT][pronounId];
-        return slicedGeneral + affiliationPartForStrongI + nounCaseEnding;
+        if (endsWithNM(affiliation) && caseId === CASES.DIRECTIONAL) {
+          end = sliceOne(end);
+        }
+        return slicedGeneral + affiliation + end;
       }
-      return slicedGeneral + 'е' + affiliationPartForStrongI + nounCaseEnding;
+
+      if (endsWithNM(affiliation) && caseId === CASES.DIRECTIONAL) {
+        end = sliceOne(end);
+      }
+
+      return slicedGeneral + 'е' + affiliation + end;
     case `к`:
       return slicedGeneral + 'г' + affiliationPart + nounCaseEnding;
     case `п`:
       return slicedGeneral + 'б' + affiliationPart + nounCaseEnding;
     case `и`:
       const isHeShe = pronounId === GENERAL.HS;
-      const specialAffiliationPart = isHeShe
-        ? NOUNS_AFFILIATION_PART[noun.voice][noun.state][pronounId]
-        : specialAffiliationPartForU;
+      const specialAffiliationPartForI = isHeShe
+        ? affiliationPart
+        : specialAffiliationPart;
 
-      return general + specialAffiliationPart + nounCaseEnding;
+      return general + specialAffiliationPartForI + nounCaseEnding;
     case `у`:
       const secondLastLetter = general.at(-2).toUpperCase();
 
       if (!CONSONANT_LETTERS.includes(secondLastLetter)) {
-        return (
-          slicedGeneral + 'в' + specialAffiliationPartForU + nounCaseEnding
-        );
+        return slicedGeneral + 'в' + specialAffiliationPart + nounCaseEnding;
       }
-      return general + specialAffiliationPartForU + nounCaseEnding;
+      return general + specialAffiliationPart + nounCaseEnding;
     case `ю`:
-      return general + specialAffiliationPartForU + nounCaseEnding;
+      return general + specialAffiliationPart + nounCaseEnding;
     default:
       return general;
   }
 };
 
 const nounEndsWithN = (general, nounCaseEnding) => {
-  return general + 'н' + nounCaseEnding.slice(1);
+  return general + 'н' + sliceOne(nounCaseEnding);
 };
 
 export const getChangedNoun = (nounId, caseId, alotId, pronounId = null) => {
@@ -109,19 +113,30 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId = null) => {
   const general = noun.fullValue;
   const nounCaseEnding = NOUNS_ENDINGS[caseId][noun.sound][noun.state];
 
+  const specialAffiliationPart =
+    NOUNS_AFFILIATION_PART[VOICE.CONSONANT][noun.state][pronounId];
+
   if (alotId === ALOT.ON || (caseId === CASES.NOMINATIVE && pronounId === 6)) {
-    return nounWithAlot(noun, caseId, general, pronounId);
+    return nounWithAlot(noun, caseId, general, specialAffiliationPart);
   }
 
   const generalLastLetter = general.at(-1);
-  const generalLastLetterIncludesInExpectedLetters =
-    expectedLetters.includes(generalLastLetter);
+  const generalExpectedLastLetter = expectedLetters.includes(generalLastLetter);
 
   const affiliationPart =
     NOUNS_AFFILIATION_PART[noun.voice][noun.state][pronounId];
 
-  if (generalLastLetterIncludesInExpectedLetters && pronounId) {
-    return nounWithExpects(noun, general, caseId, pronounId, generalLastLetter);
+  if (generalExpectedLastLetter && pronounId) {
+    return nounWithExpects(
+      noun,
+      general,
+      caseId,
+      pronounId,
+      generalLastLetter,
+      affiliationPart,
+      nounCaseEnding,
+      specialAffiliationPart,
+    );
   }
 
   if (endsWithNM(general) && !pronounId && caseId === CASES.ORIGINAL) {
@@ -129,7 +144,7 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId = null) => {
   }
 
   if (endsWithNM(affiliationPart) && caseId === CASES.DIRECTIONAL) {
-    return general + affiliationPart + nounCaseEnding.slice(1);
+    return general + affiliationPart + sliceOne(nounCaseEnding);
   }
 
   return general + affiliationPart + nounCaseEnding;

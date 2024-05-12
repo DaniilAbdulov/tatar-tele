@@ -141,16 +141,16 @@ describe('Noun test', () => {
     expect(getChangedNoun(56, 1, 2, 4)).toBe('Аебыз');
     expect(getChangedNoun(56, 1, 2, 5)).toBe('Аегыз');
     expect(getChangedNoun(56, 1, 2, 6)).toBe('Айлары');
-    //expect(getChangedNoun(56, 3, 2, 1)).toBe('Аема');
+    expect(getChangedNoun(56, 3, 2, 1)).toBe('Аема');
   });
-  // test('өй в ед.ч', () => {
-  //   expect(getChangedNoun(2, 1, 2, 1)).toBe('Өем');
-  //   expect(getChangedNoun(2, 1, 2, 2)).toBe('Өең');
-  //   expect(getChangedNoun(2, 1, 2, 3)).toBe('Өе');
-  //   expect(getChangedNoun(2, 1, 2, 4)).toBe('Өебез');
-  //   expect(getChangedNoun(2, 1, 2, 5)).toBe('Өегез');
-  //   expect(getChangedNoun(2, 1, 2, 6)).toBe('Өйләре');
-  // });
+  test('өй в ед.ч', () => {
+    expect(getChangedNoun(2, 1, 2, 1)).toBe('Өем');
+    expect(getChangedNoun(2, 1, 2, 2)).toBe('Өең');
+    expect(getChangedNoun(2, 1, 2, 3)).toBe('Өе');
+    expect(getChangedNoun(2, 1, 2, 4)).toBe('Өебез');
+    expect(getChangedNoun(2, 1, 2, 5)).toBe('Өегез');
+    expect(getChangedNoun(2, 1, 2, 6)).toBe('Өйләре');
+  });
   test('Күз', () => {
     expect(getChangedNoun(35, 3, 1, 2)).toBe('Күзләреңә');
   });
