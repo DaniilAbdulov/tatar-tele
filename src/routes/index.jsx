@@ -10,9 +10,9 @@ export const Router = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/lesson/first" element={<FirstLessonWrapper />} />
-        <Route path="/lesson/second" element={<SecondLessonWrapper />} />
-        <Route path="/lesson/thirth" element={<ThirthLessonWrapper />} />
+        <Route path="/first" element={<FirstLessonWrapper />} />
+        <Route path="/second" element={<SecondLessonWrapper />} />
+        <Route path="/thirth" element={<ThirthLessonWrapper />} />
         <Route path="/pairs" element={<PairWordsWrapper />} />
         <Route path="*" element={<NoFound />} />
         {/* {isAuth && <Route path="/home" element={<Home />} />} */}

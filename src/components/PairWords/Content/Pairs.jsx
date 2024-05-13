@@ -4,18 +4,20 @@ import {pairWordsStore} from '../../../stores/components/PairWords/PairWordsStor
 import {Button, Divider, Flex} from 'antd';
 
 export const Pairs = observer(() => {
-  const {variants} = pairWordsStore;
+  const {leftColumnArray, rightColumnArray} = pairWordsStore?.variants;
+  const answer = pairWordsStore?.userAnswer;
+  const ansIds = answer.map(a => a.id);
 
-  const sendAnswer = id => {
-    pairWordsStore.setUserAnswer(id);
+  const sendAnswer = value => {
+    pairWordsStore.setUserAnswer(value);
     pairWordsStore.checkAnswer();
   };
 
   useEffect(() => {
-    if (!variants.length) {
+    if (!leftColumnArray.length || !rightColumnArray.length) {
       pairWordsStore.getLessonData();
     }
-  }, [variants]);
+  }, [leftColumnArray, rightColumnArray]);
 
   const upperedValue = value => {
     return value.slice(0, 1).toUpperCase() + value.slice(1);
@@ -24,19 +26,27 @@ export const Pairs = observer(() => {
   return (
     <Flex>
       <Flex vertical gap={10}>
-        {variants.map(v => (
-          <Button key={v.id} onClick={() => sendAnswer(v.id)}>
+        {leftColumnArray.map(v => (
+          <Button
+            key={v.id}
+            disabled={ansIds.includes(v.id)}
+            onClick={() => sendAnswer(v)}
+          >
             {upperedValue(v.fullValue)}
           </Button>
         ))}
       </Flex>
       <Divider type="vertical" />
       <Flex vertical gap={10}>
-        {variants
+        {rightColumnArray
           .slice()
           .sort((a, b) => b.id - a.id)
           .map(v => (
-            <Button key={v.id} onClick={() => sendAnswer(v.id)}>
+            <Button
+              key={v.id}
+              disabled={ansIds.includes(v.id)}
+              onClick={() => sendAnswer(v)}
+            >
               {upperedValue(v.russian)}
             </Button>
           ))}

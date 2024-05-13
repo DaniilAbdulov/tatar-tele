@@ -1,4 +1,4 @@
-import {makeAutoObservable} from 'mobx';
+import {makeAutoObservable, runInAction} from 'mobx';
 import {COUNT_FOR_LESSON_DONE} from '../../data/index.js';
 
 class ProgressStore {
@@ -12,7 +12,9 @@ class ProgressStore {
   }
 
   setResult = value => {
-    this.result = value;
+    runInAction(() => {
+      this.result = value;
+    });
   };
 
   resetStore = () => {
@@ -27,25 +29,28 @@ class ProgressStore {
       this.lessonIsDone = true;
     }
   };
-  
-  getPercent = (count) => {
+
+  setPercent = count => {
     const percentFloat = count / COUNT_FOR_LESSON_DONE;
     const percent = Math.round(percentFloat * 100);
+    runInAction(() => {
+      this.percent = percent;
+    });
   };
 
   ingreeCountOfTrueTask = () => {
     this.countOfTrueAnswers += 1;
-    this.percent = this.getPercent(this.countOfTrueAnswers);
+    this.setPercent(this.countOfTrueAnswers);
     this.checkDoneLesson();
   };
-  
+
   degreeCountOfTrueTask = () => {
     if (this.countOfTrueAnswers > 0) {
       this.countOfTrueAnswers -= 1;
-      this.percent = this.getPercent(this.countOfTrueAnswers);
-     }
+      this.setPercent(this.countOfTrueAnswers);
+    }
   };
-  
+
   handleSuccess = () => {
     //this.setResult('success');
     this.ingreeCountOfTrueTask();

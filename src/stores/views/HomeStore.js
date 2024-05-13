@@ -13,22 +13,22 @@ class HomeStore {
       {
         id: 1,
         title: 'Образование глаголов',
-        path: '/lesson/first',
+        path: '/first',
       },
       {
         id: 2,
         title: 'Образование существительных',
-        path: '/lesson/second',
+        path: '/second',
       },
       {
         id: 3,
         title: 'Образование прилагательных',
-        path: '/lesson/thirth',
+        path: '/thirth',
       },
       {
         id: 4,
         title: 'Счёт',
-        path: '/lesson/fourth',
+        path: '/fourth',
       },
       {
         id: 5,

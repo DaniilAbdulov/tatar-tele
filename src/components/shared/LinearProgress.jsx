@@ -11,7 +11,7 @@ export const LinearProgress = observer(() => {
   const {pathname} = useLocation();
 
   useEffect(() => {
-    if (pathname.includes('lesson')) {
+    if (pathname !== '/') {
       setShowProgress(false);
       return;
     }

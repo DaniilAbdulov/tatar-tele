@@ -3,7 +3,7 @@ import {Router} from './routes/index';
 import {ConfigProvider, Layout} from 'antd';
 import {Footer, Header} from 'antd/es/layout/layout';
 import {LessonEnd} from './components/shared/LessonEnd';
-import {LinearProgress} from './components/shared/LinearProgress'
+import {LinearProgress} from './components/shared/LinearProgress';
 
 export const App = () => {
   return (
@@ -27,10 +27,10 @@ export const App = () => {
               alignItems: 'center',
               justifyContent: 'center',
               height: '70px',
-              backgroundColor:'white'
+              backgroundColor: 'white',
             }}
           >
-          <LinearProgress/>
+            <LinearProgress />
           </Header>
           <Layout
             style={{
@@ -45,7 +45,11 @@ export const App = () => {
           </Layout>
           <Footer style={{textAlign: 'center'}}>
             Tatar tele ©{new Date().getFullYear()} Created by{' '}
-            <a href="https://www.abdulovdb.com/" rel="noreferrer" target="_blank">
+            <a
+              href="https://www.abdulovdb.com/"
+              rel="noreferrer"
+              target="_blank"
+            >
               AbdulovDB
             </a>
           </Footer>
