@@ -17,12 +17,16 @@ export const Pairs = observer(() => {
     }
   }, [variants]);
 
+  const upperedValue = value => {
+    return value.slice(0, 1).toUpperCase() + value.slice(1);
+  };
+
   return (
     <Flex>
       <Flex vertical gap={10}>
         {variants.map(v => (
           <Button key={v.id} onClick={() => sendAnswer(v.id)}>
-            {v.fullValue}
+            {upperedValue(v.fullValue)}
           </Button>
         ))}
       </Flex>
@@ -33,7 +37,7 @@ export const Pairs = observer(() => {
           .sort((a, b) => b.id - a.id)
           .map(v => (
             <Button key={v.id} onClick={() => sendAnswer(v.id)}>
-              {v.russian}
+              {upperedValue(v.russian)}
             </Button>
           ))}
       </Flex>
