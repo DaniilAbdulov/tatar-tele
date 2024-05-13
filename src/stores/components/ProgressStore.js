@@ -28,7 +28,7 @@ class ProgressStore {
     }
   };
   
-  getPercent = () => {
+  getPercent = (count) => {
     const percentFloat = count / COUNT_FOR_LESSON_DONE;
     const percent = Math.round(percentFloat * 100);
   };
