@@ -37,6 +37,7 @@ class ThirthLessonStore {
   getLessonData = () => {
     this.getTask();
     this.getVariants();
+    myProgressStore.setLessonId(this.lessonId)
   };
 
   setTrueTaskValue = obj => {
@@ -111,11 +112,9 @@ class ThirthLessonStore {
 
     if (userAnswer === trueAnswer) {
       myProgressStore.handleSuccess();
-      setTimeout(() => {
         this.resetTask();
         this.getAnotherTask();
         myProgressStore.setResult('');
-      }, 2000);
     } else {
       myProgressStore.handleError();
       setTimeout(() => {

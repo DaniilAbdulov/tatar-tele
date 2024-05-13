@@ -6,6 +6,7 @@ class ProgressStore {
   lessonIsDone = false;
   countOfTrueAnswers = 0;
   percent = 0;
+  lessonId = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -15,18 +16,19 @@ class ProgressStore {
     this.result = value;
   };
 
+  setLessonId = id => this.lessonId = id;
+
   resetStore = () => {
     this.result = '';
     this.lessonIsDone = false;
     this.countOfTrueAnswers = 0;
     this.percent = 0;
+    this.lessonId = null;
   };
 
   checkDoneLesson = () => {
     if (COUNT_FOR_LESSON_DONE === this.countOfTrueAnswers) {
-      setTimeout(() => {
         this.lessonIsDone = true;
-      }, 1500);
     }
   };
 

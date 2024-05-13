@@ -3,6 +3,7 @@ import {Router} from './routes/index';
 import {ConfigProvider, Layout} from 'antd';
 import {Footer, Header} from 'antd/es/layout/layout';
 import {LessonEnd} from './components/shared/LessonEnd';
+import {LinearProgress} from './components/shared/LinearProgress'
 
 export const App = () => {
   return (
@@ -24,10 +25,13 @@ export const App = () => {
               width: '100%',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between',
+              justifyContent: 'center',
               height: '70px',
+              backgroundColor:'white'
             }}
-          ></Header>
+          >
+          <LinearProgress/>
+          </Header>
           <Layout
             style={{
               justifyContent: 'center',
