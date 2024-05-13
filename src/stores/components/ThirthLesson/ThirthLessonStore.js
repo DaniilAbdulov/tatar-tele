@@ -1,4 +1,4 @@
-import {autorun, makeAutoObservable} from 'mobx';
+import {autorun, makeAutoObservable, runInAction} from 'mobx';
 import {PART_SPEACH, LESSONS, NOUNS, ADJECTIVES} from '../../../data/index.js';
 import {
   actualValue,
@@ -37,27 +37,36 @@ class ThirthLessonStore {
   getLessonData = () => {
     this.getTask();
     this.getVariants();
-    myProgressStore.setLessonId(this.lessonId)
   };
 
   setTrueTaskValue = obj => {
-    this.trueTaskValue = obj;
+    runInAction(() => {
+      this.trueTaskValue = obj;
+    });
   };
 
   setFalseTaskAdjectives = arr => {
-    this.falseTaskAdjectives = arr;
+    runInAction(() => {
+      this.falseTaskAdjectives = arr;
+    });
   };
 
   setFalseTaskNouns = arr => {
-    this.falseTaskNouns = arr;
+    runInAction(() => {
+      this.falseTaskNouns = arr;
+    });
   };
 
   setFalseTaskSecondNouns = arr => {
-    this.falseTaskSecondNouns = arr;
+    runInAction(() => {
+      this.falseTaskSecondNouns = arr;
+    });
   };
 
   setVariants = arr => {
-    this.variants = arr;
+    runInAction(() => {
+      this.variants = arr;
+    });
   };
 
   getAnotherTask = () => {
@@ -112,9 +121,9 @@ class ThirthLessonStore {
 
     if (userAnswer === trueAnswer) {
       myProgressStore.handleSuccess();
-        this.resetTask();
-        this.getAnotherTask();
-        myProgressStore.setResult('');
+      this.resetTask();
+      this.getAnotherTask();
+      myProgressStore.setResult('');
     } else {
       myProgressStore.handleError();
       setTimeout(() => {

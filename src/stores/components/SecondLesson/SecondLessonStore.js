@@ -1,4 +1,4 @@
-import {autorun, makeAutoObservable} from 'mobx';
+import {autorun, makeAutoObservable, runInAction} from 'mobx';
 import {
   PART_SPEACH,
   LESSONS,
@@ -40,23 +40,30 @@ class SecondLessonStore {
   getLessonData = () => {
     this.getTask();
     this.getVariants();
-    myProgressStore.setLessonId(this.lessonId)
   };
 
   setTrueTaskValue = obj => {
-    this.trueTaskValue = obj;
+    runInAction(() => {
+      this.trueTaskValue = obj;
+    });
   };
 
   setFalseTaskNouns = arr => {
-    this.falseTaskNouns = arr;
+    runInAction(() => {
+      this.falseTaskNouns = arr;
+    });
   };
 
   setFalseTaskPronouns = arr => {
-    this.falseTaskPronouns = arr;
+    runInAction(() => {
+      this.falseTaskPronouns = arr;
+    });
   };
 
   setVariants = arr => {
-    this.variants = arr;
+    runInAction(() => {
+      this.variants = arr;
+    });
   };
 
   getAnotherTask = () => {
@@ -92,9 +99,9 @@ class SecondLessonStore {
 
     if (userAnswer === trueAnswer) {
       myProgressStore.handleSuccess();
-        this.resetTask();
-        this.getAnotherTask();
-        myProgressStore.setResult('');
+      this.resetTask();
+      this.getAnotherTask();
+      myProgressStore.setResult('');
     } else {
       myProgressStore.handleError();
       setTimeout(() => {

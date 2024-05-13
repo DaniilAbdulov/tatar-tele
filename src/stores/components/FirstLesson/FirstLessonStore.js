@@ -1,4 +1,4 @@
-import {autorun, makeAutoObservable} from 'mobx';
+import {autorun, makeAutoObservable, runInAction} from 'mobx';
 import {PART_SPEACH, VERBS, PRONOUNS, LESSONS} from '../../../data/index.js';
 import {
   actualValue,
@@ -20,7 +20,6 @@ class FirstLessonStore {
 
   constructor() {
     makeAutoObservable(this);
-
     autorun(() => this.getLessonData());
   }
 
@@ -33,29 +32,38 @@ class FirstLessonStore {
   };
 
   setResult = value => {
-    this.result = value;
+    runInAction(() => {
+      this.result = value;
+    });
   };
 
   getLessonData = () => {
     this.getTask();
     this.getVariants();
-    myProgressStore.setLessonId(this.lessonId)
   };
 
   setTrueTaskValue = obj => {
-    this.trueTaskValue = obj;
+    runInAction(() => {
+      this.trueTaskValue = obj;
+    });
   };
 
   setFalseTaskVerbs = arr => {
-    this.falseTaskVerbs = arr;
+    runInAction(() => {
+      this.falseTaskVerbs = arr;
+    });
   };
 
   setFalseTaskPronouns = arr => {
-    this.falseTaskPronouns = arr;
+    runInAction(() => {
+      this.falseTaskPronouns = arr;
+    });
   };
 
   setVariants = arr => {
-    this.variants = arr;
+    runInAction(() => {
+      this.variants = arr;
+    });
   };
 
   getAnotherTask = () => {

@@ -1,16 +1,31 @@
 import {Flex, Progress} from 'antd';
 import {observer} from 'mobx-react-lite';
 import {progressStore} from '../../stores/components/ProgressStore';
+import {useEffect, useState} from 'react';
+import {useLocation} from 'react-router';
 
 export const LinearProgress = observer(() => {
-  const lessonId = progressStore?.lessonId;
+  const [showProgress, setShowProgress] = useState(false);
   const progressPercent = progressStore?.percent;
-  console.log(lessonId);
-  return (lessonId &&
+
+  const {pathname} = useLocation();
+
+  useEffect(() => {
+    if (pathname.includes('lesson')) {
+      setShowProgress(false);
+      return;
+    }
+    setShowProgress(true);
+    progressStore.resetStore();
+  }, [pathname]);
+
+  return !showProgress ? (
     <Flex vertical gap="middle">
       <Flex vertical gap="small" style={{width: 300}}>
-        <Progress percent={progressPercent} size={[300, 20]} />
+        <Progress showInfo={false} percent={progressPercent} size={[300, 20]} />
       </Flex>
     </Flex>
+  ) : (
+    <div></div>
   );
 });
