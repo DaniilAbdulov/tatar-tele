@@ -27,17 +27,25 @@ class ProgressStore {
       this.lessonIsDone = true;
     }
   };
+  
+  getPercent = () => {
+    const percentFloat = count / COUNT_FOR_LESSON_DONE;
+    const percent = Math.round(percentFloat * 100);
+  };
 
   ingreeCountOfTrueTask = () => {
     this.countOfTrueAnswers += 1;
-
-    const percentFloat = this.countOfTrueAnswers / COUNT_FOR_LESSON_DONE;
-    const percent = Math.round(percentFloat * 100);
-    this.percent = percent;
-
+    this.percent = this.getPercent(this.countOfTrueAnswers);
     this.checkDoneLesson();
   };
-
+  
+  degreeCountOfTrueTask = () => {
+    if (this.countOfTrueAnswers > 0) {
+      this.countOfTrueAnswers -= 1;
+      this.percent = this.getPercent(this.countOfTrueAnswers);
+     }
+  };
+  
   handleSuccess = () => {
     //this.setResult('success');
     this.ingreeCountOfTrueTask();
@@ -45,6 +53,7 @@ class ProgressStore {
 
   handleError = () => {
     this.setResult('error');
+    this.degreeCountOfTrueTask();
   };
 }
 
