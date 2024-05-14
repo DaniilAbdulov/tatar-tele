@@ -37,6 +37,7 @@ import {
 
 import {ADJECTIVE_ENDINGS} from './ThirthLesson/index.js';
 import {ADJECTIVES} from './ThirthLesson/adjectives.js';
+import {TAT_NUMBERS} from './FourthLesson/index.js';
 
 export {
   NOW_VERB_ENDINGS,
@@ -69,4 +70,5 @@ export {
   COUNT_FOR_LESSON_DONE,
   ADJECTIVE_ENDINGS,
   ADJECTIVES,
+  TAT_NUMBERS,
 };

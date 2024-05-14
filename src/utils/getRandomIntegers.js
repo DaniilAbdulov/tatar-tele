@@ -16,6 +16,7 @@ export const getRandomIntegers = () => {
   const verbId = randomInt(1, VERBS.length);
   const oneOrTwo = randomInt(1, 2);
   const adjectiveId = randomInt(1, ADJECTIVES.length);
+  const randomNumber = randomInt(1, 999999);
 
   return {
     nounId,
@@ -25,5 +26,6 @@ export const getRandomIntegers = () => {
     verbId,
     oneOrTwo,
     adjectiveId,
+    randomNumber,
   };
 };

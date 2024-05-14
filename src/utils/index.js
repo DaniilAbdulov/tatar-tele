@@ -5,6 +5,7 @@ import {getChangedVerb} from './getChangedVerb.js';
 import {getChangedNoun} from './getChangedNoun.js';
 import {getFalseValues} from './getFalseValues.js';
 import {getChangedAdjective} from './getChangedAdjective.js';
+import {getTatarNumber} from './getTatarNumber.js';
 
 export {
   actualValue,
@@ -14,4 +15,5 @@ export {
   getChangedNoun,
   getFalseValues,
   getChangedAdjective,
+  getTatarNumber,
 };

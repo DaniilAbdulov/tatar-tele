@@ -6,6 +6,7 @@ import {Flex, Space} from 'antd';
 import {Pronoun} from '../../../../FirstLesson/Content/Task/Pronoun';
 import {Case} from '../../../../SecondLesson/Content/Task/Case';
 import {AdjectiveTask} from '../../../../ThithLesson/Content/AdjectiveTask';
+import {NumbersTask} from '../../../../FourthLesson/Content/NumbersTask.jsx';
 import {SharedDropDown} from './SharedDropDown.jsx';
 import {Pairs} from '../../../../PairWords/Content/Pairs.jsx';
 
@@ -33,6 +34,8 @@ export const Task = ({task}) => {
       );
     case LESSONS.THIRD:
       return <AdjectiveTask />;
+    case LESSONS.FOURTH:
+      return <NumbersTask />;
     case LESSONS.FIVE:
       return <Pairs />;
     default:
