@@ -3,6 +3,7 @@ import {Content} from './Content';
 import {Button, Card, Divider, Flex} from 'antd';
 import {NavLink} from 'react-router-dom';
 import {Message} from '../Message';
+import {MyHint} from '../MyHint';
 
 export const LessonView = ({title, store}) => {
   const lessonId = store.lessonId;
@@ -14,7 +15,7 @@ export const LessonView = ({title, store}) => {
       style={{maxWidth: '600px', margin: '10px'}}
     >
       <Divider />
-      <Card title={title || ''}>
+      <Card title={title || ''} extra={<MyHint store={store} />}>
         <Content store={store} lessonId={lessonId} />
       </Card>
       <Divider />

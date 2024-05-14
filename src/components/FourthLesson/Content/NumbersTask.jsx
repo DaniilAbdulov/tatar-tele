@@ -11,7 +11,7 @@ export const NumbersTask = observer(() => {
   }
 
   return (
-    <Flex gap={10} align="center">
+    <Flex vertical gap={10} align="center">
       <Title>{trueTaskValue.randomNumber}</Title>
     </Flex>
   );
