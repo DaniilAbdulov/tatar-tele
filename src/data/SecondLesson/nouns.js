@@ -530,9 +530,9 @@ export const NOUNS = [
   },
   {
     id: 66,
-    fullValue: 'Мәгълүмат',
-    russian: 'информация',
-    sound: 2,
+    fullValue: 'Тоз',
+    russian: 'соль',
+    sound: 1,
     voice: 1,
     state: 1,
   },
