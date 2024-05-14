@@ -72,7 +72,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
       }
       break;
     case PART_SPEACH.NUMERAL:
-      for (let i = 0; i < COUNT / 2; i++) {
+      for (let i = 0; i <= 1; i++) {
         const {randomNumber} = getRandomIntegers();
 
         if (value !== randomNumber) {
