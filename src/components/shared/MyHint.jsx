@@ -1,13 +1,20 @@
+import {useState} from 'react';
 import {Dropdown} from 'antd';
 import {observer} from 'mobx-react-lite';
-import {BulbOutlined} from '@ant-design/icons';
+import {BulbOutlined, BulbFilled} from '@ant-design/icons';
+import './shared.scss';
 
 export const MyHint = observer(({store}) => {
+  const [isOpen, setIsOpen] = useState(false);
   const {trueTaskValue} = store;
 
   if (!trueTaskValue?.value) {
     return <></>;
   }
+
+  const handleOpenChange = nextOpen => {
+    setIsOpen(nextOpen);
+  };
 
   const items = [
     {
@@ -20,8 +27,13 @@ export const MyHint = observer(({store}) => {
       menu={{
         items,
       }}
+      onOpenChange={handleOpenChange}
     >
-      <BulbOutlined style={{cursor: 'pointer'}} />
+      {isOpen ? (
+        <BulbFilled className="hovered" />
+      ) : (
+        <BulbOutlined style={{cursor: 'pointer'}} />
+      )}
     </Dropdown>
   );
 });

@@ -1,0 +1,24 @@
+.hovered {
+  animation: scaled 1s alternate ease-in;
+}
+
+@keyframes scaled {
+  0% {
+    scale: 1;
+    transform: rotate(0deg);
+  }
+  25% {
+    scale: 1.5;
+  }
+  50% {
+    scale: 2;
+    transform: rotate(-360deg);
+  }
+  75% {
+    scale: 1.5;
+  }
+  100% {
+    scale: 1;
+    transform: rotate(0deg);
+  }
+}
