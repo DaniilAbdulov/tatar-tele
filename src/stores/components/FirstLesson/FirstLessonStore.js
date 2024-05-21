@@ -150,7 +150,7 @@ class FirstLessonStore {
       timeId,
       verbId,
       oneOrTwo: negativeId,
-    } = getRandomIntegers();
+    } = getRandomIntegers(['pronounId','timeId','verbId','oneOrTwo']);
     const [pronoun] = actualValue(PRONOUNS, pronounId);
     const [verb] = actualValue(VERBS, verbId);
 

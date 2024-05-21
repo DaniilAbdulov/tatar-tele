@@ -127,7 +127,7 @@ class FourthLessonStore {
   };
 
   getTrueTaskValue = () => {
-    const {randomNumber} = getRandomIntegers();
+    const {randomNumber} = getRandomIntegers(['randomNumber']);
 
     const value = getTatarNumber(randomNumber);
 
