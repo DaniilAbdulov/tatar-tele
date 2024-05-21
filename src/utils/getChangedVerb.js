@@ -12,7 +12,7 @@ import {
 import {actualValue} from './actualValue.js';
 
 export const getChangedVerb = (verbId, pronounId, timeId, negativeId) => {
-  const [verb] = actualValue(VERBS, verbId);
+  const verb = actualValue(VERBS, verbId);
   //деструктуризация глагола
   const {fullValue: verbFull, imperative, voice, state} = verb;
   const slicedImperative = imperative.slice(0, imperative.length - 1);

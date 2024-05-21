@@ -1,1 +1,1 @@
-export const actualValue = (arr, id) => arr.filter(e => e.id === id);
+export const actualValue = (arr, id) => arr.find(e => e.id === id);

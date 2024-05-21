@@ -42,11 +42,11 @@ class PairWordsStore {
       anotherVerbId = verbId;
     }
 
-    const [noun] = actualValue(NOUNS, nounId);
-    const [anotherNoun] = actualValue(NOUNS, anotherNounId);
-    const [verb] = actualValue(VERBS, verbId);
-    const [anotherVerb] = actualValue(VERBS, anotherVerbId);
-    const [adjective] = actualValue(ADJECTIVES, adjectiveId);
+    const noun = actualValue(NOUNS, nounId);
+    const anotherNoun = actualValue(NOUNS, anotherNounId);
+    const verb = actualValue(VERBS, verbId);
+    const anotherVerb = actualValue(VERBS, anotherVerbId);
+    const adjective = actualValue(ADJECTIVES, adjectiveId);
 
     const arrForVariants = [noun, anotherNoun, verb, adjective, anotherVerb];
 

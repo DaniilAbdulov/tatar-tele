@@ -104,7 +104,7 @@ export const getChangedNoun = (nounId, caseId, alotId, pronounId = null) => {
     return '';
   }
 
-  const [noun] = actualValue(NOUNS, nounId);
+  const noun = actualValue(NOUNS, nounId);
 
   if (!noun?.fullValue) {
     return '';

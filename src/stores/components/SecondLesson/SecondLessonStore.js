@@ -133,7 +133,7 @@ class SecondLessonStore {
 
   getTrueTaskValue = () => {
     const {nounId, caseId, oneOrTwo: alotId, pronounId} = getRandomIntegers(['nounId', 'caseId', 'oneOrTwo', 'alotId', 'pronounId']);
-    const [noun] = actualValue(NOUNS, nounId);
+    const noun = actualValue(NOUNS, nounId);
     const casePart = RUSSIAN_CASES[caseId];
     const value = getChangedNoun(nounId, caseId, alotId, pronounId);
 
