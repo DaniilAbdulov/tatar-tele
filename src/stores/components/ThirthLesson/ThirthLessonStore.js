@@ -169,10 +169,10 @@ class ThirthLessonStore {
   };
 
   getTrueTaskValue = () => {
-    const {nounId, adjectiveId} = getRandomIntegers();
+    const {nounId, adjectiveId} = getRandomIntegers(['nounId', 'adjectiveId']);
     const [noun] = actualValue(NOUNS, nounId);
     const [adjective] = actualValue(ADJECTIVES, adjectiveId);
-    const {nounId: secondNounId} = getRandomIntegers();
+    const {nounId: secondNounId} = getRandomIntegers(['nounId']);
     const [secondNoun] = actualValue(NOUNS, secondNounId);
 
     const valueAdjective = getChangedAdjective(adjective);

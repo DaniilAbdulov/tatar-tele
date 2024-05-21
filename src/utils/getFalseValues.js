@@ -20,7 +20,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
           timeId,
           verbId,
           oneOrTwo: negativeId,
-        } = getRandomIntegers();
+        } = getRandomIntegers(['pronounId', 'timeId', 'verbId', 'oneOrTwo']);
 
         const item = getChangedVerb(verbId, pronounId, timeId, negativeId);
 
@@ -31,7 +31,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
       break;
     case PART_SPEACH.PRONOUN:
       for (let i = 0; i < COUNT; i++) {
-        const {pronounId} = getRandomIntegers();
+        const {pronounId} = getRandomIntegers(['pronounId']);
         const [pronoun] = actualValue(PRONOUNS, pronounId);
 
         const item = pronoun.value;
@@ -48,7 +48,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
           caseId,
           oneOrTwo: alotId,
           pronounId,
-        } = getRandomIntegers();
+        } = getRandomIntegers(['nounId', 'caseId', 'oneOrTwo', 'pronounId']);
 
         const item =
           lessonId === LESSONS.THIRD
@@ -62,7 +62,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
       break;
     case PART_SPEACH.ADJECTIVE:
       for (let i = 0; i < COUNT; i++) {
-        const {adjectiveId} = getRandomIntegers();
+        const {adjectiveId} = getRandomIntegers(['adjectiveId']);
         const [adjective] = actualValue(ADJECTIVES, adjectiveId);
 
         if (value.fullValue !== adjective.fullValue) {
@@ -72,7 +72,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
       }
       break;
     case PART_SPEACH.NUMERAL:
-        const {randomNumber} = getRandomIntegers();
+        const {randomNumber} = getRandomIntegers(['randomNumber']);
 
         if (value !== randomNumber) {
           const item = getTatarNumber(randomNumber);
