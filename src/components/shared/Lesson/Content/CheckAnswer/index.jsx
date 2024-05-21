@@ -8,7 +8,7 @@ export const CheckAnswer = ({store}) => {
 
   const handleUserKeyPress = useCallback(event => {
     const { key, keyCode } = event;
-    console.log([key, keyCode]);
+
     if (key === 'Enter' || keyCode === 13) {
       checkHandler();
     }
