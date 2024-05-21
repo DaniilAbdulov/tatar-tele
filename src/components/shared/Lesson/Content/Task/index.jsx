@@ -27,7 +27,6 @@ export const Task = ({task}) => {
         <Flex>
           <Flex vertical>
             <SharedDropDown noun={task.noun} />
-
             <Case />
           </Flex>
         </Flex>

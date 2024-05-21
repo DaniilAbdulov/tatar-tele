@@ -29,7 +29,7 @@ export const Case = observer(() => {
   ];
 
   return (
-    <Flex wrap gap={5} style={{marginTop:'10px'}}>
+    <Flex wrap gap={5} style={{marginTop: '10px'}}>
       <Descriptions items={arrOfParts} />
     </Flex>
   );

@@ -1,0 +1,22 @@
+.adjective {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  &_task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  span {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .adjective {
+    &_task {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

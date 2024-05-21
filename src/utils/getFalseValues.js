@@ -72,13 +72,13 @@ export const getFalseValues = (value, parametr, lessonId) => {
       }
       break;
     case PART_SPEACH.NUMERAL:
-        const {randomNumber} = getRandomIntegers(['randomNumber']);
+      const {randomNumber} = getRandomIntegers(['randomNumber']);
 
-        if (value !== randomNumber) {
-          const item = getTatarNumber(randomNumber);
-          arr.push(item);
-        }
-      
+      if (value !== randomNumber) {
+        const item = getTatarNumber(randomNumber);
+        arr.push(item);
+      }
+
       break;
     default:
       break;

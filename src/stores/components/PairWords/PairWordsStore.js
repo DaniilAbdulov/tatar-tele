@@ -27,7 +27,11 @@ class PairWordsStore {
   };
 
   getVariants = () => {
-    const {nounId, verbId, adjectiveId} = getRandomIntegers(['nounId', 'verbId', 'adjectiveId']);
+    const {nounId, verbId, adjectiveId} = getRandomIntegers([
+      'nounId',
+      'verbId',
+      'adjectiveId',
+    ]);
     let anotherNounId = nounId;
 
     while (anotherNounId === nounId) {
