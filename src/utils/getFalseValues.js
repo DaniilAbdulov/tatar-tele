@@ -32,7 +32,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
     case PART_SPEACH.PRONOUN:
       for (let i = 0; i < COUNT; i++) {
         const {pronounId} = getRandomIntegers(['pronounId']);
-        const [pronoun] = actualValue(PRONOUNS, pronounId);
+        const pronoun = actualValue(PRONOUNS, pronounId);
 
         const item = pronoun.value;
 
@@ -63,7 +63,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
     case PART_SPEACH.ADJECTIVE:
       for (let i = 0; i < COUNT; i++) {
         const {adjectiveId} = getRandomIntegers(['adjectiveId']);
-        const [adjective] = actualValue(ADJECTIVES, adjectiveId);
+        const adjective = actualValue(ADJECTIVES, adjectiveId);
 
         if (value.fullValue !== adjective.fullValue) {
           const item = getChangedAdjective(adjective);

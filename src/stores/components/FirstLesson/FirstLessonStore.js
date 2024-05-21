@@ -151,8 +151,8 @@ class FirstLessonStore {
       verbId,
       oneOrTwo: negativeId,
     } = getRandomIntegers(['pronounId','timeId','verbId','oneOrTwo']);
-    const [pronoun] = actualValue(PRONOUNS, pronounId);
-    const [verb] = actualValue(VERBS, verbId);
+    const pronoun = actualValue(PRONOUNS, pronounId);
+    const verb = actualValue(VERBS, verbId);
 
     const value = getChangedVerb(verbId, pronounId, timeId, negativeId);
 
