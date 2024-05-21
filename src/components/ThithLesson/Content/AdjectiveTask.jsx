@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {observer} from 'mobx-react-lite';
 import {thirthLessonStore} from '../../../stores/components/ThirthLesson/ThirthLessonStore';
 import {SharedDropDown} from '../../shared/Lesson/Content/Task/SharedDropDown';
@@ -15,10 +15,6 @@ export const AdjectiveTask = observer(() => {
   ) {
     return <></>;
   }
-
-  useEffect(()=>{
-    console.log(window.innerWidth);
-  })
 
   return (
     <Flex wrap justify='center' gap={10}>
