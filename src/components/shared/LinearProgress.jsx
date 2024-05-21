@@ -1,6 +1,6 @@
 import {Flex, Progress} from 'antd';
 import {observer} from 'mobx-react-lite';
-import {progressStore} from '../../stores/components/ProgressStore';
+import {progressStore} from '#stores/components/ProgressStore';
 import {useEffect, useState} from 'react';
 import {useLocation} from 'react-router';
 

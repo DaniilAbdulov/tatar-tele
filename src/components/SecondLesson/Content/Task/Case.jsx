@@ -1,7 +1,7 @@
 import React from 'react';
 import {observer} from 'mobx-react-lite';
-import {secondLessonStore} from '../../../../stores/components/SecondLesson/SecondLessonStore';
-import {ALOT, RUSSIAN_CASES_PART} from '../../../../data/index.js';
+import {secondLessonStore} from '#stores/components/SecondLesson/SecondLessonStore';
+import {ALOT, RUSSIAN_CASES_PART} from '#data/index.js';
 import {Descriptions, Flex} from 'antd';
 
 export const Case = observer(() => {

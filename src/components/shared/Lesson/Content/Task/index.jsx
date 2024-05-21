@@ -1,5 +1,5 @@
 import React from 'react';
-import {LESSONS} from '../../../../../data/index.js';
+import {LESSONS} from '#data/index.js';
 import {TimePart} from '../../../../FirstLesson/Content/Task/TimePart';
 import {Verb} from '../../../../FirstLesson/Content/Task/Verb';
 import {Flex, Space} from 'antd';

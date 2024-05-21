@@ -1,6 +1,6 @@
 import React from 'react';
 import {observer} from 'mobx-react-lite';
-import {firstLessonStore} from '../../../../stores/components/FirstLesson/FirstLessonStore';
+import {firstLessonStore} from '#stores/components/FirstLesson/FirstLessonStore';
 import {Dropdown} from 'antd';
 
 export const Verb = observer(() => {

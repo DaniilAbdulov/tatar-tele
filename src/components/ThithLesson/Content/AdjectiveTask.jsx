@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {observer} from 'mobx-react-lite';
-import {thirthLessonStore} from '../../../stores/components/ThirthLesson/ThirthLessonStore';
+import {thirthLessonStore} from '#stores/components/ThirthLesson/ThirthLessonStore';
 import {SharedDropDown} from '../../shared/Lesson/Content/Task/SharedDropDown';
 import './AdjectiveTask.scss';
-import {progressStore} from '../../../stores/components/ProgressStore';
+import {progressStore} from '#stores/components/ProgressStore';
 
 export const AdjectiveTask = observer(() => {
   const [showInfo, setShowInfo] = useState(true);

@@ -1,6 +1,6 @@
 import {Modal, Result} from 'antd';
 import {observer} from 'mobx-react-lite';
-import {progressStore} from '../../stores/components/ProgressStore';
+import {progressStore} from '#stores/components/ProgressStore';
 import {useNavigate} from 'react-router';
 
 export const LessonEnd = observer(() => {

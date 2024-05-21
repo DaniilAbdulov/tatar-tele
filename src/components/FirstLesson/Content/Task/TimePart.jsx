@@ -1,11 +1,7 @@
 import React from 'react';
 import {observer} from 'mobx-react-lite';
-import {firstLessonStore} from '../../../../stores/components/FirstLesson/FirstLessonStore';
-import {
-  RUSSIAN_TIME_PART,
-  TIMES,
-  RUSSIAN_NEGATIVE,
-} from '../../../../data/index.js';
+import {firstLessonStore} from '#stores/components/FirstLesson/FirstLessonStore';
+import {RUSSIAN_TIME_PART, TIMES, RUSSIAN_NEGATIVE} from '#data/index.js';
 import Text from 'antd/es/typography/Text';
 
 export const TimePart = observer(() => {

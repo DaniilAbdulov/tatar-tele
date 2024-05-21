@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {observer} from 'mobx-react-lite';
-import {pairWordsStore} from '../../../stores/components/PairWords/PairWordsStore';
+import {pairWordsStore} from '#stores/components/PairWords/PairWordsStore';
 import {Button, Divider, Flex} from 'antd';
 
 export const Pairs = observer(() => {
