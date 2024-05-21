@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {observer} from 'mobx-react-lite';
 import {thirthLessonStore} from '../../../stores/components/ThirthLesson/ThirthLessonStore';
 import {SharedDropDown} from '../../shared/Lesson/Content/Task/SharedDropDown';
-import {Flex, Space} from 'antd';
+import {Flex} from 'antd';
 import Text from 'antd/es/typography/Text';
 
 export const AdjectiveTask = observer(() => {
@@ -16,19 +16,22 @@ export const AdjectiveTask = observer(() => {
     return <></>;
   }
 
+  useEffect(()=>{
+    console.log(window.innerWidth);
+  })
+
   return (
-    <Flex vertical gap={10} align="center">
-      <span style={{textAlign: 'center'}}>
+    <Flex wrap justify='center' gap={10}>
+      <span>
         *некоторые предложения могут быть абсолютно бессмысленны
       </span>
-      <Space>
+
         <SharedDropDown noun={trueTaskValue.noun} />
         <SharedDropDown adjective={trueTaskValue.adjective} />
-      </Space>
-      <Space>
+
         <Text>чем</Text>
         <SharedDropDown noun={trueTaskValue.secondNoun} />
-      </Space>
+
     </Flex>
   );
 });
