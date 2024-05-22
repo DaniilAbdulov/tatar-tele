@@ -1,10 +1,6 @@
 import {autorun, makeAutoObservable, runInAction} from 'mobx';
-import {PART_SPEACH, LESSONS} from '../../../data/index.js';
-import {
-  getFalseValues,
-  getRandomIntegers,
-  getTatarNumber,
-} from '../../../utils/index.js';
+import {LESSONS} from '#data/index.js';
+import {getRandomIntegers, getTatarNumber} from '#utils/index.js';
 import {progressStore} from '../ProgressStore.js';
 const myProgressStore = progressStore;
 
@@ -23,7 +19,6 @@ class FourthLessonStore {
   resetTask = () => {
     this.trueTaskValue = {};
     this.falseTaskNumbers = [];
-    this.falseTaskPronouns = [];
     this.variants = [];
     this.userAnswer = [];
   };
@@ -45,12 +40,6 @@ class FourthLessonStore {
     });
   };
 
-  setFalseTaskNumbers = arr => {
-    runInAction(() => {
-      this.falseTaskNumbers = arr;
-    });
-  };
-
   setVariants = arr => {
     runInAction(() => {
       this.variants = arr;
@@ -64,13 +53,7 @@ class FourthLessonStore {
   };
 
   getVariants = () => {
-    const falses = [...new Set(this.falseTaskNumbers)].reduce(
-      (a, b) => a + ' ' + b,
-    );
-    const uniqueFalses = [...new Set(falses.split(' '))].join(' ');
-    const bigString = uniqueFalses + ' ' + this.trueTaskValue.value;
-
-    const numbers = bigString.split(' ');
+    const numbers = this.trueTaskValue.value.split(' ');
 
     const variants = [...numbers].map((item, index) => {
       const miniObj = {
@@ -90,7 +73,6 @@ class FourthLessonStore {
     }
     const {value} = this.trueTaskValue;
     const userAnswerArray = this.userAnswer.map(e => e.value);
-
     const userAnswer = userAnswerArray.join(' ');
 
     if (userAnswer === value) {
@@ -118,17 +100,11 @@ class FourthLessonStore {
 
   getTask = () => {
     const trueTaskValue = this.getTrueTaskValue();
-    const {randomNumber} = trueTaskValue;
-
-    const falseTaskNumbers = getFalseValues(randomNumber, PART_SPEACH.NUMERAL);
-
     this.setTrueTaskValue(trueTaskValue);
-    this.setFalseTaskNumbers(falseTaskNumbers);
   };
 
   getTrueTaskValue = () => {
     const {randomNumber} = getRandomIntegers(['randomNumber']);
-
     const value = getTatarNumber(randomNumber);
 
     return {

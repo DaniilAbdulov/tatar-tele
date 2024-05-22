@@ -1,12 +1,12 @@
 import {autorun, makeAutoObservable, runInAction} from 'mobx';
-import {PART_SPEACH, VERBS, PRONOUNS, LESSONS} from '../../../data/index.js';
+import {PART_SPEACH, VERBS, PRONOUNS, LESSONS} from '#data/index.js';
 import {
   actualValue,
   getFalseValues,
   getRandomIntegers,
   shuffleArray,
-} from '../../../utils/index.js';
-import {getChangedVerb} from '../../../utils/index.js';
+} from '#utils/index.js';
+import {getChangedVerb} from '#utils/index.js';
 import {progressStore} from '../ProgressStore.js';
 const myProgressStore = progressStore;
 

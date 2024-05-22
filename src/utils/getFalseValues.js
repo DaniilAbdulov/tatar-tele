@@ -5,7 +5,6 @@ import {
   getChangedNoun,
   getChangedVerb,
   getRandomIntegers,
-  getTatarNumber,
 } from './index.js';
 
 export const getFalseValues = (value, parametr, lessonId) => {
@@ -70,15 +69,6 @@ export const getFalseValues = (value, parametr, lessonId) => {
           arr.push(item);
         }
       }
-      break;
-    case PART_SPEACH.NUMERAL:
-      const {randomNumber} = getRandomIntegers(['randomNumber']);
-
-      if (value !== randomNumber) {
-        const item = getTatarNumber(randomNumber);
-        arr.push(item);
-      }
-
       break;
     default:
       break;

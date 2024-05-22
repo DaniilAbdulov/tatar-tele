@@ -1,6 +1,6 @@
 import {autorun, makeAutoObservable} from 'mobx';
-import {LESSONS, NOUNS, ADJECTIVES, VERBS} from '../../../data/index.js';
-import {actualValue, getRandomIntegers} from '../../../utils/index.js';
+import {LESSONS, NOUNS, ADJECTIVES, VERBS} from '#data/index.js';
+import {actualValue, getRandomIntegers} from '#utils/index.js';
 import {progressStore} from '../ProgressStore.js';
 const myProgressStore = progressStore;
 

@@ -1,17 +1,12 @@
 import {autorun, makeAutoObservable, runInAction} from 'mobx';
-import {
-  PART_SPEACH,
-  LESSONS,
-  NOUNS,
-  RUSSIAN_CASES,
-} from '../../../data/index.js';
+import {PART_SPEACH, LESSONS, NOUNS, RUSSIAN_CASES} from '#data/index.js';
 import {
   actualValue,
   getFalseValues,
   getRandomIntegers,
   shuffleArray,
   getChangedNoun,
-} from '../../../utils/index.js';
+} from '#utils/index.js';
 import {progressStore} from '../ProgressStore.js';
 const myProgressStore = progressStore;
 
@@ -132,7 +127,18 @@ class SecondLessonStore {
   };
 
   getTrueTaskValue = () => {
-    const {nounId, caseId, oneOrTwo: alotId, pronounId} = getRandomIntegers(['nounId', 'caseId', 'oneOrTwo', 'alotId', 'pronounId']);
+    const {
+      nounId,
+      caseId,
+      oneOrTwo: alotId,
+      pronounId,
+    } = getRandomIntegers([
+      'nounId',
+      'caseId',
+      'oneOrTwo',
+      'alotId',
+      'pronounId',
+    ]);
     const noun = actualValue(NOUNS, nounId);
     const casePart = RUSSIAN_CASES[caseId];
     const value = getChangedNoun(nounId, caseId, alotId, pronounId);
