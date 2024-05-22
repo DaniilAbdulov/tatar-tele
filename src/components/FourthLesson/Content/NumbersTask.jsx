@@ -6,10 +6,7 @@ import Title from 'antd/es/typography/Title';
 
 export const NumbersTask = observer(() => {
   const {trueTaskValue} = fourthLessonStore;
-  if (!trueTaskValue?.value) {
-    return <></>;
-  }
-
+  
   return (
     <Flex vertical gap={10} align="center">
       <Title>{trueTaskValue.randomNumber}</Title>

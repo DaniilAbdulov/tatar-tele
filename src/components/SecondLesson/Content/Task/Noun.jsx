@@ -7,12 +7,12 @@ export const Noun = observer(() => {
   const noun = secondLessonStore?.trueTaskValue?.noun || '';
   const items = [
     {
-      label: `Перевод: ${noun.fullValue}`,
+      label: `Перевод: ${noun?.fullValue}`,
       key: '1',
     },
   ];
   const menuProps = {
     items,
   };
-  return <Dropdown.Button menu={menuProps}>{noun.russian}</Dropdown.Button>;
+  return <Dropdown.Button menu={menuProps}>{noun?.russian}</Dropdown.Button>;
 });
