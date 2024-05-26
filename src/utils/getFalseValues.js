@@ -7,7 +7,7 @@ import {
   getRandomIntegers,
 } from './index.js';
 
-export const getFalseValues = (value, parametr, lessonId) => {
+export const getFalseValues = (value, parametr, lessonId, curNounId = 1) => {
   const arr = [];
   const COUNT = lessonId === LESSONS.THIRD ? 2 : 4;
 
@@ -52,7 +52,7 @@ export const getFalseValues = (value, parametr, lessonId) => {
         const item =
           lessonId === LESSONS.THIRD
             ? getChangedNoun(nounId, 6, 2)
-            : getChangedNoun(nounId, caseId, alotId, pronounId);
+            : getChangedNoun(curNounId, caseId, alotId, pronounId);
 
         if (value !== item) {
           arr.push(item);

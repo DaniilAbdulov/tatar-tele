@@ -1,6 +1,6 @@
 import {autorun, makeAutoObservable, runInAction} from 'mobx';
 import {LESSONS} from '#data/index.js';
-import {getRandomIntegers, getTatarNumber} from '#utils/index.js';
+import {getRandomIntegers, getTatarNumber, shuffleArray} from '#utils/index.js';
 import {progressStore} from '../ProgressStore.js';
 const myProgressStore = progressStore;
 
@@ -55,7 +55,7 @@ class FourthLessonStore {
   getVariants = () => {
     const numbers = this.trueTaskValue.value.split(' ');
 
-    const variants = [...numbers].map((item, index) => {
+    const unShuffledvariants = [...numbers].map((item, index) => {
       const miniObj = {
         id: index + 1,
         value: item,
@@ -63,6 +63,8 @@ class FourthLessonStore {
 
       return miniObj;
     });
+
+    const variants = shuffleArray(unShuffledvariants);
 
     this.setVariants([...variants]);
   };

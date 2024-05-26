@@ -119,8 +119,14 @@ class SecondLessonStore {
 
   getTask = () => {
     const trueTaskValue = this.getTrueTaskValue();
-    const {value} = trueTaskValue;
-    const falseTaskNouns = getFalseValues(value, PART_SPEACH.NOUN);
+    const {value, noun} = trueTaskValue;
+    const curNounId = noun?.id;
+    const falseTaskNouns = getFalseValues(
+      value,
+      PART_SPEACH.NOUN,
+      this.lessonId,
+      curNounId,
+    );
 
     this.setTrueTaskValue(trueTaskValue);
     this.setFalseTaskNouns(falseTaskNouns);
