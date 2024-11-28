@@ -46,7 +46,7 @@ export const App = () => {
           <Footer style={{textAlign: 'center'}}>
             Tatar tele ©{new Date().getFullYear()} Created by{' '}
             <a
-              href="https://www.abdulovdb.com/"
+              href="https://abdulovdb-com.vercel.app"
               rel="noreferrer"
               target="_blank"
             >
